@@ -1,0 +1,9 @@
+# Generated build output
+dist/
+
+# Local environment files
+.env
+.env.*
+
+# Logs
+*.log
