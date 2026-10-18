@@ -78,8 +78,8 @@ h3 { font-size: 1.6rem; }
 .home-routes { display: grid; gap: 1rem; }
 .route-card { display: block; min-height: 13rem; padding: 1.5rem; color: var(--ink); background: linear-gradient(150deg, var(--white), #f4f9ff); border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease; }
 .route-card:hover { color: var(--ink); border-color: #80b9ee; transform: translateY(-0.2rem); box-shadow: var(--shadow); }
-.route-card > span { color: var(--teal); font-size: 0.8rem; font-weight: 800; }
-.route-card h3 { margin: 2.3rem 0 0.65rem; }
+.route-card > span { color: var(--teal); font-size: clamp(1.3rem, 2.5vw, 2rem); font-weight: 800; }
+.route-card h3 { margin: 2.0rem 0 0.65rem; }
 .route-card p { margin-bottom: 0; color: var(--muted); }
 .split-heading { display: grid; gap: 1rem; max-width: none; }
 .split-heading > p { max-width: 28rem; }
