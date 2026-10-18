@@ -73,7 +73,7 @@ h3 { font-size: 1.6rem; }
 .section-heading > p { color: var(--muted); }
 .page-hero { max-width: 76rem; padding-block: var(--space-6) var(--space-5); border-bottom: 1px solid var(--line); background: linear-gradient(90deg, transparent, #dceeff52); }
 .page-hero h1 { max-width: 13ch; margin-bottom: 1rem; }
-.page-hero > p:last-child { max-width: 43rem; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.3rem); }
+.page-hero > p:last-child, .page-hero-with-media > div > p:last-child { max-width: 43rem; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.3rem); }
 .page-hero-with-media { display: grid; gap: 2rem; align-items: center; }
 .page-hero-with-media > img { width: 100%; min-height: 17rem; object-fit: cover; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
 .home-routes { display: grid; gap: 1rem; }
@@ -128,6 +128,10 @@ h3 { font-size: 1.6rem; }
 .profile-content p:last-child, .profile-content ul:last-child { margin-bottom: 0; }
 .profile-content ul { padding-left: 1.25rem; }
 .profile-content li + li { margin-top: 0.6rem; }
+.profile-section--biography p { color: var(--ink); font-size: clamp(1.08rem, 1.45vw, 1.22rem); line-height: 1.85; text-indent: 2em; }
+.profile-content ol { padding-left: 1.5rem; }
+.profile-content ol:last-child { margin-bottom: 0; }
+.profile-content ol li { padding-left: 0.25rem; line-height: 1.7; }
 .section-link { display: inline-block; margin-top: 1.5rem; }
 .publication-section { border-top: 1px solid var(--line); }
 .publication { display: grid; grid-template-columns: 2.5rem 1fr auto; gap: 1rem; padding: 1.5rem 0; border-top: 1px solid var(--line); }
