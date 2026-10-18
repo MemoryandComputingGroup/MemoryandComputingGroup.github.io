@@ -110,7 +110,7 @@ h3 { font-size: 1.6rem; }
 .group-heading h2 { margin-bottom: 0; font-size: clamp(2rem, 3.5vw, 3.25rem); }
 .member-grid { display: grid; gap: 1rem; }
 .member-card { overflow: hidden; padding: 1rem; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); text-align: center; }
-.member-photo { display: block; width: 100%; aspect-ratio: 4 / 5; margin-bottom: 1rem; object-fit: cover; object-position: center top; border-radius: calc(var(--radius) - 0.25rem); background: #dceeff; }
+.member-photo { display: block; width: 100%; aspect-ratio: 5 / 4; margin-bottom: 1rem; object-fit: cover; object-position: center top; border-radius: calc(var(--radius) - 0.25rem); background: #dceeff; }
 .member-photo-placeholder { display: grid; place-items: center; color: #416489; background: linear-gradient(145deg, #e8f5ff, #cfe6fb); border: 1px dashed #92bfeb; font-size: 0.8rem; font-weight: 800; line-height: 1.45; text-transform: uppercase; letter-spacing: 0.08em; }
 .member-card h3 { margin-bottom: 0.35rem; font-size: 1.35rem; }
 .member-card p { margin-bottom: 0; color: var(--muted); }
@@ -146,3 +146,10 @@ h3 { font-size: 1.6rem; }
   .hero { grid-template-columns: 1.05fr 0.95fr; }.hero-visual { min-height: 31rem; }.split-heading { grid-template-columns: 1fr 0.65fr; align-items: end; }.theme-grid { grid-template-columns: repeat(3, 1fr); }.people-grid { grid-template-columns: repeat(3, 1fr); }.leadership-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.member-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }.page-hero-with-media { grid-template-columns: 1fr 0.8fr; }.page-hero-with-media > img { min-height: 23rem; height: 100%; }.profile-hero { grid-template-columns: minmax(16rem, 0.6fr) 1fr; }.profile-portrait { width: 100%; }.news-grid { grid-template-columns: repeat(3, 1fr); }.home-routes { grid-template-columns: repeat(3, 1fr); }.join-layout { grid-template-columns: 1fr 1fr; align-items: start; }.contact-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+/* Centre the single postdoctoral-researcher card on wide screens */
+@media (min-width: 44rem) {
+  #postdoctoral-researchers .member-card:only-child {
+    grid-column: 2;
+  }
+}
