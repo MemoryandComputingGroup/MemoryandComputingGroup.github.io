@@ -6,13 +6,12 @@ export const siteContent = {
   },
   homeStatement: "Compute Differently. Think Beyond.",
   researchThemes: [
-    { number: "01", title: "Neuromorphic Chip Design", description: "Detailed research description forthcoming. A verified overview of design objectives, target applications, and representative work will be added here." },
-    { number: "02", title: "Hardware–Algorithm Co-design", description: "Detailed research description forthcoming. Verified co-design approaches, evaluation settings, and representative work will be added here." },
-    { number: "03", title: "RRAM-enabled Computing-in-Memory", description: "Detailed research description forthcoming. Verified device, circuit, and architecture scope will be added here." },
-    { number: "04", title: "Memristive Device Design", description: "Detailed research description forthcoming. Verified device-design questions, methods, and representative work will be added here." },
+    { number: "01", title: "Neuromorphic Chip Design", description: "We design energy-efficient integrated circuits inspired by the brain to support intelligent perception, learning, and inference with low latency and power consumption." },
+    { number: "02", title: "Hardware–Algorithm Co-design", description: "We jointly optimize algorithms, computing architectures, and circuit implementations to maximize performance, efficiency, and reliability in AI hardware." },
+    { number: "03", title: "RRAM-Enabled Computing-in-Memory", description: "We explore RRAM-based computing-in-memory to perform data storage and computation within the same hardware, reducing data movement and improving the energy efficiency of AI workloads." },
   ],
   leaders: [
-    { name: "Qi Liu", role: "Professor (教授)", affiliation: "College of Integrated Circuits and Micro-Nano Electronics, Fudan University", email: "qi_liu@fudan.edu.cn", image: "assets/images/qi-liu.png", alt: "Portrait of Professor Qi Liu", profile: "qi-liu.html" },
+    { name: "Qi Liu", role: "Professor", affiliation: "College of Integrated Circuits and Micro-Nano Electronics, Fudan University", email: "qi_liu@fudan.edu.cn", image: "assets/images/qi-liu.png", alt: "Portrait of Professor Qi Liu", profile: "qi-liu.html" },
     { name: "Xumeng Zhang", role: "Assistant Research Fellow", affiliation: "College of Integrated Circuits and Micro-Nano Electronics, Fudan University", email: "xumengzhang@fudan.edu.cn", image: "assets/images/xumeng-zhang.png", alt: "Portrait of Xumeng Zhang", profile: "xumeng-zhang.html" },
   ],
   peopleGroups: [
@@ -35,7 +34,7 @@ export const siteContent = {
   ],
   profiles: {
     qiLiu: {
-      name: "Qi Liu", role: "Professor (教授)", affiliation: "College of Integrated Circuits and Micro-Nano Electronics, Fudan University", email: "qi_liu@fudan.edu.cn", image: "assets/images/qi-liu.png", alt: "Portrait of Professor Qi Liu",
+      name: "Qi Liu", role: "Professor", affiliation: "College of Integrated Circuits and Micro-Nano Electronics, Fudan University", email: "qi_liu@fudan.edu.cn", image: "assets/images/qi-liu.png", alt: "Portrait of Professor Qi Liu",
       sections: [{ heading: "Biography", type: "paragraphs", entries: ["2010年于安徽大学获得微电子与固体电子学专业博士学位，2010–2020年在中国科学院微电子研究所分别任博士后、副研究员和研究员。主要研究方向包括新型非易失存储技术、神经形态器件、类脑计算、存算一体芯片及系统。主持了国家重点研发计划、国家自然科学基金委杰青、优青和重点等项目。在Science、Nat. Nano.、Nat. Electron.、Nat. Commun.、Adv. Mater.、Nano Lett.、IEEE EDL等期刊发表SCI论文100多篇，Google引用13000多次，获得授权中国发明专利65项，美国发明专利8项。曾获得国家自然科学二等奖、电子学会科学技术进步一等奖、中科院青年科学家奖、中科院杰出科技成就奖等奖项。"] }],
     },
     xumengZhang: {
