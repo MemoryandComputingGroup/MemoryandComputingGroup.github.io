@@ -110,7 +110,7 @@ h3 { font-size: 1.6rem; }
 .group-heading h2 { margin-bottom: 0; font-size: clamp(2rem, 3.5vw, 3.25rem); }
 .member-grid { display: grid; gap: 1rem; }
 .member-card { overflow: hidden; padding: 1rem; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); text-align: center; }
-.member-photo { display: block; width: 100%; aspect-ratio: 4 / 8; margin-bottom: 1rem; object-fit: cover; object-position: center top; border-radius: calc(var(--radius) - 0.25rem); background: #dceeff; }
+.member-photo { display: block; width: 100%; aspect-ratio: 4 / 5; margin-bottom: 1rem; object-fit: cover; object-position: center top; border-radius: calc(var(--radius) - 0.25rem); background: #dceeff; }
 .member-photo-placeholder { display: grid; place-items: center; color: #416489; background: linear-gradient(145deg, #e8f5ff, #cfe6fb); border: 1px dashed #92bfeb; font-size: 0.8rem; font-weight: 800; line-height: 1.45; text-transform: uppercase; letter-spacing: 0.08em; }
 .member-card h3 { margin-bottom: 0.35rem; font-size: 1.35rem; }
 .member-card p { margin-bottom: 0; color: var(--muted); }
