@@ -24,7 +24,7 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.18e
 a:hover { color: var(--teal); }
 a:focus-visible, button:focus-visible { outline: 3px solid #027cff; outline-offset: 4px; }
 h1, h2, h3, p { margin-top: 0; }
-h1, h2, h3 { font-family: Inter, ui-sans-serif, system-ui, sans-serif; line-height: 0.98; letter-spacing: -0.055em; }
+h1, h2, h3 { font-family: Inter, ui-sans-serif, system-ui, sans-serif; line-height: 1.05; letter-spacing: -0.055em; }
 h1 { max-width: 11ch; margin-bottom: 1.5rem; font-size: clamp(3rem, 7vw, 6.5rem); }
 h2 { margin-bottom: 1rem; font-size: clamp(2.3rem, 4vw, 4.3rem); }
 h3 { font-size: 1.6rem; }
@@ -105,9 +105,20 @@ h3 { font-size: 1.6rem; }
 .leader-card-copy { display: grid; justify-items: center; padding: 1.25rem 0 0; }
 .leader-card-copy .eyebrow { margin-bottom: 0.45rem; font-size: 0.95rem; letter-spacing: 0.16em; }
 .leader-card-copy h3 { margin-bottom: 0.6rem; font-size: clamp(1.8rem, 3vw, 2.5rem); }
-.people-groups { padding-bottom: var(--space-6); }
-.people-group { padding-top: var(--space-5); }
-.people-group + .people-group { border-top: 1px solid var(--line); }
+.people-groups {
+  padding: var(--space-5) 0 var(--space-6);
+  border-top: 1px solid var(--line);
+}
+
+.people-group {
+  padding-top: 0;
+}
+
+.people-group + .people-group {
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--line);
+}
 .group-heading { margin-bottom: 1.5rem; text-align: center; }
 .group-heading h2 { margin-bottom: 0; font-size: clamp(2rem, 3.5vw, 3.25rem); }
 .member-grid { display: grid; gap: 1rem; }
