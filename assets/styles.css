@@ -153,8 +153,33 @@ h3 { font-size: 1.6rem; }
 .year-index button:focus-visible { outline: 3px solid #027cff; outline-offset: 3px; }
 .year-filter-status { margin: -0.5rem 0 1.5rem; color: var(--muted); font-weight: 700; }
 .publication[hidden], .news-card[hidden] { display: none; }
-.publication { display: grid; grid-template-columns: 2.5rem 1fr auto; gap: 1rem; padding: 1.5rem 0; border-top: 1px solid var(--line); }
-.publication > span:first-child { color: var(--teal); font-size: 0.75rem; font-weight: 800; }
+.publication {
+  border-top: 1px solid var(--line);
+}
+
+.publication-link {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr auto;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.publication-link:hover h3 {
+  color: var(--teal);
+}
+
+.publication-link:focus-visible {
+  outline: 3px solid #027cff;
+  outline-offset: 4px;
+}
+
+.publication-number {
+  color: var(--teal);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
 .publication h3 { margin-bottom: 0.6rem; font-size: clamp(1.3rem, 2vw, 1.7rem); }
 .publication p:last-child { margin-bottom: 0; color: var(--muted); font-size: 0.95rem; }
 .publication-arrow { color: var(--teal); font-size: 1.4rem; }

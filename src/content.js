@@ -72,7 +72,15 @@ export const siteContent = {
     },
   },
   publications: [
-    { type: "Publication placeholder", title: "A verified publication title will appear here", detail: "Authors · Venue · Year · DOI or persistent link" },
+    {
+      type: "Journal article",
+      authors: "Li, Yifan; Yang, Dongzi; Chen, Pei; Chen, Yan; Zhang, Wenkui; Wang, Ming; Jiang, Hao; Chen, Xianzhe; Zhang, Xumeng; Liu, Qi",
+      journal: "IEEE Electron Device Letters",
+      title: "A Hodgkin-Huxley Tactile Neuron for In Situ Sliding Direction Encoding Using Distinct Firing Patterns",
+      year: "2026",
+      doi: "10.1109/LED.2026.3737978",
+      url: "https://ieeexplore.ieee.org/abstract/document/11713021",
+},
     { type: "Publication placeholder", title: "A second selected output can be added here", detail: "Authors · Venue · Year · DOI or persistent link" },
     { type: "Publication placeholder", title: "Organize additional publications by year or research theme", detail: "Authors · Venue · Year · DOI or persistent link" },
   ],

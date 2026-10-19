@@ -2,6 +2,14 @@ import { siteContent } from "./content.js";
 
 const setText = (selector, value) => document.querySelectorAll(selector).forEach((element) => { element.textContent = value; });
 const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#039;", '"': "&quot;" }[character]));
+const publisherUrl = (value) => {
+  try {
+    const url = new URL(value);
+    return url.protocol === "https:" ? url.href : "#";
+  } catch {
+    return "#";
+  }
+};
 const renderInto = (selector, markup) => {
   const element = document.querySelector(selector);
   if (element) element.innerHTML = markup;
@@ -40,8 +48,27 @@ function renderContent() {
   if (profile) {
     renderInto("[data-profile-content]", `<section class="profile-hero section-shell"><div class="profile-portrait"><img src="${escapeHtml(profile.image)}" alt="${escapeHtml(profile.alt)}" width="640" height="960" /></div><div><p class="eyebrow">${escapeHtml(profile.role)}</p><h1>${escapeHtml(profile.name)}</h1><p class="profile-affiliation">${escapeHtml(profile.affiliation)}</p><p class="profile-email"><a href="mailto:${escapeHtml(profile.email)}">${escapeHtml(profile.email)}</a></p></div></section><section class="profile-content section-shell">${profile.sections.map((section) => `<section class="profile-section profile-section--${escapeHtml(section.type)}"><h2>${escapeHtml(section.heading)}</h2>${section.type === "list" ? `<ul>${section.entries.map((entry) => `<li>${escapeHtml(entry)}</li>`).join("")}</ul>` : section.type === "ordered-list" ? `<ol>${section.entries.map((entry) => `<li>${escapeHtml(entry)}</li>`).join("")}</ol>` : section.entries.map((entry) => `<p>${escapeHtml(entry)}</p>`).join("")}</section>`).join("")}</section>`);
   }
-  renderInto("[data-publications]", siteContent.publications.map((publication, index) => `
-    <article class="publication" data-year-item="publications" data-item-year="${escapeHtml(publication.year || "")}"><span>${String(index + 1).padStart(2, "0")}</span><div><p class="publication-type">${escapeHtml(publication.type)}</p><h3>${escapeHtml(publication.title)}</h3><p>${escapeHtml(publication.detail)}</p></div><span class="publication-arrow" aria-hidden="true">↗</span></article>`).join(""));
+  renderInto("[data-publications]", siteContent.publications.map((publication, index) => {
+  const detail = [
+    publication.authors,
+    publication.journal,
+    publication.year,
+    publication.doi ? `DOI: ${publication.doi}` : "",
+  ].filter(Boolean).join(" · ");
+
+  return `
+    <article class="publication" data-year-item="publications" data-item-year="${escapeHtml(publication.year || "")}">
+      <a class="publication-link" href="${escapeHtml(publisherUrl(publication.url))}" target="_blank" rel="noopener noreferrer" aria-label="Open publication: ${escapeHtml(publication.title)}">
+        <span class="publication-number">${String(index + 1).padStart(2, "0")}</span>
+        <div>
+          <p class="publication-type">${escapeHtml(publication.type)}</p>
+          <h3>${escapeHtml(publication.title)}</h3>
+          <p>${escapeHtml(detail)}</p>
+        </div>
+        <span class="publication-arrow" aria-hidden="true">↗</span>
+      </a>
+    </article>`;
+}).join(""));
   renderInto("[data-news]", siteContent.news.map((item) => `
     <article class="news-card" data-year-item="news" data-item-year="${escapeHtml(item.year || "")}"><p>${escapeHtml(item.date)}</p><span>${escapeHtml(item.category)}</span><h3>${escapeHtml(item.title)}</h3><a href="contact.html">Read update <span aria-hidden="true">→</span></a></article>`).join(""));
 }
