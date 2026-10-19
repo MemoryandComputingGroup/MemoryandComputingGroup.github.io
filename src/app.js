@@ -48,7 +48,10 @@ function renderContent() {
   if (profile) {
     renderInto("[data-profile-content]", `<section class="profile-hero section-shell"><div class="profile-portrait"><img src="${escapeHtml(profile.image)}" alt="${escapeHtml(profile.alt)}" width="640" height="960" /></div><div><p class="eyebrow">${escapeHtml(profile.role)}</p><h1>${escapeHtml(profile.name)}</h1><p class="profile-affiliation">${escapeHtml(profile.affiliation)}</p><p class="profile-email"><a href="mailto:${escapeHtml(profile.email)}">${escapeHtml(profile.email)}</a></p></div></section><section class="profile-content section-shell">${profile.sections.map((section) => `<section class="profile-section profile-section--${escapeHtml(section.type)}"><h2>${escapeHtml(section.heading)}</h2>${section.type === "list" ? `<ul>${section.entries.map((entry) => `<li>${escapeHtml(entry)}</li>`).join("")}</ul>` : section.type === "ordered-list" ? `<ol>${section.entries.map((entry) => `<li>${escapeHtml(entry)}</li>`).join("")}</ol>` : section.entries.map((entry) => `<p>${escapeHtml(entry)}</p>`).join("")}</section>`).join("")}</section>`);
   }
-  renderInto("[data-publications]", siteContent.publications.map((publication, index) => {
+  const publications = [...siteContent.publications].sort(
+  (first, second) => Number(second.year || 0) - Number(first.year || 0)
+  );
+  renderInto("[data-publications]", publications.map((publication, index) => {
   const detail = [
     publication.authors,
     publication.journal,
