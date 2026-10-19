@@ -128,7 +128,7 @@ h3 { font-size: 1.6rem; }
 .profile-content p:last-child, .profile-content ul:last-child { margin-bottom: 0; }
 .profile-content ul { padding-left: 1.25rem; }
 .profile-content li + li { margin-top: 0.6rem; }
-.profile-section--biography p { color: var(--ink); font-size: clamp(1.08rem, 1.45vw, 1.22rem); line-height: 1.85; text-indent: 2em; }
+.profile-section--biography p { color: var(--ink); font-size: clamp(1.08rem, 1.45vw, 1.22rem); line-height: 1.85; text-align: justify; text-justify: inter-word; text-indent: 2em; }
 .profile-content ol { padding-left: 1.5rem; }
 .profile-content ol:last-child { margin-bottom: 0; }
 .profile-content ol li { padding-left: 0.25rem; line-height: 1.7; }
@@ -150,7 +150,7 @@ h3 { font-size: 1.6rem; }
 .news-card span { width: fit-content; padding: 0.23rem 0.5rem; color: var(--teal-dark); background: var(--lime); border-radius: 0.3rem; font-size: 0.72rem; font-weight: 800; }
 .news-card h3 { margin: 1.5rem 0; font-size: 1.5rem; }.news-card a { margin-top: auto; font-weight: 800; }
 .join-section { position: relative; overflow: hidden; padding-block: var(--space-5); color: var(--white); background: linear-gradient(120deg, #0b4ba0, #1469d8); }.join-section::before { position: absolute; right: 4%; bottom: -9rem; width: 24rem; aspect-ratio: 1; border: 1px solid #80d9ff66; border-radius: 50%; content: ""; }.join-layout { position: relative; z-index: 1; display: grid; gap: 2rem; }.join-layout h2 { max-width: 8ch; margin-bottom: 0; }.join-layout p { max-width: 33rem; font-size: 1.15rem; }.join-layout .button { margin-top: 0.75rem; }
-.contact-grid { display: grid; gap: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }.contact-grid p:not(.contact-label) { margin-bottom: 0; font-size: 1.1rem; }.contact-location { grid-column: 1 / -1; }.site-footer { padding-block: 2rem; color: #cfe4ff; background: #06172f; font-size: 0.85rem; }.footer-layout { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+.contact-grid { display: grid; gap: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }.contact-grid p:not(.contact-label) { margin-bottom: 0; font-size: 1.1rem; }.contact-location { grid-column: 1 / -1; }.site-footer { padding-block: 2rem; color: #cfe4ff; background: #06172f; font-size: 0.85rem; }.footer-layout { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }.footer-contact { max-width: 52rem; margin: 0; font-style: normal; line-height: 1.6; }.footer-contact a { color: inherit; }
 
 @media (min-width: 44rem) {
   .section-shell, .site-header { width: min(100% - 4rem, 76rem); }

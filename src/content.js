@@ -18,6 +18,7 @@ export const siteContent = {
     { title: "Postdoctoral Researchers", members: [{ name: "Postdoctoral researcher", role: "Profile to be confirmed", placeholder: true }] },
     { title: "Doctoral Students", members: [
       { name: "Chenyang Li", role: "Doctoral student", image: "assets/images/chenyang-li.jpg", alt: "Portrait of Chenyang Li" },
+      { name: "Yiwen Zhu", role: "Doctoral student", image: "assets/images/Yiwen%20Zhu.jpg", alt: "Portrait of Yiwen Zhu" },
       { name: "Xianghui Li", role: "Doctoral student", image: "assets/images/xianghui-li.jpg", alt: "Portrait of Xianghui Li" },
       { name: "Doctoral student", role: "Profile to be confirmed", placeholder: true },
     ] },
