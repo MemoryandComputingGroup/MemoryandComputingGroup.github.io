@@ -38,9 +38,9 @@ function renderContent() {
     renderInto("[data-profile-content]", `<section class="profile-hero section-shell"><div class="profile-portrait"><img src="${escapeHtml(profile.image)}" alt="${escapeHtml(profile.alt)}" width="640" height="960" /></div><div><p class="eyebrow">${escapeHtml(profile.role)}</p><h1>${escapeHtml(profile.name)}</h1><p class="profile-affiliation">${escapeHtml(profile.affiliation)}</p><p class="profile-email"><a href="mailto:${escapeHtml(profile.email)}">${escapeHtml(profile.email)}</a></p></div></section><section class="profile-content section-shell">${profile.sections.map((section) => `<section class="profile-section profile-section--${escapeHtml(section.type)}"><h2>${escapeHtml(section.heading)}</h2>${section.type === "list" ? `<ul>${section.entries.map((entry) => `<li>${escapeHtml(entry)}</li>`).join("")}</ul>` : section.type === "ordered-list" ? `<ol>${section.entries.map((entry) => `<li>${escapeHtml(entry)}</li>`).join("")}</ol>` : section.entries.map((entry) => `<p>${escapeHtml(entry)}</p>`).join("")}</section>`).join("")}</section>`);
   }
   renderInto("[data-publications]", siteContent.publications.map((publication, index) => `
-    <article class="publication"><span>${String(index + 1).padStart(2, "0")}</span><div><p class="publication-type">${escapeHtml(publication.type)}</p><h3>${escapeHtml(publication.title)}</h3><p>${escapeHtml(publication.detail)}</p></div><span class="publication-arrow" aria-hidden="true">↗</span></article>`).join(""));
+    <article class="publication" data-year-item="publications" data-item-year="${escapeHtml(publication.year || "")}"><span>${String(index + 1).padStart(2, "0")}</span><div><p class="publication-type">${escapeHtml(publication.type)}</p><h3>${escapeHtml(publication.title)}</h3><p>${escapeHtml(publication.detail)}</p></div><span class="publication-arrow" aria-hidden="true">↗</span></article>`).join(""));
   renderInto("[data-news]", siteContent.news.map((item) => `
-    <article class="news-card"><p>${escapeHtml(item.date)}</p><span>${escapeHtml(item.category)}</span><h3>${escapeHtml(item.title)}</h3><a href="contact.html">Read update <span aria-hidden="true">→</span></a></article>`).join(""));
+    <article class="news-card" data-year-item="news" data-item-year="${escapeHtml(item.year || "")}"><p>${escapeHtml(item.date)}</p><span>${escapeHtml(item.category)}</span><h3>${escapeHtml(item.title)}</h3><a href="contact.html">Read update <span aria-hidden="true">→</span></a></article>`).join(""));
 }
 
 function setUpMenu() {
@@ -67,6 +67,34 @@ function addHomeNavigation() {
   nav.prepend(home);
 }
 
+function setUpYearIndexes() {
+  document.querySelectorAll("[data-year-index]").forEach((index) => {
+    const collection = index.dataset.yearIndex;
+    const label = index.dataset.yearLabel || "items";
+    const buttons = [...index.querySelectorAll("[data-filter-year]")];
+    const items = [...document.querySelectorAll(`[data-year-item="${collection}"]`)];
+    const status = document.querySelector(`[data-year-status="${collection}"]`);
+
+    const applyFilter = (year) => {
+      let visibleCount = 0;
+      buttons.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.filterYear === year)));
+      items.forEach((item) => {
+        const visible = year === "all" || item.dataset.itemYear === year;
+        item.hidden = !visible;
+        if (visible) visibleCount += 1;
+      });
+      if (status) {
+        status.hidden = year === "all" || visibleCount > 0;
+        if (!status.hidden) status.textContent = `No verified ${label} have been added for ${year} yet.`;
+      }
+    };
+
+    buttons.forEach((button) => button.addEventListener("click", () => applyFilter(button.dataset.filterYear)));
+    applyFilter(index.querySelector('[aria-pressed="true"]')?.dataset.filterYear || "all");
+  });
+}
+
 renderContent();
 addHomeNavigation();
 setUpMenu();
+setUpYearIndexes();
