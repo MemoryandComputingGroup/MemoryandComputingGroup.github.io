@@ -153,9 +153,9 @@ export const siteContent = {
 
   ],
   news: [
-    { date: "Update date — to be confirmed", category: "Group update", title: "Add a verified event, award, or research milestone" },
-    { date: "Update date — to be confirmed", category: "Publication", title: "Announce new work after the public record is available" },
-    { date: "Update date — to be confirmed", category: "Opportunity", title: "Share recruitment information when an opening is approved" },
+    { date: "Update date — to be confirmed", category: "Group update", title: "Group update template", url: "news-group-update.html" },
+    { date: "Update date — to be confirmed", category: "Publication", title: "Publication announcement template", url: "news-publication-update.html" },
+    { date: "Update date — to be confirmed", category: "Opportunity", title: "Opportunity update template", url: "news-opportunity-update.html" },
   ],
   joinCopy: "Replace this placeholder with verified opportunities, expectations, and a clear application process.",
   contact: {

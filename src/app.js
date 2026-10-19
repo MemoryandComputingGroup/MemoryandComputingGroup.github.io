@@ -73,7 +73,7 @@ function renderContent() {
     </article>`;
 }).join(""));
   renderInto("[data-news]", siteContent.news.map((item) => `
-    <article class="news-card" data-year-item="news" data-item-year="${escapeHtml(item.year || "")}"><p>${escapeHtml(item.date)}</p><span>${escapeHtml(item.category)}</span><h3>${escapeHtml(item.title)}</h3><a href="contact.html">Read update <span aria-hidden="true">→</span></a></article>`).join(""));
+    <article class="news-card" data-year-item="news" data-item-year="${escapeHtml(item.year || "")}"><p>${escapeHtml(item.date)}</p><span>${escapeHtml(item.category)}</span><h3>${escapeHtml(item.title)}</h3><a href="${escapeHtml(item.url || "news.html")}">Read update <span aria-hidden="true">→</span></a></article>`).join(""));
 }
 
 function setUpMenu() {
