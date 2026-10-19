@@ -72,9 +72,21 @@ export const siteContent = {
     },
   },
   publications: [
+
+// !!! PUBLICATION UPDATE TEMPLATE !!!
+//   {
+//       type: "Journal article/Conference Paper",
+//       authors: "",
+//       journal: "",
+//       title: "",
+//       year: "2026",
+//       doi: "",
+//       url: "",
+// },
+
     {
       type: "Journal article",
-      authors: "Li, Yifan; Yang, Dongzi; Chen, Pei; Chen, Yan; Zhang, Wenkui; Wang, Ming; Jiang, Hao; Chen, Xianzhe; Zhang, Xumeng; Liu, Qi",
+      authors: "Yifan Li, Dongzi Yang, Pei Chen, Yan Chen, Wenkui Zhang, Ming Wang, Hao Jiang, Xianzhe Chen, Xumeng Zhang, and Qi Liu",
       journal: "IEEE Electron Device Letters",
       title: "A Hodgkin-Huxley Tactile Neuron for In Situ Sliding Direction Encoding Using Distinct Firing Patterns",
       year: "2026",
@@ -83,15 +95,62 @@ export const siteContent = {
 },
     {
       type: "Conference Paper",
-      authors: "Zhang, Jingsong and Zhu, Yiwen and Zhu, Fangduo and Li, Chenyang and Ouyang, Siyuan and Liang, Jinhao and Chen, Jingyi and Zhang, Xumeng and Liu, Qi",
+      authors: "Jingsong Zhang, Yiwen Zhu, Fangduo Zhu, Chenyang Li, Siyuan Ouyang, Jinhao Liang, Jingyi Chen, Xumeng Zhang, and Qi Liu",
       journal: "2026 IEEE International Symposium on Circuits and Systems (ISCAS)",
       title: "A Pipelined NoC-Based Membrane Shortcut SNN Architecture for Low-Latency Spike Sorting",
       year: "2026",
       doi: "10.1109/ISCAS66217.2026.11562720",
       url: "https://ieeexplore.ieee.org/abstract/document/11562720",
 },
-    { type: "Publication placeholder", title: "A second selected output can be added here", detail: "Authors · Venue · Year · DOI or persistent link" },
-    { type: "Publication placeholder", title: "Organize additional publications by year or research theme", detail: "Authors · Venue · Year · DOI or persistent link" },
+      {
+      type: "Conference Paper",
+      authors: "Jingyi Chen, Fangduo Zhu, Zhicheng Li, Zihan Xu, Yiwen Zhu, Jingsong Zhang, Jinhao Liang, Xumeng Zhang, and Qi Liu",
+      journal: "2026 IEEE International Symposium on Circuits and Systems (ISCAS)",
+      title: "An RRAM-based Neuromorphic Sleep Monitoring System for Energy-efficient Edge Healthcare Applications",
+      year: "2026",
+      doi: "10.1109/ISCAS66217.2026.11562757",
+      url: "https://ieeexplore.ieee.org/abstract/document/11562757",
+},
+  {
+      type: "Conference Paper",
+      authors: "Jinhao Liang, Chenyang Li, Fangduo Zhu, Yiwen Zhu, Siyuan Ouyang, Jingsong Zhang, Xumeng Zhang, Qi Liu, and Ming Liu",
+      journal: "2026 IEEE International Symposium on Circuits and Systems (ISCAS)",
+      title: "An RRAM-based Multi-Timescale Spiking Processor with Reconfigurable Neurons",
+      year: "2026",
+      doi: "10.1109/ISCAS66217.2026.11562758",
+      url: "https://ieeexplore.ieee.org/abstract/document/11562758",
+},    
+  {
+      type: "Journal article",
+      authors: "Xumeng Zhang, Yanting Ding, Yue Yang, Pei Chen, and Qi Liu",
+      journal: "Energy-Efficient Devices and Circuits for Neuromorphic Computing",
+      title: "Chapter 4 - Memristive spiking neurons for neuromorphic applications",
+      year: "2026",
+      doi: "10.1016/B978-0-443-29981-0.00012-4",
+      url: "https://ieeexplore.ieee.org/abstract/document/11322821",
+},
+
+  {
+      type: "Journal article",
+      authors: "Lingli Cheng, Pei Chen, Zengcai Zhao, Xumeng Zhang, Kaiping Yuan, Chao Li, Yanting Ding, and Jie Yu",
+      journal: "Chinese Journal of Electronics",
+      title: "Fully Integrated Artificial Olfactory Memristive Neuron for Event-Driven Toxic Gas Alarm",
+      year: "2025",
+      doi: "10.23919/cje.2025.00.155",
+      url: "https://ieeexplore.ieee.org/abstract/document/11322821",
+},
+
+// !!! PUBLICATION UPDATE TEMPLATE !!!
+//   {
+//       type: "Journal article/Conference Paper",
+//       authors: "",
+//       journal: "",
+//       title: "",
+//       year: "2026",
+//       doi: "",
+//       url: "",
+// },
+
   ],
   news: [
     { date: "Update date — to be confirmed", category: "Group update", title: "Add a verified event, award, or research milestone" },
