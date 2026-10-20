@@ -196,9 +196,12 @@ h3 { font-size: 1.6rem; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
 
-/* Centre the single postdoctoral-researcher card on wide screens */
-@media (min-width: 44rem) {
-  #postdoctoral-researchers .member-card:only-child {
-    grid-column: 2;
-  }
+/* Present the postdoctoral listing as a centered, single-column row. */
+#postdoctoral-researchers .member-grid {
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+}
+
+#postdoctoral-researchers .member-card:only-child {
+  width: min(100%, 24rem);
 }
