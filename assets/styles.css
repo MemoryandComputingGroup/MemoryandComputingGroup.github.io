@@ -203,5 +203,8 @@ h3 { font-size: 1.6rem; }
 }
 
 #postdoctoral-researchers .member-card:only-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-inline: auto;
   width: min(100%, 24rem);
 }
