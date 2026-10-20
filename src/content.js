@@ -10,9 +10,14 @@ export const siteContent = {
     { number: "02", title: "Hardware–Algorithm Co-design", description: "We jointly optimize algorithms, computing architectures, and circuit implementations to maximize performance, efficiency, and reliability in AI hardware." },
     { number: "03", title: "RRAM-Enabled Computing-in-Memory", description: "We explore RRAM-based computing-in-memory to perform data storage and computation within the same hardware, reducing data movement and improving the energy efficiency of AI workloads." },
   ],
-  leaders: [
-    { name: "Qi Liu", role: "Professor", affiliation: "College of Integrated Circuits and Micro-Nano Electronics, Fudan University", email: "qi_liu@fudan.edu.cn", image: "assets/images/qi-liu.png", alt: "Portrait of Professor Qi Liu", profile: "qi-liu.html" },
-    { name: "Xumeng Zhang", role: "Assistant Research Fellow", affiliation: "College of Integrated Circuits and Micro-Nano Electronics, Fudan University", email: "xumengzhang@fudan.edu.cn", image: "assets/images/xumeng-zhang.png", alt: "Portrait of Xumeng Zhang", profile: "xumeng-zhang.html" },
+  leadershipGroups: [
+    { title: "Principal Investigators", members: [
+      { name: "Ming Liu", role: "Academician of the Chinese Academy of Sciences", affiliation: "Dean, Frontier Institute of Chip and System, Fudan University", email: "liuming@fudan.edu.cn", image: "assets/images/Ming-Liu.jpg", alt: "Portrait of Academician Ming Liu", profile: "ming-liu.html" },
+      { name: "Qi Liu", role: "Professor", affiliation: "College of Integrated Circuits and Micro-Nano Electronics, Fudan University", email: "qi_liu@fudan.edu.cn", image: "assets/images/qi-liu.png", alt: "Portrait of Professor Qi Liu", profile: "qi-liu.html" },
+    ] },
+    { title: "Faculty", members: [
+      { name: "Xumeng Zhang", role: "Assistant Research Fellow", affiliation: "College of Integrated Circuits and Micro-Nano Electronics, Fudan University", email: "xumengzhang@fudan.edu.cn", image: "assets/images/xumeng-zhang.png", alt: "Portrait of Xumeng Zhang", profile: "xumeng-zhang.html" },
+    ] },
   ],
   peopleGroups: [
     { title: "Postdoctoral Researchers", members: [{ name: "Postdoctoral researcher", role: "Profile to be confirmed", placeholder: true }] },
@@ -34,6 +39,17 @@ export const siteContent = {
     ] },
   ],
   profiles: {
+    mingLiu: {
+      name: "Ming Liu", role: "Academician of the Chinese Academy of Sciences", affiliation: "Dean, Frontier Institute of Chip and System, Fudan University; Research Professor and Doctoral Supervisor, Institute of Microelectronics, Chinese Academy of Sciences", email: "liuming@fudan.edu.cn", image: "assets/images/Ming-Liu.jpg", alt: "Portrait of Academician Ming Liu",
+      sections: [
+        { heading: "Biography", type: "biography", entries: [
+          "Professor Ming Liu is Dean of the Frontier Institute of Chip and System, Fudan University; an Academician of the Chinese Academy of Sciences; an IEEE Fellow; and an Academician of The World Academy of Sciences. He is also a research professor and doctoral supervisor at the Institute of Microelectronics, Chinese Academy of Sciences, where he serves as Director of the Key Laboratory of Microelectronic Devices and Integration Technology. His appointments and honors include chief scientist of a National Basic Research Program project, recipient of the National Science Fund for Distinguished Young Scholars in 2008, leader of an innovative research group supported by the National Natural Science Foundation of China, recipient of the 2017 Ho Leung Ho Lee Prize, and selection for national and Beijing talent-development programs.",
+          "Professor Liu has conducted long-term research in microelectronics, making systematic contributions to memory-device models and mechanisms, materials and structures, enabling technologies, and micro/nanofabrication for integrated circuits. His representative work includes physical models and integration methods for RRAM; new materials and structures for flash memory; reliability-characterisation methods and failure models; independently developed 8-Mb nanocrystal-memory and 1-Gb NOR memory chips; and IC-processing technologies applied to mask fabrication and specialised devices. These contributions have supported the development of emerging memory and integrated-circuit processing technologies.",
+          "Professor Liu has published more than 300 SCI-indexed papers, with more than 6,000 SCI citations excluding self-citations, under the supplied citation methodology. Six papers were recognised as ESI Highly Cited Papers, and two contributions were included in the 2013 International Technology Roadmap for Semiconductors. He has authored two monographs, translated one book, and holds 246 granted invention patents, including 18 granted U.S. patents; major patents have been transferred or licensed to important integrated-circuit enterprises.",
+          "His honors include the 2016 Second Prize of the National Natural Science Award, the 2013 National Technology Invention Award (Second Prize), the 2007 National Technology Invention Award (Second Prize), the 2005 National Technology Invention Award (Second Prize), the 2009 National Science and Technology Progress Award (Second Prize), the 2018 Chinese Academy of Sciences Outstanding Science and Technology Achievement Award, the 2017 Ho Leung Ho Lee Prize, and awards from the Chinese Vacuum Society, Chinese Institute of Electronics, and Beijing Municipal Government. He has delivered more than 60 invited international-conference presentations and supervised more than 40 doctoral students. His professional service includes editorial and committee roles for Applied Physics A, the Chinese Society of Micro-Nano Technology, the University of Chinese Academy of Sciences, the Chinese Vacuum Society, the China Instrument and Control Society, the Chinese Materials Research Society, and several micro/nano-technology publication series.",
+        ] },
+      ],
+    },
     qiLiu: {
       name: "Qi Liu", role: "Professor", affiliation: "College of Integrated Circuits and Micro-Nano Electronics, Fudan University", email: "qi_liu@fudan.edu.cn", image: "assets/images/qi-liu.png", alt: "Portrait of Professor Qi Liu",
       sections: [

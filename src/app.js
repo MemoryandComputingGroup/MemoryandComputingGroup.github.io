@@ -36,9 +36,10 @@ function renderContent() {
 
   renderInto("[data-research-themes]", siteContent.researchThemes.map((theme) => `
     <article class="theme-card"><span>${escapeHtml(theme.number)}</span><h3>${escapeHtml(theme.title)}</h3><p>${escapeHtml(theme.description)}</p></article>`).join(""));
-  const [principalInvestigator, ...faculty] = siteContent.leaders;
-  renderInto("[data-principal-investigator]", principalInvestigator ? leaderCardMarkup(principalInvestigator) : "");
-  renderInto("[data-faculty]", faculty.map(leaderCardMarkup).join(""));
+  renderInto("[data-leadership-groups]", siteContent.leadershipGroups.map((group) => {
+    const groupId = group.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    return `<section class="leadership-section" aria-labelledby="${escapeHtml(groupId)}"><div class="section-heading people-heading"><p class="eyebrow">Leadership</p><h2 id="${escapeHtml(groupId)}">${escapeHtml(group.title)}</h2></div><div class="leadership-grid">${group.members.map(leaderCardMarkup).join("")}</div></section>`;
+  }).join(""));
   renderInto("[data-people-groups]", siteContent.peopleGroups.map((group) => `
     <section class="people-group" aria-labelledby="${escapeHtml(group.title.toLowerCase().replace(/[^a-z0-9]+/g, "-"))}"><div class="group-heading"><h2 id="${escapeHtml(group.title.toLowerCase().replace(/[^a-z0-9]+/g, "-"))}">${escapeHtml(group.title)}</h2></div><div class="member-grid">${group.members.map((person) => `
       <article class="member-card">${person.placeholder ? `<div class="member-photo member-photo-placeholder" role="img" aria-label="Placeholder portrait"><span>Profile<br />forthcoming</span></div>` : `<img class="member-photo" src="${escapeHtml(person.image)}" alt="${escapeHtml(person.alt)}" width="640" height="800" />`}<h3>${escapeHtml(person.name)}</h3><p>${escapeHtml(person.role)}</p></article>`).join("")}</div></section>`).join(""));
