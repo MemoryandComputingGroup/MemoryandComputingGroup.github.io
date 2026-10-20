@@ -157,7 +157,7 @@ export const siteContent = {
     { date: "Update date — to be confirmed", category: "Publication", title: "Publication announcement template", url: "news-publication-update.html" },
     { date: "Update date — to be confirmed", category: "Opportunity", title: "Opportunity update template", url: "news-opportunity-update.html" },
   ],
-  joinCopy: "Replace this placeholder with verified opportunities, expectations, and a clear application process.",
+  joinCopy: "We are continuously recruiting postdoctoral researchers and doctoral and master's students. Students with relevant interests are warmly invited to join our team to learn and grow together.",
   contact: {
     institution: "State Key Laboratory of Integrated Chips and Systems; College of Integrated Circuits and Micro-Nano Electronics; Frontier Institute of Chip and System; Fudan University",
     person: "Xumeng Zhang",
