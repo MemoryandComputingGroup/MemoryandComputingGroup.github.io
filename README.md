@@ -1,27 +1,68 @@
-# Research Group Website
+# QiLiu RRAM Group Website
 
-This lightweight, dependency-free website starter is located at `D:\Group_Web`.
+Source repository for the public website of the QiLiu RRAM Group at Fudan University.
 
-## Edit content
+**Live site:** <https://qiliurramgroup.github.io/>
 
-All editable group-specific content is centralised in `src/content.js`. Each entry is intentionally a placeholder until verified information is supplied. The site uses separate static pages for Home, Research, People, Publications, News, Join us, and Contact.
+## Technology
 
-After edits, run `./build.ps1` from PowerShell to refresh the deployable `dist` directory.
+- Static HTML, CSS, and browser-native JavaScript
+- No package installation or framework build is required
+- Leaflet and OpenStreetMap tiles are loaded only on the Contact page to provide the interactive campus map
+- GitHub Pages publishes the site from the `main` branch through the repository workflow
 
-## Preview locally
+## Repository structure
 
-From `D:\Group_Web`, run:
-
-```powershell
-python -m http.server 8080
+```text
+assets/
+  images/        Approved site images and portraits
+  styles.css     Shared responsive styles
+src/
+  content.js     Central editable content: people, profiles, publications, news, contact
+  app.js         Page rendering, navigation, filters, and map setup
+*.html           Public pages and leader-profile pages
+build.ps1        Produces the deployable dist/ directory
 ```
 
-Then open `http://localhost:8080`. No build step or dependency installation is required.
+## Update content
 
-## Content still required
+Edit `src/content.js` for routine content changes:
 
-- Official group name, institution, and research summary
-- Team biographies and photographs with permission to use them
-- Publication records and persistent links
-- Dated news items and approved recruitment information
-- Contact details and address
+- `leadershipGroups` — principal investigators and faculty
+- `peopleGroups` — postdoctoral researchers, students, and alumni
+- `profiles` — leader biographies and profile-page content
+- `publications` — scholarly outputs; include an official DOI or publisher URL in `url`
+- `news` — dated news cards and their destination pages
+- `contact` — public contact details and the campus-map marker
+
+Add portraits or other approved assets to `assets/images/`. Use descriptive filenames and publish photographs only with permission.
+
+## Build and preview locally
+
+From the repository root in PowerShell:
+
+```powershell
+.\build.ps1
+python -m http.server 8080 --directory dist
+```
+
+Open <http://localhost:8080>. The Contact-page map requires an internet connection because its Leaflet library and OpenStreetMap tiles are delivered from public services.
+
+## Publish changes
+
+```powershell
+git status
+git add <changed-files>
+git commit -m "Describe the change"
+git push origin main
+```
+
+After the GitHub Actions deployment succeeds, review <https://qiliurramgroup.github.io/> in a browser. Do not commit `dist/` unless the repository policy changes.
+
+## Content and privacy checklist
+
+Before publishing, confirm that names, biographies, affiliations, news, publication metadata, photographs, and contact details are approved for public release. Prefer official publisher pages and DOI links for publications. Keep credentials, tokens, private contact details, and unapproved images out of the repository.
+
+## Map attribution
+
+The Contact page uses [Leaflet](https://leafletjs.com/) with map tiles from [OpenStreetMap](https://www.openstreetmap.org/copyright). The marker identifies the Jiangwan Campus location; it is not represented as a room-level geolocation.

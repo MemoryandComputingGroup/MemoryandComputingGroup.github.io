@@ -91,6 +91,26 @@ function setUpMenu() {
   });
 }
 
+function setUpLabMap() {
+  const mapElement = document.querySelector("[data-lab-map]");
+  const mapConfig = siteContent.contact.map;
+  if (!mapElement || !mapConfig || !window.L) return;
+
+  mapElement.innerHTML = "";
+  const map = window.L.map(mapElement, { scrollWheelZoom: false }).setView(
+    [mapConfig.latitude, mapConfig.longitude],
+    mapConfig.zoom,
+  );
+  window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
+  window.L.marker([mapConfig.latitude, mapConfig.longitude])
+    .addTo(map)
+    .bindPopup(`<strong>${escapeHtml(mapConfig.label)}</strong><br>${escapeHtml(mapConfig.description)}`)
+    .openPopup();
+}
+
 function addHomeNavigation() {
   const nav = document.querySelector("[data-nav]");
   if (!nav || nav.querySelector('a[href="index.html"]')) return;
@@ -131,4 +151,5 @@ function setUpYearIndexes() {
 renderContent();
 addHomeNavigation();
 setUpMenu();
+setUpLabMap();
 setUpYearIndexes();
