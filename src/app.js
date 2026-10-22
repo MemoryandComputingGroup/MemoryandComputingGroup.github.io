@@ -65,15 +65,14 @@ function renderContent() {
 
   return `
     <article class="publication" data-year-item="publications" data-item-year="${escapeHtml(publication.year || "")}">
-      <a class="publication-link" href="${escapeHtml(publisherUrl(publication.url, publication.doi))}" target="_blank" rel="noopener noreferrer" aria-label="Open publication: ${escapeHtml(publication.title)}">
+      <div class="publication-entry">
         <span class="publication-number">${String(index + 1).padStart(2, "0")}</span>
         <div>
           <p class="publication-type">${escapeHtml(publication.type)}</p>
-          <h3>${escapeHtml(publication.title)}</h3>
+          <h3><a class="publication-title-link" href="${escapeHtml(publisherUrl(publication.url, publication.doi))}" target="_blank" rel="noopener noreferrer" aria-label="Open publication: ${escapeHtml(publication.title)}">${escapeHtml(publication.title)}</a></h3>
           <p>${escapeHtml(detail)}</p>
         </div>
-        <span class="publication-arrow" aria-hidden="true">↗</span>
-      </a>
+      </div>
     </article>`;
 }).join(""));
   const publishedNews = siteContent.news.filter((item) => item.published !== false);
