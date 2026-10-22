@@ -180,8 +180,8 @@ export const siteContent = {
     email: "xumengzhang@fudan.edu.cn",
     address: "Room B3013, Interdisciplinary Building No. 1, Fudan University Jiangwan Campus, 2005 Songhu Road, Yangpu District, Shanghai (上海市杨浦区淞沪路2005号复旦大学江湾校区一号交叉学科楼B3013室)",
     map: {
-      latitude: 31.338331440538656,
-      longitude: 121.50993302642436,
+      latitude: 31.340351766,
+      longitude: 121.505523824,
       zoom: 18,
       label: "QiLiu RRAM Group",
       description: "Room B3013, Interdisciplinary Building No. 1, Fudan University Jiangwan Campus",
