@@ -143,7 +143,7 @@ export const siteContent = {
       title: "Chapter 4 - Memristive spiking neurons for neuromorphic applications",
       year: "2026",
       doi: "10.1016/B978-0-443-29981-0.00012-4",
-      url: "https://ieeexplore.ieee.org/abstract/document/11322821",
+      url: "https://doi.org/10.1016/B978-0-443-29981-0.00012-4",
 },
 
   {
@@ -153,7 +153,7 @@ export const siteContent = {
       title: "Fully Integrated Artificial Olfactory Memristive Neuron for Event-Driven Toxic Gas Alarm",
       year: "2025",
       doi: "10.23919/cje.2025.00.155",
-      url: "https://ieeexplore.ieee.org/abstract/document/11322821",
+      url: "https://doi.org/10.23919/cje.2025.00.155",
 },
 
 // !!! PUBLICATION UPDATE TEMPLATE !!!
@@ -169,9 +169,10 @@ export const siteContent = {
 
   ],
   news: [
-    { date: "Update date — to be confirmed", category: "Group update", title: "Group update template", url: "news-group-update.html" },
-    { date: "Update date — to be confirmed", category: "Publication", title: "Publication announcement template", url: "news-publication-update.html" },
-    { date: "Update date — to be confirmed", category: "Opportunity", title: "Opportunity update template", url: "news-opportunity-update.html" },
+    // Keep draft templates out of the public archive until their facts are approved.
+    { published: false, date: "Update date — to be confirmed", category: "Group update", title: "Group update template", url: "news-group-update.html" },
+    { published: false, date: "Update date — to be confirmed", category: "Publication", title: "Publication announcement template", url: "news-publication-update.html" },
+    { published: false, date: "Update date — to be confirmed", category: "Opportunity", title: "Opportunity update template", url: "news-opportunity-update.html" },
   ],
   joinCopy: "We are continuously recruiting postdoctoral researchers and doctoral and master's students. Students with relevant interests are warmly invited to join our team to learn and grow together.",
   contact: {

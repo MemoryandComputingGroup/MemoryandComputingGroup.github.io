@@ -2,12 +2,12 @@ import { siteContent } from "./content.js";
 
 const setText = (selector, value) => document.querySelectorAll(selector).forEach((element) => { element.textContent = value; });
 const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#039;", '"': "&quot;" }[character]));
-const publisherUrl = (value) => {
+const publisherUrl = (value, doi) => {
   try {
     const url = new URL(value);
     return url.protocol === "https:" ? url.href : "#";
   } catch {
-    return "#";
+    return doi ? `https://doi.org/${encodeURIComponent(doi)}` : "#";
   }
 };
 const renderInto = (selector, markup) => {
@@ -40,7 +40,10 @@ function renderContent() {
     const groupId = group.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
     return `<section class="leadership-section" aria-labelledby="${escapeHtml(groupId)}"><div class="section-heading people-heading"><p class="eyebrow">Leadership</p><h2 id="${escapeHtml(groupId)}">${escapeHtml(group.title)}</h2></div><div class="leadership-grid">${group.members.map(leaderCardMarkup).join("")}</div></section>`;
   }).join(""));
-  renderInto("[data-people-groups]", siteContent.peopleGroups.map((group) => `
+  const peopleGroups = siteContent.peopleGroups
+    .map((group) => ({ ...group, members: group.members.filter((person) => !person.placeholder) }))
+    .filter((group) => group.members.length > 0);
+  renderInto("[data-people-groups]", peopleGroups.map((group) => `
     <section class="people-group" aria-labelledby="${escapeHtml(group.title.toLowerCase().replace(/[^a-z0-9]+/g, "-"))}"><div class="group-heading"><h2 id="${escapeHtml(group.title.toLowerCase().replace(/[^a-z0-9]+/g, "-"))}">${escapeHtml(group.title)}</h2></div><div class="member-grid">${group.members.map((person) => `
       <article class="member-card">${person.placeholder ? `<div class="member-photo member-photo-placeholder" role="img" aria-label="Placeholder portrait"><span>Profile<br />forthcoming</span></div>` : `<img class="member-photo" src="${escapeHtml(person.image)}" alt="${escapeHtml(person.alt)}" width="640" height="800" />`}<h3>${escapeHtml(person.name)}</h3><p>${escapeHtml(person.role)}</p></article>`).join("")}</div></section>`).join(""));
 
@@ -62,7 +65,7 @@ function renderContent() {
 
   return `
     <article class="publication" data-year-item="publications" data-item-year="${escapeHtml(publication.year || "")}">
-      <a class="publication-link" href="${escapeHtml(publisherUrl(publication.url))}" target="_blank" rel="noopener noreferrer" aria-label="Open publication: ${escapeHtml(publication.title)}">
+      <a class="publication-link" href="${escapeHtml(publisherUrl(publication.url, publication.doi))}" target="_blank" rel="noopener noreferrer" aria-label="Open publication: ${escapeHtml(publication.title)}">
         <span class="publication-number">${String(index + 1).padStart(2, "0")}</span>
         <div>
           <p class="publication-type">${escapeHtml(publication.type)}</p>
@@ -73,8 +76,10 @@ function renderContent() {
       </a>
     </article>`;
 }).join(""));
-  renderInto("[data-news]", siteContent.news.map((item) => `
-    <article class="news-card" data-year-item="news" data-item-year="${escapeHtml(item.year || "")}"><p>${escapeHtml(item.date)}</p><span>${escapeHtml(item.category)}</span><h3>${escapeHtml(item.title)}</h3><a href="${escapeHtml(item.url || "news.html")}">Read update <span aria-hidden="true">→</span></a></article>`).join(""));
+  const publishedNews = siteContent.news.filter((item) => item.published !== false);
+  renderInto("[data-news]", publishedNews.length ? publishedNews.map((item) => `
+    <article class="news-card" data-year-item="news" data-item-year="${escapeHtml(item.year || "")}"><p>${escapeHtml(item.date)}</p><span>${escapeHtml(item.category)}</span><h3>${escapeHtml(item.title)}</h3><a href="${escapeHtml(item.url || "news.html")}">Read update <span aria-hidden="true">→</span></a></article>`).join("")
+    : `<p class="empty-state">No news updates have been published yet.</p>`);
 }
 
 function setUpMenu() {
@@ -125,9 +130,20 @@ function setUpYearIndexes() {
   document.querySelectorAll("[data-year-index]").forEach((index) => {
     const collection = index.dataset.yearIndex;
     const label = index.dataset.yearLabel || "items";
-    const buttons = [...index.querySelectorAll("[data-filter-year]")];
     const items = [...document.querySelectorAll(`[data-year-item="${collection}"]`)];
     const status = document.querySelector(`[data-year-status="${collection}"]`);
+    const years = [...new Set(items.map((item) => item.dataset.itemYear).filter(Boolean))]
+      .sort((first, second) => Number(second) - Number(first));
+
+    if (!years.length) {
+      index.hidden = true;
+      if (status) status.hidden = true;
+      return;
+    }
+
+    index.innerHTML = ["all", ...years].map((year) => `
+      <button type="button" aria-pressed="${year === "all"}" data-filter-year="${escapeHtml(year)}">${year === "all" ? "All" : escapeHtml(year)}</button>`).join("");
+    const buttons = [...index.querySelectorAll("[data-filter-year]")];
 
     const applyFilter = (year) => {
       let visibleCount = 0;
