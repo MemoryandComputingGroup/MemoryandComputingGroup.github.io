@@ -93,6 +93,9 @@ function setUpMenu() {
   nav.addEventListener("click", (event) => {
     if (event.target.matches("a")) { button.setAttribute("aria-expanded", "false"); nav.classList.remove("is-open"); }
   });
+  window.matchMedia("(min-width: 50rem)").addEventListener("change", (event) => {
+    if (event.matches) { button.setAttribute("aria-expanded", "false"); nav.classList.remove("is-open"); }
+  });
 }
 
 function setUpLabMap() {

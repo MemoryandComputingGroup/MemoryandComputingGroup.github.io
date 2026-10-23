@@ -37,6 +37,8 @@ Edit `src/content.js` for routine content changes:
 
 Add portraits or other approved assets to `assets/images/`. Use descriptive filenames and publish photographs only with permission.
 
+The three `news-*-update.html` files are draft templates. The build excludes them from the public site. To publish a news item, create an approved detail page with a distinct filename and add its dated record to `src/content.js` without `published: false`.
+
 ## Build and preview locally
 
 From the repository root in PowerShell:
@@ -57,7 +59,7 @@ git commit -m "Describe the change"
 git push origin main
 ```
 
-After the GitHub Actions deployment succeeds, review <https://qiliurramgroup.github.io/> in a browser. Do not commit `dist/` unless the repository policy changes.
+GitHub Actions builds and publishes `dist/` after a push to `main`. After deployment succeeds, review <https://qiliurramgroup.github.io/> in a browser. Do not commit `dist/` unless the repository policy changes.
 
 ## Content and privacy checklist
 

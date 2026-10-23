@@ -8,9 +8,14 @@ if (Test-Path -LiteralPath $outputRoot) {
 }
 
 New-Item -ItemType Directory -Path $outputRoot | Out-Null
-Copy-Item -Force (Join-Path $projectRoot "*.html") $outputRoot
-New-Item -ItemType Directory -Path (Join-Path $outputRoot "assets"), (Join-Path $outputRoot "src") | Out-Null
-Copy-Item -Recurse -Force (Join-Path $projectRoot "assets\*") (Join-Path $outputRoot "assets")
-Copy-Item -Recurse -Force (Join-Path $projectRoot "src\*") (Join-Path $outputRoot "src")
+$draftPages = @("news-group-update.html", "news-opportunity-update.html", "news-publication-update.html")
+Get-ChildItem -LiteralPath $projectRoot -Filter "*.html" -File |
+  Where-Object { $_.Name -notin $draftPages } |
+  Copy-Item -Destination $outputRoot -Force
+$assetsOutput = Join-Path $outputRoot "assets"
+$sourceOutput = Join-Path $outputRoot "src"
+New-Item -ItemType Directory -Path $assetsOutput, $sourceOutput | Out-Null
+Copy-Item -Recurse -Force (Join-Path (Join-Path $projectRoot "assets") "*") $assetsOutput
+Copy-Item -Recurse -Force (Join-Path (Join-Path $projectRoot "src") "*") $sourceOutput
 
 Write-Output "Static site prepared in $outputRoot"
