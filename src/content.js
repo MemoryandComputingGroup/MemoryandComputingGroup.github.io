@@ -2,13 +2,13 @@ export const siteContent = {
   siteName: "QiLiu RRAM Group",
   hero: {
     title: "Neuromorphic hardware for efficient AI.",
-    summary: "We focus on neuromorphic chip design for efficient artificial intelligence, hardware–algorithm co-design, computing architectures, and RRAM-enabled in-memory computing.",
+    summary: "We connect neuromorphic chip and architecture design, hardware–algorithm co-design, and emerging-memory devices to develop efficient brain-inspired computing hardware.",
   },
   homeStatement: "Compute Differently. Think Beyond.",
   researchThemes: [
-    { number: "01", title: "Neuromorphic Chip Design", description: "We design energy-efficient integrated circuits inspired by the brain to support intelligent perception, learning, and inference with low latency and power consumption." },
-    { number: "02", title: "Hardware–Algorithm Co-design", description: "We jointly optimize algorithms, computing architectures, and circuit implementations to maximize performance, efficiency, and reliability in AI hardware." },
-    { number: "03", title: "RRAM-Enabled Computing-in-Memory", description: "We explore RRAM-based computing-in-memory to perform data storage and computation within the same hardware, reducing data movement and improving the energy efficiency of AI workloads." },
+    { number: "01", title: "Neuromorphic Chip and Architecture Design", description: "Digital, analog, and mixed-signal chip designs bring brain-inspired computing into efficient hardware. Research spans spiking neural network processors, on-chip communication, and memory-based architectures for low-power, low-latency operation." },
+    { number: "02", title: "Hardware–Algorithm Co-Design for Neuromorphic Computing", description: "Algorithms, circuits, and architectures are developed together so that each makes effective use of the others. Applications include spike sorting, temporal prediction, and sensory processing under practical hardware constraints." },
+    { number: "03", title: "Emerging-Memory Neuromorphic Devices", description: "RRAM, NbO₂ memristors, and ferroelectric devices provide building blocks for artificial neurons and synapses. Research examines their switching dynamics, synaptic plasticity, and integration into sensing–computing circuits." },
   ],
   leadershipGroups: [
     { title: "Principal Investigators", members: [

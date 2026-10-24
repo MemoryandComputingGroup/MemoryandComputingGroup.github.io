@@ -43,7 +43,10 @@ function renderContent() {
   }
 
   renderInto("[data-research-themes]", siteContent.researchThemes.map((theme) => `
-    <article class="theme-card"><span>${escapeHtml(theme.number)}</span><h3>${escapeHtml(theme.title)}</h3><p>${escapeHtml(theme.description)}</p></article>`).join(""));
+    <article class="theme-card">
+      <div class="theme-card-media" aria-hidden="true"><span class="theme-card-number">${escapeHtml(theme.number)}</span><span class="theme-card-media-label">Image placeholder</span></div>
+      <div class="theme-card-body"><h3>${escapeHtml(theme.title)}</h3><p>${escapeHtml(theme.description)}</p></div>
+    </article>`).join(""));
   renderInto("[data-leadership-groups]", siteContent.leadershipGroups.map((group) => {
     const groupId = group.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
     return `<section class="leadership-section" aria-labelledby="${escapeHtml(groupId)}"><div class="section-heading people-heading"><p class="eyebrow">Leadership</p><h2 id="${escapeHtml(groupId)}">${escapeHtml(group.title)}</h2></div><div class="leadership-grid">${group.members.map(leaderCardMarkup).join("")}</div></section>`;

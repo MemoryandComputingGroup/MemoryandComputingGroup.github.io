@@ -28,6 +28,7 @@ build.ps1        Produces the deployable dist/ directory
 
 Edit `src/content.js` for routine content changes:
 
+- `researchThemes` — the three research-area card titles and descriptions
 - `leadershipGroups` — principal investigators and faculty
 - `peopleGroups` — postdoctoral researchers, students, and alumni
 - `profiles` — leader biographies and profile-page content
@@ -36,6 +37,8 @@ Edit `src/content.js` for routine content changes:
 - `contact` — public contact details and the campus-map marker
 
 Add portraits or other approved assets to `assets/images/`. Use descriptive filenames and publish photographs only with permission.
+
+Each research card reserves a 16:10 visual area. A 1600×1000 image is a suitable replacement size; keep the placeholder until an approved image and descriptive alt text are available.
 
 The three `news-*-update.html` files are draft templates. The build excludes them from the public site. To publish a news item, create an approved detail page with a distinct filename and add its dated record to `src/content.js` without `published: false`.
 
