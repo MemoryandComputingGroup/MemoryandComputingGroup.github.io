@@ -44,7 +44,7 @@ function renderContent() {
 
   renderInto("[data-research-themes]", siteContent.researchThemes.map((theme) => `
     <article class="theme-card">
-      <div class="theme-card-media" aria-hidden="true"><span class="theme-card-number">${escapeHtml(theme.number)}</span><span class="theme-card-media-label">Image placeholder</span></div>
+      <div class="theme-card-media" aria-hidden="true"><img src="${escapeHtml(theme.image)}" alt="" loading="lazy" decoding="async" /><span class="theme-card-number">${escapeHtml(theme.number)}</span></div>
       <div class="theme-card-body"><h3>${escapeHtml(theme.title)}</h3><p>${escapeHtml(theme.description)}</p></div>
     </article>`).join(""));
   renderInto("[data-leadership-groups]", siteContent.leadershipGroups.map((group) => {
