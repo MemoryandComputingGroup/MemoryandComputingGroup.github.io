@@ -268,7 +268,13 @@ export const siteContent = {
     { published: false, date: "Update date — to be confirmed", category: "Publication", title: "Publication announcement template", url: "news-publication-update.html" },
     { published: false, date: "Update date — to be confirmed", category: "Opportunity", title: "Opportunity update template", url: "news-opportunity-update.html" },
   ],
-  joinCopy: "We are continuously recruiting postdoctoral researchers and doctoral and master's students. Students with relevant interests are warmly invited to join our team to learn and grow together.",
+  joinCopy: "Explore research opportunities in neuromorphic chip and architecture design, hardware–algorithm co-design, and emerging-memory neuromorphic devices.",
+  jobOpenings: [
+    { title: "Postdoctoral Researchers", description: "Lead research in digital, analog, and mixed-signal neuromorphic chips, hardware–algorithm co-design, or emerging-memory devices and circuits." },
+    { title: "Doctoral Students", description: "Pursue doctoral research on spiking processors, memory-based computing architectures, and the integration of neuromorphic devices with circuits and systems." },
+    { title: "Master's Students", description: "Build research experience in integrated-circuit design, neuromorphic computing, and the translation of algorithms into efficient hardware." },
+    { title: "Undergraduate Research Interns", description: "Explore hands-on projects in chip design, computing architectures, and emerging-memory neuromorphic technology." },
+  ],
   contact: {
     institution: "State Key Laboratory of Integrated Chips and Systems; College of Integrated Circuits and Micro-Nano Electronics; Frontier Institute of Chip and System; Fudan University",
     person: "Xumeng Zhang",

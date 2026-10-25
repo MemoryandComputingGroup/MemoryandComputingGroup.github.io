@@ -34,6 +34,7 @@ Edit `src/content.js` for routine content changes:
 - `profiles` — leader biographies and profile-page content
 - `publications` — scholarly outputs; include an official DOI or publisher URL in `url`
 - `news` — dated news cards and their destination pages
+- `joinCopy` and `jobOpenings` — Join Us introduction and opportunity cards
 - `contact` — public contact details and the campus-map marker
 
 Add portraits or other approved assets to `assets/images/`. Use descriptive filenames and publish photographs only with permission.

@@ -31,6 +31,12 @@ function renderContent() {
   setText("[data-hero-summary]", siteContent.hero.summary);
   setText("[data-home-statement]", siteContent.homeStatement);
   setText("[data-join-copy]", siteContent.joinCopy);
+  renderInto("[data-job-openings]", siteContent.jobOpenings.map((opening, index) => `
+    <article class="opening-card">
+      <span class="opening-number" aria-hidden="true">${String(index + 1).padStart(2, "0")}</span>
+      <div class="opening-card-copy"><h3>${escapeHtml(opening.title)}</h3><p>${escapeHtml(opening.description)}</p></div>
+      <a class="opening-link" href="contact.html" aria-label="Enquire about ${escapeHtml(opening.title)}">Enquire about this opportunity <span aria-hidden="true">↗</span></a>
+    </article>`).join(""));
   setText("[data-institution]", siteContent.contact.institution);
   setText("[data-address]", siteContent.contact.address);
   setText("[data-contact-person]", siteContent.contact.person);
