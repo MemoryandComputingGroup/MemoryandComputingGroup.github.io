@@ -309,6 +309,7 @@ html[lang="zh-CN"] h1, html[lang="zh-CN"] h2, html[lang="zh-CN"] h3 { line-heigh
 html[lang="zh-CN"] h1, html[lang="zh-CN"] .page-hero h1 { max-width: 15em; }
 html[lang="zh-CN"] .statement-band p, html[lang="zh-CN"] .join-layout h2 { max-width: none; }
 html[lang="zh-CN"] .eyebrow, html[lang="zh-CN"] .publication-type, html[lang="zh-CN"] .contact-label { letter-spacing: 0.06em; }
+html[lang="zh-CN"] .hero-visual p span { font-size: 0.42em; letter-spacing: 0.08em; }
 @media (max-width: 23rem) { .brand [data-site-name], .language-toggle [data-language-code] { display: none; }.language-toggle { min-width: 2.7rem; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
 

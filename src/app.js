@@ -43,7 +43,7 @@ function renderContent() {
     <article class="opening-card">
       <span class="opening-number" aria-hidden="true">${String(index + 1).padStart(2, "0")}</span>
       <div class="opening-card-copy"><h3>${escapeHtml(opening.title)}</h3><p>${escapeHtml(opening.description)}</p></div>
-      <a class="opening-link" href="contact.html" aria-label="${currentLanguage === "zh-CN" ? "咨询机会：" : "Enquire about "}${escapeHtml(opening.title)}">Enquire about this opportunity <span aria-hidden="true">↗</span></a>
+      <a class="opening-link" href="contact.html" aria-label="${currentLanguage === "zh-CN" ? `咨询${escapeHtml(opening.title)}申请事宜` : `Enquire about ${escapeHtml(opening.title)}`}">Enquire about this opportunity <span aria-hidden="true">↗</span></a>
     </article>`).join(""));
   setText("[data-institution]", siteContent.contact.institution);
   setText("[data-address]", siteContent.contact.address);
@@ -101,7 +101,7 @@ function renderContent() {
         <span class="publication-number">${String(index + 1).padStart(2, "0")}</span>
         <div>
           <p class="publication-type">${escapeHtml(publication.type)}</p>
-          <h3><a class="publication-title-link" href="${escapeHtml(publisherUrl(publication.url, publication.doi))}" target="_blank" rel="noopener noreferrer" aria-label="${currentLanguage === "zh-CN" ? "打开论文：" : "Open publication: "}${escapeHtml(publication.title)}">${escapeHtml(publication.title)}</a></h3>
+          <h3><a class="publication-title-link" href="${escapeHtml(publisherUrl(publication.url, publication.doi))}" target="_blank" rel="noopener noreferrer" aria-label="${currentLanguage === "zh-CN" ? "查看论文原文：" : "Open publication: "}${escapeHtml(publication.title)}">${escapeHtml(publication.title)}</a></h3>
           <p>${escapeHtml(detail)}</p>
         </div>
       </div>
@@ -195,7 +195,7 @@ function setUpYearIndexes() {
       if (status) {
         status.hidden = year === "all" || visibleCount > 0;
         if (!status.hidden) status.textContent = currentLanguage === "zh-CN"
-          ? `${year} 年尚未添加已核实的${collection === "publications" ? "研究成果" : "新闻动态"}。`
+          ? `${year} 年暂无已核实的${collection === "publications" ? "论文" : "新闻"}。`
           : `No verified ${label} have been added for ${year} yet.`;
       }
     };
