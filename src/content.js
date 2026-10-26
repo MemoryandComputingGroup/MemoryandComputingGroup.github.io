@@ -22,9 +22,9 @@ export const siteContent = {
   peopleGroups: [
     { title: "Postdoctoral Researchers", members: [{ name: "Postdoctoral researcher", role: "Profile to be confirmed", placeholder: true }] },
     { title: "Doctoral Students", members: [
-      { name: "Chenyang Li", role: "Doctoral student", image: "assets/images/chenyang-li.jpg", alt: "Portrait of Chenyang Li" },
-      { name: "Yiwen Zhu", role: "Doctoral student", image: "assets/images/Yiwen%20Zhu.jpg", alt: "Portrait of Yiwen Zhu" },
-      { name: "Xianghui Li", role: "Doctoral student", image: "assets/images/xianghui-li.jpg", alt: "Portrait of Xianghui Li" },
+      { name: "Chenyang Li", role: "Doctoral student", image: "assets/images/chenyang-li.jpg", alt: "Portrait of Chenyang Li", profile: "chenyang-li.html" },
+      { name: "Yiwen Zhu", role: "Doctoral student", image: "assets/images/Yiwen%20Zhu.jpg", alt: "Portrait of Yiwen Zhu", profile: "yiwen-zhu.html" },
+      { name: "Xianghui Li", role: "Doctoral student", image: "assets/images/xianghui-li.jpg", alt: "Portrait of Xianghui Li", profile: "xianghui-li.html" },
       { name: "Doctoral student", role: "Profile to be confirmed", placeholder: true },
     ] },
     { title: "Graduate Students", members: [
@@ -39,6 +39,45 @@ export const siteContent = {
     ] },
   ],
   profiles: {
+    chenyangLi: {
+      kind: "student", name: "Chenyang Li", role: "Doctoral student", affiliation: "QiLiu RRAM Group · Fudan University", image: "assets/images/chenyang-li.jpg", alt: "Portrait of Chenyang Li", email: "xumengzhang@fudan.edu.cn", emailLabel: "Group contact email",
+      sections: [
+        { heading: "Introduction", type: "biography", entries: [
+          "Chenyang Li is a doctoral student in the QiLiu RRAM Group at Fudan University. Their coauthored publications include work on a network-on-chip spiking architecture for spike sorting, an RRAM-based spiking processor, and low-leakage digital circuits. The interests below are illustrative topics based on that published work."
+        ] },
+        { heading: "Research interests", type: "list", entries: [
+          "Spiking neural network processors and on-chip communication",
+          "RRAM-based neuromorphic architectures",
+          "Low-power digital and mixed-signal circuits"
+        ] },
+      ],
+    },
+    yiwenZhu: {
+      kind: "student", name: "Yiwen Zhu", role: "Doctoral student", affiliation: "QiLiu RRAM Group · Fudan University", image: "assets/images/Yiwen%20Zhu.jpg", alt: "Portrait of Yiwen Zhu", email: "xumengzhang@fudan.edu.cn", emailLabel: "Group contact email",
+      sections: [
+        { heading: "Introduction", type: "biography", entries: [
+          "Yiwen Zhu is a doctoral student in the QiLiu RRAM Group at Fudan University. Their first-authored work explores spiking neural networks for spike sorting and co-optimization on memristor platforms. They have also coauthored research on spiking architectures and RRAM-based edge healthcare systems. The interests below are illustrative topics based on those publications."
+        ] },
+        { heading: "Research interests", type: "list", entries: [
+          "Spike sorting with spiking neural networks",
+          "Hardware–algorithm co-design for memristor platforms",
+          "RRAM-based edge computing for healthcare"
+        ] },
+      ],
+    },
+    xianghuiLi: {
+      kind: "student", name: "Xianghui Li", role: "Doctoral student", affiliation: "QiLiu RRAM Group · Fudan University", image: "assets/images/xianghui-li.jpg", alt: "Portrait of Xianghui Li", email: "xianghuili26@m.fudan.edu.cn",
+      sections: [
+        { heading: "Introduction", type: "biography", entries: [
+          "Xianghui Li is a doctoral student in the QiLiu RRAM Group at Fudan University. The topics below are examples from the group's research program; Xianghui's individual research interests have not yet been confirmed."
+        ] },
+        { heading: "Research interests · examples", type: "list", entries: [
+          "Neuromorphic chip and architecture design",
+          "Hardware–algorithm co-design for neuromorphic computing",
+          "Emerging-memory neuromorphic devices"
+        ] },
+      ],
+    },
     mingLiu: {
       name: "Ming Liu", role: "Academician of the Chinese Academy of Sciences", affiliation: "Dean, Frontier Institute of Chip and System, Fudan University; Research Professor and Doctoral Supervisor, Institute of Microelectronics, Chinese Academy of Sciences", email: "liuming@fudan.edu.cn", image: "assets/images/Ming-Liu.jpg", alt: "Portrait of Academician Ming Liu",
       sections: [

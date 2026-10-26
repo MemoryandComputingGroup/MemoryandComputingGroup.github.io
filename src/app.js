@@ -62,16 +62,16 @@ function renderContent() {
     .filter((group) => group.members.length > 0);
   renderInto("[data-people-groups]", peopleGroups.map((group) => `
     <section class="people-group" aria-labelledby="${escapeHtml(group.title.toLowerCase().replace(/[^a-z0-9]+/g, "-"))}"><div class="group-heading"><h2 id="${escapeHtml(group.title.toLowerCase().replace(/[^a-z0-9]+/g, "-"))}">${escapeHtml(group.title)}</h2></div><div class="member-grid">${group.members.map((person) => `
-      <article class="member-card"><img class="member-photo" src="${escapeHtml(person.image)}" alt="${escapeHtml(person.alt)}" width="640" height="800" loading="lazy" /><div class="member-card-copy"><h3>${escapeHtml(person.name)}</h3><p>${escapeHtml(person.role)}</p></div></article>`).join("")}</div></section>`).join(""));
+      <article class="member-card"><img class="member-photo" src="${escapeHtml(person.image)}" alt="${escapeHtml(person.alt)}" width="640" height="800" loading="lazy" /><div class="member-card-copy"><h3>${person.profile ? `<a href="${escapeHtml(person.profile)}">${escapeHtml(person.name)}</a>` : escapeHtml(person.name)}</h3><p>${escapeHtml(person.role)}</p>${person.profile ? `<a class="member-profile-link" href="${escapeHtml(person.profile)}">View profile <span aria-hidden="true">→</span></a>` : ""}</div></article>`).join("")}</div></section>`).join(""));
 
   const profileKey = document.body.dataset.profile;
   const profile = profileKey ? siteContent.profiles[profileKey] : null;
   if (profile) {
     renderInto("[data-profile-content]", `
       <nav class="profile-breadcrumb section-shell" aria-label="Breadcrumb"><a href="people.html">People</a><span aria-hidden="true">/</span><span aria-current="page">${escapeHtml(profile.name)}</span></nav>
-      <section class="profile-hero section-shell" aria-labelledby="profile-name">
+      <section class="profile-hero${profile.kind === "student" ? " profile-hero--student" : ""} section-shell" aria-labelledby="profile-name">
         <div class="profile-portrait"><img src="${escapeHtml(profile.image)}" alt="${escapeHtml(profile.alt)}" width="640" height="960" /></div>
-        <div class="profile-hero-copy"><p class="eyebrow">${escapeHtml(profile.role)}</p><h1 id="profile-name">${escapeHtml(profile.name)}</h1><p class="profile-affiliation">${escapeHtml(profile.affiliation)}</p><a class="profile-email" href="mailto:${escapeHtml(profile.email)}">${escapeHtml(profile.email)} <span aria-hidden="true">↗</span></a></div>
+        <div class="profile-hero-copy"><p class="eyebrow">${escapeHtml(profile.role)}</p><h1 id="profile-name">${escapeHtml(profile.name)}</h1><p class="profile-affiliation">${escapeHtml(profile.affiliation)}</p><p class="profile-email-label">${escapeHtml(profile.emailLabel || "Email")}</p><a class="profile-email" href="mailto:${escapeHtml(profile.email)}">${escapeHtml(profile.email)} <span aria-hidden="true">↗</span></a></div>
       </section>
       <div class="profile-content section-shell">${profile.sections.map((section, index) => `
         <section class="profile-section profile-section--${escapeHtml(section.type)}" aria-labelledby="profile-section-${index + 1}"><div class="profile-section-heading"><span>${String(index + 1).padStart(2, "0")}</span><h2 id="profile-section-${index + 1}">${escapeHtml(section.heading)}</h2></div><div class="profile-section-body">${section.type === "list" ? `<ul>${section.entries.map((entry) => `<li>${escapeHtml(entry)}</li>`).join("")}</ul>` : section.type === "ordered-list" ? `<ol>${section.entries.map((entry) => `<li>${escapeHtml(entry)}</li>`).join("")}</ol>` : section.entries.map((entry) => `<p>${escapeHtml(entry)}</p>`).join("")}</div></section>`).join("")}</div>`);

@@ -20,7 +20,7 @@ assets/
 src/
   content.js     Central editable content: people, profiles, publications, news, contact
   app.js         Page rendering, navigation, filters, and map setup
-*.html           Public pages and leader-profile pages
+*.html           Public pages and member-profile pages
 build.ps1        Produces the deployable dist/ directory
 ```
 
@@ -31,7 +31,7 @@ Edit `src/content.js` for routine content changes:
 - `researchThemes` — the three research-area card titles and descriptions
 - `leadershipGroups` — principal investigators and faculty
 - `peopleGroups` — postdoctoral researchers, students, and alumni
-- `profiles` — leader biographies and profile-page content
+- `profiles` — leader and student profile-page content
 - `publications` — scholarly outputs; include an official DOI or publisher URL in `url`
 - `news` — dated news cards and their destination pages
 - `joinCopy` and `jobOpenings` — Join Us introduction and opportunity cards
