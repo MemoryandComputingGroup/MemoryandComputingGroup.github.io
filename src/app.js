@@ -1,4 +1,12 @@
-import { siteContent } from "./content.js";
+import { siteContent as englishContent } from "./content.js";
+import { languageStorageKey, localizeContent, translate } from "./i18n.js";
+
+let currentLanguage = "en";
+let siteContent = englishContent;
+let labMapMarker;
+const originalText = new WeakMap();
+const originalAttributes = new WeakMap();
+const originalTitle = document.title;
 
 const setText = (selector, value) => document.querySelectorAll(selector).forEach((element) => { element.textContent = value; });
 const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#039;", '"': "&quot;" }[character]));
@@ -35,7 +43,7 @@ function renderContent() {
     <article class="opening-card">
       <span class="opening-number" aria-hidden="true">${String(index + 1).padStart(2, "0")}</span>
       <div class="opening-card-copy"><h3>${escapeHtml(opening.title)}</h3><p>${escapeHtml(opening.description)}</p></div>
-      <a class="opening-link" href="contact.html" aria-label="Enquire about ${escapeHtml(opening.title)}">Enquire about this opportunity <span aria-hidden="true">↗</span></a>
+      <a class="opening-link" href="contact.html" aria-label="${currentLanguage === "zh-CN" ? "咨询机会：" : "Enquire about "}${escapeHtml(opening.title)}">Enquire about this opportunity <span aria-hidden="true">↗</span></a>
     </article>`).join(""));
   setText("[data-institution]", siteContent.contact.institution);
   setText("[data-address]", siteContent.contact.address);
@@ -53,15 +61,15 @@ function renderContent() {
       <div class="theme-card-media" aria-hidden="true"><img src="${escapeHtml(theme.image)}" alt="" loading="lazy" decoding="async" /><span class="theme-card-number">${escapeHtml(theme.number)}</span></div>
       <div class="theme-card-body"><h3>${escapeHtml(theme.title)}</h3><p>${escapeHtml(theme.description)}</p></div>
     </article>`).join(""));
-  renderInto("[data-leadership-groups]", siteContent.leadershipGroups.map((group) => {
-    const groupId = group.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  renderInto("[data-leadership-groups]", siteContent.leadershipGroups.map((group, index) => {
+    const groupId = `leadership-group-${index + 1}`;
     return `<section class="leadership-section" aria-labelledby="${escapeHtml(groupId)}"><div class="section-heading people-heading"><p class="eyebrow">Leadership</p><h2 id="${escapeHtml(groupId)}">${escapeHtml(group.title)}</h2></div><div class="leadership-grid">${group.members.map(leaderCardMarkup).join("")}</div></section>`;
   }).join(""));
   const peopleGroups = siteContent.peopleGroups
     .map((group) => ({ ...group, members: group.members.filter((person) => !person.placeholder) }))
     .filter((group) => group.members.length > 0);
-  renderInto("[data-people-groups]", peopleGroups.map((group) => `
-    <section class="people-group" aria-labelledby="${escapeHtml(group.title.toLowerCase().replace(/[^a-z0-9]+/g, "-"))}"><div class="group-heading"><h2 id="${escapeHtml(group.title.toLowerCase().replace(/[^a-z0-9]+/g, "-"))}">${escapeHtml(group.title)}</h2></div><div class="member-grid">${group.members.map((person) => `
+  renderInto("[data-people-groups]", peopleGroups.map((group, index) => `
+    <section class="people-group" aria-labelledby="people-group-${index + 1}"><div class="group-heading"><h2 id="people-group-${index + 1}">${escapeHtml(group.title)}</h2></div><div class="member-grid">${group.members.map((person) => `
       <article class="member-card"><img class="member-photo" src="${escapeHtml(person.image)}" alt="${escapeHtml(person.alt)}" width="640" height="800" loading="lazy" /><div class="member-card-copy"><h3>${person.profile ? `<a href="${escapeHtml(person.profile)}">${escapeHtml(person.name)}</a>` : escapeHtml(person.name)}</h3><p>${escapeHtml(person.role)}</p>${person.profile ? `<a class="member-profile-link" href="${escapeHtml(person.profile)}">View profile <span aria-hidden="true">→</span></a>` : ""}</div></article>`).join("")}</div></section>`).join(""));
 
   const profileKey = document.body.dataset.profile;
@@ -93,7 +101,7 @@ function renderContent() {
         <span class="publication-number">${String(index + 1).padStart(2, "0")}</span>
         <div>
           <p class="publication-type">${escapeHtml(publication.type)}</p>
-          <h3><a class="publication-title-link" href="${escapeHtml(publisherUrl(publication.url, publication.doi))}" target="_blank" rel="noopener noreferrer" aria-label="Open publication: ${escapeHtml(publication.title)}">${escapeHtml(publication.title)}</a></h3>
+          <h3><a class="publication-title-link" href="${escapeHtml(publisherUrl(publication.url, publication.doi))}" target="_blank" rel="noopener noreferrer" aria-label="${currentLanguage === "zh-CN" ? "打开论文：" : "Open publication: "}${escapeHtml(publication.title)}">${escapeHtml(publication.title)}</a></h3>
           <p>${escapeHtml(detail)}</p>
         </div>
       </div>
@@ -117,7 +125,7 @@ function setUpMenu() {
   nav.addEventListener("click", (event) => {
     if (event.target.matches("a")) { button.setAttribute("aria-expanded", "false"); nav.classList.remove("is-open"); }
   });
-  window.matchMedia("(min-width: 50rem)").addEventListener("change", (event) => {
+  window.matchMedia("(min-width: 64rem)").addEventListener("change", (event) => {
     if (event.matches) { button.setAttribute("aria-expanded", "false"); nav.classList.remove("is-open"); }
   });
 }
@@ -136,10 +144,15 @@ function setUpLabMap() {
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
-  window.L.marker([mapConfig.latitude, mapConfig.longitude])
-    .addTo(map)
-    .bindPopup(`<strong>${escapeHtml(mapConfig.label)}</strong><br>${escapeHtml(mapConfig.description)}`)
-    .openPopup();
+  labMapMarker = window.L.marker([mapConfig.latitude, mapConfig.longitude]).addTo(map);
+  updateLabMapPopup();
+  labMapMarker.openPopup();
+}
+
+function updateLabMapPopup() {
+  if (!labMapMarker) return;
+  const { label, description } = siteContent.contact.map;
+  labMapMarker.bindPopup(`<strong>${escapeHtml(label)}</strong><br>${escapeHtml(description)}`);
 }
 
 function addHomeNavigation() {
@@ -181,7 +194,9 @@ function setUpYearIndexes() {
       });
       if (status) {
         status.hidden = year === "all" || visibleCount > 0;
-        if (!status.hidden) status.textContent = `No verified ${label} have been added for ${year} yet.`;
+        if (!status.hidden) status.textContent = currentLanguage === "zh-CN"
+          ? `${year} 年尚未添加已核实的${collection === "publications" ? "研究成果" : "新闻动态"}。`
+          : `No verified ${label} have been added for ${year} yet.`;
       }
     };
 
@@ -190,8 +205,91 @@ function setUpYearIndexes() {
   });
 }
 
-renderContent();
-addHomeNavigation();
+function translateDocument(language) {
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  let node;
+  while ((node = walker.nextNode())) {
+    if (node.parentElement?.closest("script, style, [data-no-translate]")) continue;
+    if (!originalText.has(node)) originalText.set(node, node.nodeValue);
+    const source = originalText.get(node);
+    const parts = source.match(/^(\s*)([\s\S]*?)(\s*)$/);
+    if (parts) node.nodeValue = `${parts[1]}${translate(parts[2], language)}${parts[3]}`;
+  }
+
+  document.querySelectorAll("[aria-label], [alt], [title]").forEach((element) => {
+    const originals = originalAttributes.get(element) || {};
+    ["aria-label", "alt", "title"].forEach((attribute) => {
+      if (!element.hasAttribute(attribute)) return;
+      if (!(attribute in originals)) originals[attribute] = element.getAttribute(attribute);
+      element.setAttribute(attribute, translate(originals[attribute], language));
+    });
+    originalAttributes.set(element, originals);
+  });
+  document.title = translate(originalTitle, language);
+}
+
+function updateLanguageControl() {
+  const toggle = document.querySelector("[data-language-toggle]");
+  if (!toggle) return;
+  toggle.setAttribute("aria-label", currentLanguage === "zh-CN" ? "语言：简体中文" : "Language: English");
+  toggle.querySelector("[data-language-code]").textContent = currentLanguage === "zh-CN" ? "中" : "EN";
+  document.querySelector("[data-language-options]").setAttribute("aria-label", currentLanguage === "zh-CN" ? "选择语言" : "Choose language");
+  document.querySelectorAll("[data-set-language]").forEach((option) => {
+    option.setAttribute("aria-pressed", String(option.dataset.setLanguage === currentLanguage));
+  });
+}
+
+function applyLanguage(language) {
+  currentLanguage = language;
+  siteContent = localizeContent(englishContent, language);
+  document.documentElement.lang = language;
+  renderContent();
+  addHomeNavigation();
+  setUpYearIndexes();
+  translateDocument(language);
+  updateLabMapPopup();
+  updateLanguageControl();
+}
+
+function setUpLanguageControl() {
+  const header = document.querySelector("[data-header]");
+  if (!header) return;
+  const control = document.createElement("div");
+  control.className = "language-switcher";
+  control.dataset.noTranslate = "";
+  control.innerHTML = `
+    <button class="language-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="language-options" data-language-toggle>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" /></svg>
+      <span data-language-code>EN</span>
+    </button>
+    <div class="language-options" id="language-options" role="group" hidden data-language-options>
+      <button type="button" lang="en" data-set-language="en">English</button>
+      <button type="button" lang="zh-CN" data-set-language="zh-CN">简体中文</button>
+    </div>`;
+  header.append(control);
+  const toggle = control.querySelector("[data-language-toggle]");
+  const options = control.querySelector("[data-language-options]");
+  const close = () => { options.hidden = true; toggle.setAttribute("aria-expanded", "false"); };
+  toggle.addEventListener("click", () => {
+    options.hidden = !options.hidden;
+    toggle.setAttribute("aria-expanded", String(!options.hidden));
+  });
+  control.querySelectorAll("[data-set-language]").forEach((option) => option.addEventListener("click", () => {
+    const language = option.dataset.setLanguage;
+    try { localStorage.setItem(languageStorageKey, language); } catch { /* Preference remains active on this page. */ }
+    applyLanguage(language);
+    close();
+    toggle.focus();
+  }));
+  document.addEventListener("click", (event) => { if (!control.contains(event.target)) close(); });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !options.hidden) { close(); toggle.focus(); }
+  });
+}
+
+setUpLanguageControl();
+let preferredLanguage = "en";
+try { if (localStorage.getItem(languageStorageKey) === "zh-CN") preferredLanguage = "zh-CN"; } catch { /* Use English when storage is unavailable. */ }
+applyLanguage(preferredLanguage);
 setUpMenu();
 setUpLabMap();
-setUpYearIndexes();
