@@ -180,26 +180,27 @@ h3 { font-size: 1.6rem; }
 .profile-section-body ol { padding: 0; list-style: none; counter-reset: profile-item; }
 .profile-section-body ol li { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: 0.75rem; padding-top: 1.1rem; border-top: 1px solid var(--line); counter-increment: profile-item; }
 .profile-section-body ol li::before { color: var(--teal); font-size: 0.85rem; font-weight: 800; letter-spacing: 0.06em; content: counter(profile-item, decimal-leading-zero); }
-.student-profile-page { background: linear-gradient(180deg, #fafbff 0%, #f1fbf8 58%, #f1f4ff 100%); }
-.student-profile-page .profile-breadcrumb a { color: #6045b6; }
-.student-profile-page .profile-hero { color: #1c3150; background: radial-gradient(circle at 92% 10%, #ddd9ff 0, transparent 31%), radial-gradient(circle at 6% 95%, #c7f3e9 0, transparent 34%), linear-gradient(125deg, #f7f4ff, #effaff 54%, #f0f5ff); border-color: #ddd8f2; border-radius: 1.5rem; box-shadow: 0 22px 50px rgba(79, 76, 143, 0.11); }
-.student-profile-page .profile-hero::after { right: -7rem; bottom: -15rem; border-color: #9477d633; box-shadow: 0 0 0 4rem #9477d60b, 0 0 0 8rem #0daea408; }
-.student-profile-page .profile-portrait { background: #e6f8f2; border: 0.55rem solid #fff; border-radius: 1.25rem; box-shadow: 0 20px 35px rgba(53, 69, 110, 0.18); transform: rotate(-1.5deg); }
-.student-profile-page .profile-hero .eyebrow { display: inline-block; padding: 0.45rem 0.8rem; color: #5b3fb0; background: #e9e2ff; border-radius: 999px; letter-spacing: 0.09em; }
-.student-profile-page .profile-hero h1 { color: #25335a; text-wrap: balance; }
+.student-profile-page { background: linear-gradient(180deg, #f9fcff 0%, #eff8ff 55%, #eaf5ff 100%); }
+.student-profile-page .profile-breadcrumb a { color: #155f9f; }
+.student-profile-page .profile-hero { color: #173654; background: radial-gradient(circle at 94% 8%, #cceaff 0, transparent 31%), radial-gradient(circle at 4% 96%, #d9f1ff 0, transparent 36%), linear-gradient(125deg, #f7fcff, #e9f6ff); border-color: #c7e2f5; border-radius: 1.4rem; box-shadow: 0 20px 44px rgba(43, 105, 153, 0.1); }
+.student-profile-page .profile-hero::after { right: -7rem; bottom: -15rem; border-color: #62b1e82e; box-shadow: 0 0 0 4rem #62b1e80a, 0 0 0 8rem #62b1e807; }
+.student-profile-page .profile-portrait { width: min(100%, 17rem); background: #dceeff; border: 0.45rem solid #fff; border-radius: 1rem; box-shadow: 0 15px 30px rgba(39, 93, 137, 0.16); }
+.student-profile-page .profile-hero .eyebrow { display: inline-block; padding: 0.45rem 0.8rem; color: #155f9f; background: #dceeff; border-radius: 999px; letter-spacing: 0.09em; }
+.student-profile-page .profile-hero h1 { color: #153b61; text-wrap: balance; }
 .student-profile-page .profile-affiliation { color: #415b70; }
-.student-profile-page .profile-email-label { color: #096e70; }
-.student-profile-page .profile-email { color: #25335a; background: #fff; border-color: #c8d9e4; box-shadow: 0 7px 18px rgba(67, 83, 122, 0.08); }
-.student-profile-page .profile-email:hover { color: #5135aa; background: #fff; border-color: #8d75d2; }
-.student-profile-page .profile-email span { color: #5b3fb0; }
-.student-profile-page .profile-section { background: #fff; border-color: #dce7ed; border-radius: 1.25rem; box-shadow: 0 12px 30px rgba(65, 91, 112, 0.06); }
-.student-profile-page .profile-section--list { background: linear-gradient(135deg, #f7f3ff, #eefbf7); border-color: #ddd8ef; }
-.student-profile-page .profile-section-heading span { width: fit-content; margin-bottom: 0.85rem; padding: 0.4rem 0.7rem; color: #5b3fb0; background: #e9e2ff; border-radius: 999px; letter-spacing: 0.09em; }
-.student-profile-page .profile-section-heading h2 { color: #25335a; }
+.student-profile-page .profile-email-label { color: #155f9f; }
+.student-profile-page .profile-email { color: #153b61; background: #fff; border-color: #bddcf2; box-shadow: 0 7px 18px rgba(39, 93, 137, 0.08); }
+.student-profile-page .profile-email:hover { color: #0e5b9c; background: #fff; border-color: #73b6e6; }
+.student-profile-page .profile-email span { color: #155f9f; }
+.student-profile-page .profile-content { gap: 1rem; padding-top: 2rem; }
+.student-profile-page .profile-section { background: #fff; border-color: #d4e8f7; border-radius: 1rem; box-shadow: 0 10px 26px rgba(43, 105, 153, 0.06); }
+.student-profile-page .profile-section--list { background: #f2f9ff; border-color: #c7e2f5; }
+.student-profile-page .profile-section-heading span { width: fit-content; margin-bottom: 0.85rem; padding: 0.4rem 0.7rem; color: #155f9f; background: #dceeff; border-radius: 999px; letter-spacing: 0.09em; }
+.student-profile-page .profile-section-heading h2 { color: #153b61; }
 .student-profile-page .profile-section-body p, .student-profile-page .profile-section-body li { color: #344d60; }
 .student-profile-page .profile-section-body ul { display: grid; gap: 0.75rem; padding: 0; list-style: none; }
-.student-profile-page .profile-section-body ul li { position: relative; margin: 0; padding: 0.85rem 1rem 0.85rem 2.25rem; background: #fff; border: 1px solid #dce7ed; border-radius: 0.75rem; }
-.student-profile-page .profile-section-body ul li::before { position: absolute; top: 1.45rem; left: 1rem; width: 0.55rem; height: 0.55rem; background: #0c8792; border-radius: 50%; content: ""; }
+.student-profile-page .profile-section-body ul li { position: relative; margin: 0; padding: 0.85rem 1rem 0.85rem 2.25rem; background: #fff; border: 1px solid #d4e8f7; border-radius: 0.7rem; }
+.student-profile-page .profile-section-body ul li::before { position: absolute; top: 1.45rem; left: 1rem; width: 0.55rem; height: 0.55rem; background: #368ac5; border-radius: 50%; content: ""; }
 .section-link { display: inline-block; margin-top: 1.5rem; }
 .publication-section { border-top: 1px solid var(--line); }
 .year-index { display: flex; gap: 0.6rem; overflow-x: auto; margin: -0.9rem 0 1.5rem; padding: 0.35rem 0 1rem; border-bottom: 1px solid var(--line); scrollbar-width: thin; }
@@ -275,6 +276,8 @@ h3 { font-size: 1.6rem; }
   .section-shell, .site-header { width: min(100% - 4rem, 76rem); }
   .hero { grid-template-columns: 1.05fr 0.95fr; }.hero-visual { min-height: 31rem; }.split-heading { grid-template-columns: 1fr 0.65fr; align-items: end; }.theme-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.theme-card:last-child { grid-column: 1 / -1; justify-self: center; width: calc((100% - 1rem) / 2); }.people-grid { grid-template-columns: repeat(3, 1fr); }.leader-card { grid-template-columns: minmax(0, 0.82fr) minmax(0, 1fr); width: min(100%, 42rem); }.leader-card-copy { padding: 1rem 0.65rem 0.75rem 0; }.member-grid { grid-template-columns: repeat(3, 1fr); }.page-hero-with-media { grid-template-columns: 1fr 0.8fr; }.page-hero-with-media > img { min-height: 23rem; height: 100%; }.profile-hero { grid-template-columns: minmax(15rem, 0.78fr) minmax(0, 1.22fr); }.profile-portrait { width: 100%; }.news-grid { grid-template-columns: repeat(3, 1fr); }.home-routes { grid-template-columns: repeat(3, 1fr); }.opening-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.join-layout { grid-template-columns: 1fr 1fr; align-items: start; }.contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .leader-card > img { height: 100%; min-height: 20rem; }
+  .student-profile-page .profile-hero { grid-template-columns: minmax(13rem, 17rem) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); }
+  .student-profile-page .profile-portrait { width: 100%; margin-inline: 0; }
 }
 @media (min-width: 64rem) {
   .theme-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -283,6 +286,8 @@ h3 { font-size: 1.6rem; }
   .leader-card { max-width: none; }
   .leader-card:only-child { grid-column: 1 / -1; justify-self: center; width: min(100%, 42rem); }
   .profile-section { grid-template-columns: minmax(11rem, 0.28fr) minmax(0, 1fr); gap: clamp(2rem, 4vw, 4rem); }
+  .student-profile-page .profile-content { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; }
+  .student-profile-page .profile-section { grid-template-columns: 1fr; align-content: start; gap: 1.25rem; }
 }
 @media (min-width: 50rem) {
   .menu-button { display: none; }
