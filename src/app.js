@@ -1,5 +1,5 @@
 import { siteContent as englishContent } from "./content.js";
-import { languageStorageKey, localizeContent, translate } from "./i18n.js";
+import { languageStorageKey, localizeContent, translate } from "./i18n.js?v=20261027-cn-headings";
 
 let currentLanguage = "en";
 let siteContent = englishContent;
