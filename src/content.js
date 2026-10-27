@@ -1,5 +1,5 @@
 export const siteContent = {
-  siteName: "QiLiu RRAM Group",
+  siteName: "Memory and Computing Group",
   hero: {
     title: "Neuromorphic hardware for efficient AI.",
     summary: "We connect neuromorphic chip and architecture design, hardware–algorithm co-design, and emerging-memory devices to develop efficient brain-inspired computing hardware.",
@@ -40,10 +40,10 @@ export const siteContent = {
   ],
   profiles: {
     chenyangLi: {
-      kind: "student", name: "Chenyang Li", role: "Doctoral student", affiliation: "QiLiu RRAM Group · Fudan University", image: "assets/images/chenyang-li.jpg", alt: "Portrait of Chenyang Li", email: "xumengzhang@fudan.edu.cn", emailLabel: "Group contact email",
+      kind: "student", name: "Chenyang Li", role: "Doctoral student", affiliation: "Memory and Computing Group · Fudan University", image: "assets/images/chenyang-li.jpg", alt: "Portrait of Chenyang Li", email: "xumengzhang@fudan.edu.cn", emailLabel: "Group contact email",
       sections: [
         { heading: "Introduction", type: "biography", entries: [
-          "Chenyang Li is a doctoral student in the QiLiu RRAM Group at Fudan University. Their coauthored publications include work on a network-on-chip spiking architecture for spike sorting, an RRAM-based spiking processor, and low-leakage digital circuits. The interests below are illustrative topics based on that published work."
+          "Chenyang Li is a doctoral student in the Memory and Computing Group at Fudan University. Their coauthored publications include work on a network-on-chip spiking architecture for spike sorting, an RRAM-based spiking processor, and low-leakage digital circuits. The interests below are illustrative topics based on that published work."
         ] },
         { heading: "Research interests", type: "list", entries: [
           "Spiking neural network processors and on-chip communication",
@@ -53,10 +53,10 @@ export const siteContent = {
       ],
     },
     yiwenZhu: {
-      kind: "student", name: "Yiwen Zhu", role: "Doctoral student", affiliation: "QiLiu RRAM Group · Fudan University", image: "assets/images/Yiwen%20Zhu.jpg", alt: "Portrait of Yiwen Zhu", email: "xumengzhang@fudan.edu.cn", emailLabel: "Group contact email",
+      kind: "student", name: "Yiwen Zhu", role: "Doctoral student", affiliation: "Memory and Computing Group · Fudan University", image: "assets/images/Yiwen%20Zhu.jpg", alt: "Portrait of Yiwen Zhu", email: "xumengzhang@fudan.edu.cn", emailLabel: "Group contact email",
       sections: [
         { heading: "Introduction", type: "biography", entries: [
-          "Yiwen Zhu is a doctoral student in the QiLiu RRAM Group at Fudan University. Their first-authored work explores spiking neural networks for spike sorting and co-optimization on memristor platforms. They have also coauthored research on spiking architectures and RRAM-based edge healthcare systems. The interests below are illustrative topics based on those publications."
+          "Yiwen Zhu is a doctoral student in the Memory and Computing Group at Fudan University. Their first-authored work explores spiking neural networks for spike sorting and co-optimization on memristor platforms. They have also coauthored research on spiking architectures and RRAM-based edge healthcare systems. The interests below are illustrative topics based on those publications."
         ] },
         { heading: "Research interests", type: "list", entries: [
           "Spike sorting with spiking neural networks",
@@ -66,10 +66,10 @@ export const siteContent = {
       ],
     },
     xianghuiLi: {
-      kind: "student", name: "Xianghui Li", role: "Doctoral student", affiliation: "QiLiu RRAM Group · Fudan University", image: "assets/images/xianghui-li.jpg", alt: "Portrait of Xianghui Li", email: "xianghuili26@m.fudan.edu.cn",
+      kind: "student", name: "Xianghui Li", role: "Doctoral student", affiliation: "Memory and Computing Group · Fudan University", image: "assets/images/xianghui-li.jpg", alt: "Portrait of Xianghui Li", email: "xianghuili26@m.fudan.edu.cn",
       sections: [
         { heading: "Introduction", type: "biography", entries: [
-          "Xianghui Li is a doctoral student in the QiLiu RRAM Group at Fudan University. The topics below are examples from the group's research program; Xianghui's individual research interests have not yet been confirmed."
+          "Xianghui Li is a doctoral student in the Memory and Computing Group at Fudan University. The topics below are examples from the group's research program; Xianghui's individual research interests have not yet been confirmed."
         ] },
         { heading: "Research interests · examples", type: "list", entries: [
           "Neuromorphic chip and architecture design",
@@ -309,7 +309,7 @@ export const siteContent = {
   ],
   joinCopy: "Explore research opportunities in neuromorphic chip and architecture design, hardware–algorithm co-design, and emerging-memory neuromorphic devices.",
   jobOpenings: [
-    { title: "Postdoctoral Researchers", description: "Lead research in digital, analog, and mixed-signal neuromorphic chips, hardware–algorithm co-design, or emerging-memory devices and circuits." },
+    { title: "Postdoctoral Researchers", description: "Lead research in digital, analog, and mixed-signal neuromorphic chips, hardware–algorithm co-design, or emerging-memory devices and circuits.", url: "postdoctoral-researchers.html" },
     { title: "Doctoral Students", description: "Pursue doctoral research on spiking processors, memory-based computing architectures, and the integration of neuromorphic devices with circuits and systems." },
     { title: "Master's Students", description: "Build research experience in integrated-circuit design, neuromorphic computing, and the translation of algorithms into efficient hardware." },
     { title: "Undergraduate Research Interns", description: "Explore hands-on projects in chip design, computing architectures, and emerging-memory neuromorphic technology." },
@@ -323,7 +323,7 @@ export const siteContent = {
       latitude: 31.340351766,
       longitude: 121.505523824,
       zoom: 18,
-      label: "QiLiu RRAM Group",
+      label: "Memory and Computing Group",
       description: "Room B3013, Interdisciplinary Building No. 1, Fudan University Jiangwan Campus",
     },
   },

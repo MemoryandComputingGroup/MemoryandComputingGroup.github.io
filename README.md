@@ -1,6 +1,6 @@
-# QiLiu RRAM Group Website
+# Memory and Computing Group Website
 
-Source repository for the public website of the QiLiu RRAM Group at Fudan University.
+Source repository for the public website of the Memory and Computing Group at Fudan University.
 
 **Live site:** <https://qiliurramgroup.github.io/>
 
