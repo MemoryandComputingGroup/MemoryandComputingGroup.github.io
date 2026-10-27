@@ -156,7 +156,7 @@ h3 { font-size: 1.6rem; }
 .member-card h3 a { text-decoration: none; }
 .member-card h3 a:hover { color: var(--teal); }
 .member-card p { margin-bottom: 0; color: var(--muted); font-size: 0.95rem; }
-.member-profile-link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; color: var(--teal); font-size: 0.9rem; font-weight: 800; text-decoration: none; }
+.member-profile-link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; color: var(--teal); font-size: 1.5rem; font-weight: 800; text-decoration: none; }
 .member-profile-link:hover { text-decoration: underline; }
 .member-profile-link span { font-size: 1.2rem; line-height: 1; }
 .profile-breadcrumb { display: flex; align-items: center; gap: 0.7rem; padding-top: var(--space-4); color: var(--muted); font-size: 0.9rem; font-weight: 700; }
