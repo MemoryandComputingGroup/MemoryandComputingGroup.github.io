@@ -124,7 +124,7 @@ h3 { font-size: 1.6rem; }
 .leader-card:hover { transform: translateY(-0.2rem); border-color: #8dbceb; box-shadow: var(--shadow); }
 .leader-card > img { display: block; width: 100%; height: clamp(17rem, 66vw, 22rem); object-fit: cover; object-position: center 18%; background: #dceeff; border-radius: calc(var(--radius) - 0.25rem); }
 .leader-card-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-width: 0; padding: 0.25rem 0.4rem 0.5rem; }
-.leader-card-copy .eyebrow { margin-bottom: 0.75rem; font-size: 0.9rem; line-height: 1.4; letter-spacing: 0.025em; overflow-wrap: anywhere; }
+.leader-card-copy .eyebrow { margin-bottom: 0.75rem; font-size: 1.5rem; line-height: 1.4; letter-spacing: 0.025em; overflow-wrap: anywhere; }
 .leader-card-copy h3 { margin-bottom: 0.8rem; font-size: clamp(1.9rem, 2.8vw, 2.5rem); }
 .leader-card-copy h3 a { text-decoration: none; }
 .leader-affiliation { margin-bottom: 0.65rem; color: var(--muted); line-height: 1.55; }
