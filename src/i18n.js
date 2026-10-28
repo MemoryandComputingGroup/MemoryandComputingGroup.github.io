@@ -86,6 +86,9 @@ const zhText = {
   "Biography": "个人简介",
   "Research interests": "研究方向",
   "Research interests · examples": "研究方向示例",
+  "Honors and Awards": "荣誉与奖励",
+  "Interests": "兴趣爱好",
+  "Personal Slogan": "个人 Slogan",
   "Selected outcomes": "代表性成果",
   "Selected publications": "代表性论文",
   "Group contact email": "课题组联系邮箱",
@@ -183,8 +186,11 @@ const zhContent = {
       { entries: ["基于脉冲神经网络的神经脉冲分选", "忆阻器平台上的算法与硬件协同设计", "面向医疗应用的 RRAM 边缘计算"] },
     ] },
     xianghuiLi: { sections: [
-      { entries: ["Xianghui Li 是复旦大学存储与计算课题组的博士研究生。以下仅列出课题组的研究方向，尚不能视为其个人研究方向。"] },
-      { entries: ["神经形态芯片与架构设计", "神经形态计算的算法与硬件协同设计", "基于新型存储器的神经形态器件"] },
+      { entries: ["李相辉现为复旦大学存储与计算课题组（Memory and Computing Group）博士研究生。他于2026年在安徽大学获得集成电路设计与集成系统的工学学士学位。他于2026年开始在复旦大学攻读博士学位。"] },
+      { entries: ["他曾获得5项荣誉与奖励，包括国家奖学金等。"] },
+      { entries: ["日常喜爱旅行和摄影，以及健身。"] },
+      { entries: ["求知若饥，虚心若愚。 (Stay Hungry, stay Foolish.)"] },
+      { entries: ["类脑芯片架构设计", "脉冲神经网络处理器与片上通信", "低功耗混合信号电路设计"] },
     ] },
     mingLiu: { sections: [
       { entries: [

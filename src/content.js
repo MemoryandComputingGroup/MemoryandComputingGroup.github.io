@@ -69,12 +69,21 @@ export const siteContent = {
       kind: "student", name: "Xianghui Li", role: "Doctoral student", affiliation: "Memory and Computing Group · Fudan University", image: "assets/images/xianghui-li.jpg", alt: "Portrait of Xianghui Li", email: "xianghuili26@m.fudan.edu.cn",
       sections: [
         { heading: "Introduction", type: "biography", entries: [
-          "Xianghui Li is a doctoral student in the Memory and Computing Group at Fudan University. The topics below are examples from the group's research program; Xianghui's individual research interests have not yet been confirmed."
+          "Xianghui Li is currently a Ph.D. student in the Memory and Computing Group at Fudan University. He received his Bachelor of Engineering degree in Integrated Circuit Design and Integrated Systems from Anhui University in 2026. He began his doctoral studies at Fudan University in 2026."
         ] },
-        { heading: "Research interests · examples", type: "list", entries: [
-          "Neuromorphic chip and architecture design",
-          "Hardware–algorithm co-design for neuromorphic computing",
-          "Emerging-memory neuromorphic devices"
+        { heading: "Honors and Awards", type: "summary", entries: [
+          "He has received 5 honors and awards, including the National Scholarship."
+        ] },
+        { heading: "Interests", type: "summary", entries: [
+          "In his daily life, he enjoys traveling, photography, and fitness."
+        ] },
+        { heading: "Personal Slogan", type: "summary", entries: [
+          "Stay hungry, stay foolish."
+        ] },
+        { heading: "Research interests", type: "list", entries: [
+          "Neuromorphic Chip Architecture Design",
+          "Spiking neural network processors and on-chip communication",
+          "Low-Power Mixed-Signal Circuit Design"
         ] },
       ],
     },
