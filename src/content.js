@@ -6,25 +6,25 @@ export const siteContent = {
   },
   homeStatement: "Compute Differently. Think Beyond.",
   researchThemes: [
-    { number: "01", title: "Neuromorphic Chip and Architecture Design", image: "assets/images/Neuromorphic%20Chip%20and%20Architecture%20Design_photo.jpg", description: "Digital, analog, and mixed-signal chip designs bring brain-inspired computing into efficient hardware. Research spans spiking neural network processors, on-chip communication, and memory-based architectures for low-power, low-latency operation." },
-    { number: "02", title: "Hardware–Algorithm Co-Design for Neuromorphic Computing", image: "assets/images/Hardware%E2%80%93Algorithm%20Co-Design%20for%20Neuromorphic%20Computing_photo.jpg", description: "Algorithms, circuits, and architectures are developed together so that each makes effective use of the others. Applications include spike sorting, temporal prediction, and sensory processing under practical hardware constraints." },
-    { number: "03", title: "Emerging-Memory Neuromorphic Devices", image: "assets/images/Emerging-Memory%20Neuromorphic%20Devices_photo.jpg", description: "RRAM, NbO₂ memristors, and ferroelectric devices provide building blocks for artificial neurons and synapses. Research examines their switching dynamics, synaptic plasticity, and integration into sensing–computing circuits." },
+    { number: "01", title: "Neuromorphic Chip and Architecture Design", image: "assets/images/research/Neuromorphic%20Chip%20and%20Architecture%20Design_photo.jpg", description: "Digital, analog, and mixed-signal chip designs bring brain-inspired computing into efficient hardware. Research spans spiking neural network processors, on-chip communication, and memory-based architectures for low-power, low-latency operation." },
+    { number: "02", title: "Hardware–Algorithm Co-Design for Neuromorphic Computing", image: "assets/images/research/Hardware%E2%80%93Algorithm%20Co-Design%20for%20Neuromorphic%20Computing_photo.jpg", description: "Algorithms, circuits, and architectures are developed together so that each makes effective use of the others. Applications include spike sorting, temporal prediction, and sensory processing under practical hardware constraints." },
+    { number: "03", title: "Emerging-Memory Neuromorphic Devices", image: "assets/images/research/Emerging-Memory%20Neuromorphic%20Devices_photo.jpg", description: "RRAM, NbO₂ memristors, and ferroelectric devices provide building blocks for artificial neurons and synapses. Research examines their switching dynamics, synaptic plasticity, and integration into sensing–computing circuits." },
   ],
   leadershipGroups: [
     { title: "Principal Investigators", members: [
-      { name: "Ming Liu", role: "Academician of the Chinese Academy of Sciences", affiliation: "Dean, Frontier Institute of Chip and System, Fudan University", email: "liuming@fudan.edu.cn", image: "assets/images/Ming-Liu.jpg", alt: "Portrait of Academician Ming Liu", profile: "ming-liu.html" },
-      { name: "Qi Liu", role: "Professor", affiliation: "College of Integrated Circuits and Micro-Nano Electronics, Fudan University", email: "qi_liu@fudan.edu.cn", image: "assets/images/qi-liu.png", alt: "Portrait of Professor Qi Liu", profile: "qi-liu.html" },
+      { name: "Ming Liu", role: "Academician of the Chinese Academy of Sciences", affiliation: "Dean, Frontier Institute of Chip and System, Fudan University", email: "liuming@fudan.edu.cn", image: "assets/images/people/Ming-Liu.jpg", alt: "Portrait of Academician Ming Liu", profile: "ming-liu.html" },
+      { name: "Qi Liu", role: "Professor", affiliation: "College of Integrated Circuits and Micro-Nano Electronics, Fudan University", email: "qi_liu@fudan.edu.cn", image: "assets/images/people/qi-liu.png", alt: "Portrait of Professor Qi Liu", profile: "qi-liu.html" },
     ] },
     { title: "Faculty", members: [
-      { name: "Xumeng Zhang", role: "Assistant Research Fellow", affiliation: "College of Integrated Circuits and Micro-Nano Electronics, Fudan University", email: "xumengzhang@fudan.edu.cn", image: "assets/images/xumeng-zhang.png", alt: "Portrait of Xumeng Zhang", profile: "xumeng-zhang.html" },
+      { name: "Xumeng Zhang", role: "Assistant Research Fellow", affiliation: "College of Integrated Circuits and Micro-Nano Electronics, Fudan University", email: "xumengzhang@fudan.edu.cn", image: "assets/images/people/xumeng-zhang.png", alt: "Portrait of Xumeng Zhang", profile: "xumeng-zhang.html" },
     ] },
   ],
   peopleGroups: [
     { title: "Postdoctoral Researchers", members: [{ name: "Postdoctoral researcher", role: "Profile to be confirmed", placeholder: true }] },
     { title: "Doctoral Students", members: [
-      { name: "Chenyang Li", role: "Doctoral student", image: "assets/images/chenyang-li.jpg", alt: "Portrait of Chenyang Li", profile: "chenyang-li.html" },
-      { name: "Yiwen Zhu", role: "Doctoral student", image: "assets/images/Yiwen%20Zhu.jpg", alt: "Portrait of Yiwen Zhu", profile: "yiwen-zhu.html" },
-      { name: "Xianghui Li", role: "Doctoral student", image: "assets/images/xianghui-li.jpg", alt: "Portrait of Xianghui Li", profile: "xianghui-li.html" },
+      { name: "Chenyang Li", role: "Doctoral student", image: "assets/images/people/chenyang-li.jpg", alt: "Portrait of Chenyang Li", profile: "chenyang-li.html" },
+      { name: "Yiwen Zhu", role: "Doctoral student", image: "assets/images/people/Yiwen%20Zhu.jpg", alt: "Portrait of Yiwen Zhu", profile: "yiwen-zhu.html" },
+      { name: "Xianghui Li", role: "Doctoral student", image: "assets/images/people/xianghui-li.jpg", alt: "Portrait of Xianghui Li", profile: "xianghui-li.html" },
       { name: "Doctoral student", role: "Profile to be confirmed", placeholder: true },
     ] },
     { title: "Graduate Students", members: [
@@ -40,7 +40,7 @@ export const siteContent = {
   ],
   profiles: {
     chenyangLi: {
-      kind: "student", name: "Chenyang Li", role: "Doctoral student", affiliation: "QiLiu RRAM Group · Fudan University", image: "assets/images/chenyang-li.jpg", alt: "Portrait of Chenyang Li", email: "xumengzhang@fudan.edu.cn", emailLabel: "Group contact email",
+      kind: "student", name: "Chenyang Li", role: "Doctoral student", affiliation: "QiLiu RRAM Group · Fudan University", image: "assets/images/people/chenyang-li.jpg", alt: "Portrait of Chenyang Li", email: "xumengzhang@fudan.edu.cn", emailLabel: "Group contact email",
       sections: [
         { heading: "Introduction", type: "biography", entries: [
           "Chenyang Li is a doctoral student in the QiLiu RRAM Group at Fudan University. Their coauthored publications include work on a network-on-chip spiking architecture for spike sorting, an RRAM-based spiking processor, and low-leakage digital circuits. The interests below are illustrative topics based on that published work."
@@ -53,7 +53,7 @@ export const siteContent = {
       ],
     },
     yiwenZhu: {
-      kind: "student", name: "Yiwen Zhu", role: "Doctoral student", affiliation: "QiLiu RRAM Group · Fudan University", image: "assets/images/Yiwen%20Zhu.jpg", alt: "Portrait of Yiwen Zhu", email: "xumengzhang@fudan.edu.cn", emailLabel: "Group contact email",
+      kind: "student", name: "Yiwen Zhu", role: "Doctoral student", affiliation: "QiLiu RRAM Group · Fudan University", image: "assets/images/people/Yiwen%20Zhu.jpg", alt: "Portrait of Yiwen Zhu", email: "xumengzhang@fudan.edu.cn", emailLabel: "Group contact email",
       sections: [
         { heading: "Introduction", type: "biography", entries: [
           "Yiwen Zhu is a doctoral student in the QiLiu RRAM Group at Fudan University. Their first-authored work explores spiking neural networks for spike sorting and co-optimization on memristor platforms. They have also coauthored research on spiking architectures and RRAM-based edge healthcare systems. The interests below are illustrative topics based on those publications."
@@ -66,7 +66,7 @@ export const siteContent = {
       ],
     },
     xianghuiLi: {
-      kind: "student", name: "Xianghui Li", role: "Doctoral student", affiliation: "QiLiu RRAM Group · Fudan University", image: "assets/images/xianghui-li.jpg", alt: "Portrait of Xianghui Li", email: "xianghuili26@m.fudan.edu.cn",
+      kind: "student", name: "Xianghui Li", role: "Doctoral student", affiliation: "QiLiu RRAM Group · Fudan University", image: "assets/images/people/xianghui-li.jpg", alt: "Portrait of Xianghui Li", email: "xianghuili26@m.fudan.edu.cn",
       sections: [
         { heading: "Introduction", type: "biography", entries: [
           "Xianghui Li is a doctoral student in the QiLiu RRAM Group at Fudan University. The topics below are examples from the group's research program; Xianghui's individual research interests have not yet been confirmed."
@@ -79,7 +79,7 @@ export const siteContent = {
       ],
     },
     mingLiu: {
-      name: "Ming Liu", role: "Academician of the Chinese Academy of Sciences", affiliation: "Dean, Frontier Institute of Chip and System, Fudan University; Research Professor and Doctoral Supervisor, Institute of Microelectronics, Chinese Academy of Sciences", email: "liuming@fudan.edu.cn", image: "assets/images/Ming-Liu.jpg", alt: "Portrait of Academician Ming Liu",
+      name: "Ming Liu", role: "Academician of the Chinese Academy of Sciences", affiliation: "Dean, Frontier Institute of Chip and System, Fudan University; Research Professor and Doctoral Supervisor, Institute of Microelectronics, Chinese Academy of Sciences", email: "liuming@fudan.edu.cn", image: "assets/images/people/Ming-Liu.jpg", alt: "Portrait of Academician Ming Liu",
       sections: [
         { heading: "Biography", type: "biography", entries: [
           "Professor Ming Liu is Dean of the Frontier Institute of Chip and System, Fudan University; an Academician of the Chinese Academy of Sciences; an IEEE Fellow; and an Academician of The World Academy of Sciences. She is also a research professor and doctoral supervisor at the Institute of Microelectronics, Chinese Academy of Sciences, where she serves as Director of the Key Laboratory of Microelectronic Devices and Integration Technology. Her appointments and honors include chief scientist of a National Basic Research Program project, recipient of the National Science Fund for Distinguished Young Scholars in 2008, leader of an innovative research group supported by the National Natural Science Foundation of China, recipient of the 2017 Ho Leung Ho Lee Prize, and selection for national and Beijing talent-development programs.",
@@ -90,7 +90,7 @@ export const siteContent = {
       ],
     },
     qiLiu: {
-      name: "Qi Liu", role: "Professor", affiliation: "College of Integrated Circuits and Micro-Nano Electronics, Fudan University", email: "qi_liu@fudan.edu.cn", image: "assets/images/qi-liu.png", alt: "Portrait of Professor Qi Liu",
+      name: "Qi Liu", role: "Professor", affiliation: "College of Integrated Circuits and Micro-Nano Electronics, Fudan University", email: "qi_liu@fudan.edu.cn", image: "assets/images/people/qi-liu.png", alt: "Portrait of Professor Qi Liu",
       sections: [
         { heading: "Biography", type: "biography", entries: [
           "Professor Qi Liu is a Professor and Ph.D. supervisor at the College of Integrated Circuits and Micro-Nano Electronics, Fudan University. He received his Ph.D. in Microelectronics and Solid-State Electronics from Anhui University in 2010. From 2010 to 2020, he worked at the Institute of Microelectronics, Chinese Academy of Sciences, successively as a postdoctoral researcher, Associate Research Fellow, and Research Fellow.",
@@ -112,7 +112,7 @@ export const siteContent = {
       ],
     },
     xumengZhang: {
-      name: "Xumeng Zhang", role: "Assistant Research Fellow", affiliation: "College of Integrated Circuits and Micro-Nano Electronics, Fudan University", email: "xumengzhang@fudan.edu.cn", image: "assets/images/xumeng-zhang.png", alt: "Portrait of Xumeng Zhang",
+      name: "Xumeng Zhang", role: "Assistant Research Fellow", affiliation: "College of Integrated Circuits and Micro-Nano Electronics, Fudan University", email: "xumengzhang@fudan.edu.cn", image: "assets/images/people/xumeng-zhang.png", alt: "Portrait of Xumeng Zhang",
       sections: [
         { heading: "Biography", type: "biography", entries: [
           "Dr. Xumeng Zhang is a Young Associate Research Fellow at the Frontier Institute of Chip and System and the College of Integrated Circuits and Micro-Nano Electronics, Fudan University, where they have worked since October 2022. They previously conducted postdoctoral research at Fudan University from July 2020 to September 2022, and were a visiting doctoral researcher at the University of Massachusetts, USA, from September 2018 to October 2019. They received a Ph.D. in Microelectronics and Solid-State Electronics from the Institute of Microelectronics, Chinese Academy of Sciences, in June 2020.",
@@ -302,6 +302,7 @@ export const siteContent = {
   },
   ],
   news: [
+    { date: "21 May 2024", year: "2024", category: "Research advance", title: "Memory and Computing Group Advances Neuromorphic Computing", url: "news-neuromorphic-computing-2024-05-21.html" },
     // Keep draft templates out of the public archive until their facts are approved.
     { published: false, date: "Update date — to be confirmed", category: "Group update", title: "Group update template", url: "news-group-update.html" },
     { published: false, date: "Update date — to be confirmed", category: "Publication", title: "Publication announcement template", url: "news-publication-update.html" },

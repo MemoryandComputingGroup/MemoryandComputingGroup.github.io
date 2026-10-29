@@ -15,7 +15,15 @@ Source repository for the public website of the QiLiu RRAM Group at Fudan Univer
 
 ```text
 assets/
-  images/        Approved site images and portraits
+  images/
+    home/        Home-page imagery
+    research/    Research-page imagery and icon
+    people/      People-page imagery, portraits, and icon
+    publications/ Publications-page imagery and icon
+    news/        News-page imagery and icon
+    join/        Join-page imagery and icon
+    contact/     Contact-page imagery and icon
+    shared/      Logo and other images used across pages
   styles.css     Shared responsive styles
 src/
   content.js     Central editable content: people, profiles, publications, news, contact
@@ -37,7 +45,7 @@ Edit `src/content.js` for routine content changes:
 - `joinCopy` and `jobOpenings` — Join Us introduction and opportunity cards
 - `contact` — public contact details and the campus-map marker
 
-Add portraits or other approved assets to `assets/images/`. Use descriptive filenames and publish photographs only with permission.
+Add approved images to the folder for their page under `assets/images/`. Put member portraits in `assets/images/people/` and images used across pages in `assets/images/shared/`. Update the image path in the relevant HTML page or `src/content.js` when adding or replacing a file. Use descriptive filenames and publish photographs only with permission.
 
 Each research card reserves a 16:10 visual area. A 1600×1000 image is a suitable replacement size; keep the placeholder until an approved image and descriptive alt text are available.
 
