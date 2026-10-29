@@ -305,6 +305,7 @@ export const siteContent = {
   },
   ],
   news: [
+    { date: "3 December 2024", year: "2024", category: "Group recognition", title: "Professor Qi Liu Receives the 2024 Ho Leung Ho Lee Foundation Prize for Scientific and Technological Innovation", url: "news-qi-liu-award-2024-12-03.html" },
     { date: "21 May 2024", year: "2024", category: "Research advance", title: "Memory and Computing Group Advances Neuromorphic Computing", url: "news-neuromorphic-computing-2024-05-21.html" },
     // Keep draft templates out of the public archive until their facts are approved.
     { published: false, date: "Update date — to be confirmed", category: "Group update", title: "Group update template", url: "news-group-update.html" },

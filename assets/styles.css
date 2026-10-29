@@ -259,6 +259,7 @@ h3 { font-size: 1.6rem; }
 .news-detail [data-news-language="zh-CN"], html[lang="zh-CN"] .news-detail [data-news-language="en"] { display: none; }
 html[lang="zh-CN"] .news-detail [data-news-language="zh-CN"] { display: block; }
 .news-detail-figure { width: min(100%, 699px); margin: 2.5rem auto; }
+.news-detail-figure--portrait { width: min(100%, 36rem); }
 .news-detail-figure .news-detail-image { height: auto; max-height: none; margin: 0 0 0.85rem; object-fit: contain; }
 .news-detail-figure figcaption { color: var(--muted); font-size: 0.94rem; line-height: 1.6; }
 .news-detail-source { margin-top: 1.75rem; }
