@@ -1,14 +1,14 @@
 export const siteContent = {
-  siteName: "QiLiu RRAM Group",
+  siteName: "Memory and Computing Group",
   hero: {
     title: "Neuromorphic hardware for efficient AI.",
     summary: "We connect neuromorphic chip and architecture design, hardware–algorithm co-design, and emerging-memory devices to develop efficient brain-inspired computing hardware.",
   },
   homeStatement: "Compute Differently. Think Beyond.",
   researchThemes: [
-    { number: "01", title: "Neuromorphic Chip and Architecture Design", image: "assets/images/research/Neuromorphic%20Chip%20and%20Architecture%20Design_photo.jpg", description: "Digital, analog, and mixed-signal chip designs bring brain-inspired computing into efficient hardware. Research spans spiking neural network processors, on-chip communication, and memory-based architectures for low-power, low-latency operation." },
+    { number: "01", title: "Emerging Memory and Integration", image: "assets/images/research/Neuromorphic%20Chip%20and%20Architecture%20Design_photo.jpg", description: "Digital, analog, and mixed-signal chip designs bring brain-inspired computing into efficient hardware. Research spans spiking neural network processors, on-chip communication, and memory-based architectures for low-power, low-latency operation." },
     { number: "02", title: "Hardware–Algorithm Co-Design for Neuromorphic Computing", image: "assets/images/research/Hardware%E2%80%93Algorithm%20Co-Design%20for%20Neuromorphic%20Computing_photo.jpg", description: "Algorithms, circuits, and architectures are developed together so that each makes effective use of the others. Applications include spike sorting, temporal prediction, and sensory processing under practical hardware constraints." },
-    { number: "03", title: "Emerging-Memory Neuromorphic Devices", image: "assets/images/research/Emerging-Memory%20Neuromorphic%20Devices_photo.jpg", description: "RRAM, NbO₂ memristors, and ferroelectric devices provide building blocks for artificial neurons and synapses. Research examines their switching dynamics, synaptic plasticity, and integration into sensing–computing circuits." },
+    { number: "03", title: "Neuromorphic Chips Based on Emerging Memory", image: "assets/images/research/Emerging-Memory%20Neuromorphic%20Devices_photo.jpg", description: "RRAM, NbO₂ memristors, and ferroelectric devices provide building blocks for artificial neurons and synapses. Research examines their switching dynamics, synaptic plasticity, and integration into sensing–computing circuits." },
   ],
   leadershipGroups: [
     { title: "Principal Investigators", members: [
@@ -40,10 +40,10 @@ export const siteContent = {
   ],
   profiles: {
     chenyangLi: {
-      kind: "student", name: "Chenyang Li", role: "Doctoral student", affiliation: "QiLiu RRAM Group · Fudan University", image: "assets/images/people/chenyang-li.jpg", alt: "Portrait of Chenyang Li", email: "xumengzhang@fudan.edu.cn", emailLabel: "Group contact email",
+      kind: "student", name: "Chenyang Li", role: "Doctoral student", affiliation: "Memory and Computing Group · Fudan University", image: "assets/images/people/chenyang-li.jpg", alt: "Portrait of Chenyang Li", email: "xumengzhang@fudan.edu.cn", emailLabel: "Group contact email",
       sections: [
         { heading: "Introduction", type: "biography", entries: [
-          "Chenyang Li is a doctoral student in the QiLiu RRAM Group at Fudan University. Their coauthored publications include work on a network-on-chip spiking architecture for spike sorting, an RRAM-based spiking processor, and low-leakage digital circuits. The interests below are illustrative topics based on that published work."
+          "Chenyang Li is a doctoral student in the Memory and Computing Group at Fudan University. Their coauthored publications include work on a network-on-chip spiking architecture for spike sorting, an RRAM-based spiking processor, and low-leakage digital circuits. The interests below are illustrative topics based on that published work."
         ] },
         { heading: "Research interests", type: "list", entries: [
           "Spiking neural network processors and on-chip communication",
@@ -53,10 +53,10 @@ export const siteContent = {
       ],
     },
     yiwenZhu: {
-      kind: "student", name: "Yiwen Zhu", role: "Doctoral student", affiliation: "QiLiu RRAM Group · Fudan University", image: "assets/images/people/Yiwen%20Zhu.jpg", alt: "Portrait of Yiwen Zhu", email: "xumengzhang@fudan.edu.cn", emailLabel: "Group contact email",
+      kind: "student", name: "Yiwen Zhu", role: "Doctoral student", affiliation: "Memory and Computing Group · Fudan University", image: "assets/images/people/Yiwen%20Zhu.jpg", alt: "Portrait of Yiwen Zhu", email: "xumengzhang@fudan.edu.cn", emailLabel: "Group contact email",
       sections: [
         { heading: "Introduction", type: "biography", entries: [
-          "Yiwen Zhu is a doctoral student in the QiLiu RRAM Group at Fudan University. Their first-authored work explores spiking neural networks for spike sorting and co-optimization on memristor platforms. They have also coauthored research on spiking architectures and RRAM-based edge healthcare systems. The interests below are illustrative topics based on those publications."
+          "Yiwen Zhu is a doctoral student in the Memory and Computing Group at Fudan University. Their first-authored work explores spiking neural networks for spike sorting and co-optimization on memristor platforms. They have also coauthored research on spiking architectures and RRAM-based edge healthcare systems. The interests below are illustrative topics based on those publications."
         ] },
         { heading: "Research interests", type: "list", entries: [
           "Spike sorting with spiking neural networks",
@@ -66,15 +66,18 @@ export const siteContent = {
       ],
     },
     xianghuiLi: {
-      kind: "student", name: "Xianghui Li", role: "Doctoral student", affiliation: "QiLiu RRAM Group · Fudan University", image: "assets/images/people/xianghui-li.jpg", alt: "Portrait of Xianghui Li", email: "xianghuili26@m.fudan.edu.cn",
+      kind: "student", name: "Xianghui Li", role: "Doctoral student", affiliation: "Memory and Computing Group · Fudan University", image: "assets/images/people/xianghui-li.jpg", alt: "Portrait of Xianghui Li", email: "xianghuili26@m.fudan.edu.cn",
       sections: [
         { heading: "Introduction", type: "biography", entries: [
-          "Xianghui Li is a doctoral student in the QiLiu RRAM Group at Fudan University. The topics below are examples from the group's research program; Xianghui's individual research interests have not yet been confirmed."
+          "Xianghui Li is currently a Ph.D. student in the Memory and Computing Group at Fudan University. He received his Bachelor of Engineering degree in Integrated Circuit Design and Integrated Systems from Anhui University in 2026. He began his doctoral studies at Fudan University in 2026.",
+          "Honors and Awards: He has received 5 honors and awards, including the National Scholarship.",
+          "Interests: In his daily life, he enjoys traveling, photography, and fitness.",
+          "Personal Slogan: Stay hungry, stay foolish."
         ] },
-        { heading: "Research interests · examples", type: "list", entries: [
-          "Neuromorphic chip and architecture design",
-          "Hardware–algorithm co-design for neuromorphic computing",
-          "Emerging-memory neuromorphic devices"
+        { heading: "Research interests", type: "list", entries: [
+          "Neuromorphic Chip Architecture Design",
+          "Spiking neural network processors and on-chip communication",
+          "Low-Power Mixed-Signal Circuit Design"
         ] },
       ],
     },
@@ -310,7 +313,7 @@ export const siteContent = {
   ],
   joinCopy: "Explore research opportunities in neuromorphic chip and architecture design, hardware–algorithm co-design, and emerging-memory neuromorphic devices.",
   jobOpenings: [
-    { title: "Postdoctoral Researchers", description: "Lead research in digital, analog, and mixed-signal neuromorphic chips, hardware–algorithm co-design, or emerging-memory devices and circuits." },
+    { title: "Postdoctoral Researchers", description: "Lead research in digital, analog, and mixed-signal neuromorphic chips, hardware–algorithm co-design, or emerging-memory devices and circuits.", url: "postdoctoral-researchers.html" },
     { title: "Doctoral Students", description: "Pursue doctoral research on spiking processors, memory-based computing architectures, and the integration of neuromorphic devices with circuits and systems." },
     { title: "Master's Students", description: "Build research experience in integrated-circuit design, neuromorphic computing, and the translation of algorithms into efficient hardware." },
     { title: "Undergraduate Research Interns", description: "Explore hands-on projects in chip design, computing architectures, and emerging-memory neuromorphic technology." },
@@ -324,7 +327,7 @@ export const siteContent = {
       latitude: 31.340351766,
       longitude: 121.505523824,
       zoom: 18,
-      label: "QiLiu RRAM Group",
+      label: "Memory and Computing Group",
       description: "Room B3013, Interdisciplinary Building No. 1, Fudan University Jiangwan Campus",
     },
   },

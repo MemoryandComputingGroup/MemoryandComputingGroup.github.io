@@ -43,7 +43,7 @@ function renderContent() {
     <article class="opening-card">
       <span class="opening-number" aria-hidden="true">${String(index + 1).padStart(2, "0")}</span>
       <div class="opening-card-copy"><h3>${escapeHtml(opening.title)}</h3><p>${escapeHtml(opening.description)}</p></div>
-      <a class="opening-link" href="contact.html" aria-label="${currentLanguage === "zh-CN" ? `咨询${escapeHtml(opening.title)}申请事宜` : `Enquire about ${escapeHtml(opening.title)}`}">Enquire about this opportunity <span aria-hidden="true">↗</span></a>
+      <a class="opening-link" href="${escapeHtml(opening.url || "contact.html")}" aria-label="${opening.url ? (currentLanguage === "zh-CN" ? `查看${escapeHtml(opening.title)}招聘详情` : `View details for ${escapeHtml(opening.title)}`) : (currentLanguage === "zh-CN" ? `咨询${escapeHtml(opening.title)}申请事宜` : `Enquire about ${escapeHtml(opening.title)}`)}">${opening.url ? (currentLanguage === "zh-CN" ? "查看详情" : "View details") : "Enquire about this opportunity"} <span aria-hidden="true">↗</span></a>
     </article>`).join(""));
   setText("[data-institution]", siteContent.contact.institution);
   setText("[data-address]", siteContent.contact.address);

@@ -1,8 +1,8 @@
-# QiLiu RRAM Group Website
+# Memory and Computing Group Website
 
-Source repository for the public website of the QiLiu RRAM Group at Fudan University.
+Source repository for the public website of the Memory and Computing Group at Fudan University.
 
-**Live site:** <https://qiliurramgroup.github.io/>
+**Live site:** <https://memoryandcomputinggroup.github.io/>
 
 ## Technology
 
@@ -71,7 +71,7 @@ git commit -m "Describe the change"
 git push origin main
 ```
 
-GitHub Actions builds and publishes `dist/` after a push to `main`. After deployment succeeds, review <https://qiliurramgroup.github.io/> in a browser. Do not commit `dist/` unless the repository policy changes.
+GitHub Actions builds and publishes `dist/` after a push to `main`. After deployment succeeds, review <https://memoryandcomputinggroup.github.io/> in a browser. Do not commit `dist/` unless the repository policy changes.
 
 ## Content and privacy checklist
 
