@@ -158,7 +158,6 @@ function renderResearchAreaPage() {
       </div>
       <div class="research-area-media">
         <img src="${escapeHtml(theme.image)}" alt="${escapeHtml(theme.imageAlt || "")}" decoding="async" />
-        <span class="research-area-badge" aria-hidden="true">${escapeHtml(theme.number)}</span>
       </div>
     </section>
     <section class="section-shell area-focus" aria-labelledby="area-focus-title">
@@ -183,7 +182,10 @@ function renderResearchAreaPage() {
       <div class="section-heading"><p class="eyebrow">Continue exploring</p><h2 id="area-other-title">Other research areas</h2></div>
       <div class="area-other-grid">${otherThemes.map(({ theme: otherTheme, number }) => `
         <a class="area-other-card" data-area="${number}" href="${escapeHtml(otherTheme.url)}">
-          <span class="area-other-number" aria-hidden="true">${escapeHtml(otherTheme.number)}</span>
+          <span class="area-other-media" aria-hidden="true">
+            <img src="${escapeHtml(otherTheme.image)}" alt="" loading="lazy" decoding="async" />
+            <span class="area-other-number">${escapeHtml(otherTheme.number)}</span>
+          </span>
           <span class="area-other-copy"><strong>${escapeHtml(otherTheme.title)}</strong><span>${escapeHtml(otherTheme.description)}</span></span>
           <span class="area-other-arrow" aria-hidden="true">→</span>
         </a>`).join("")}</div>
