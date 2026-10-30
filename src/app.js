@@ -109,7 +109,14 @@ function renderContent() {
 }).join(""));
   const publishedNews = siteContent.news.filter((item) => item.published !== false);
   renderInto("[data-news]", publishedNews.length ? publishedNews.map((item) => `
-    <article class="news-card" data-year-item="news" data-item-year="${escapeHtml(item.year || "")}"><p>${escapeHtml(item.date)}</p><span>${escapeHtml(item.category)}</span><h3>${escapeHtml(item.title)}</h3><a href="${escapeHtml(item.url || "news.html")}">Read update <span aria-hidden="true">→</span></a></article>`).join("")
+    <article class="news-card" data-year-item="news" data-item-year="${escapeHtml(item.year || "")}">
+      <div class="news-card-meta">
+        <p class="news-card-date">${escapeHtml(item.date)}</p>
+        <span class="news-card-category">${escapeHtml(item.category)}</span>
+      </div>
+      <h3>${escapeHtml(item.title)}</h3>
+      <a class="news-card-link" href="${escapeHtml(item.url || "news.html")}">Read update <span class="news-card-arrow" aria-hidden="true">→</span></a>
+    </article>`).join("")
     : `<p class="empty-state">No news updates have been published yet.</p>`);
 }
 
