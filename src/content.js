@@ -6,9 +6,9 @@ export const siteContent = {
   },
   homeStatement: "Compute Differently. Think Beyond.",
   researchThemes: [
-    { number: "01", title: "Emerging Memory and Integration", image: "assets/images/research/Neuromorphic%20Chip%20and%20Architecture%20Design_photo.jpg", description: "Digital, analog, and mixed-signal chip designs bring brain-inspired computing into efficient hardware. Research spans spiking neural network processors, on-chip communication, and memory-based architectures for low-power, low-latency operation." },
+    { number: "01", title: "Emerging Memory and Integration", image: "assets/images/research/Neuromorphic%20Chip%20and%20Architecture%20Design_photo.jpg", description: "RRAM, NbO₂ memristors, and ferroelectric devices provide building blocks for artificial neurons and synapses. Research examines their switching dynamics, synaptic plasticity, and integration into sensing–computing circuits." },
     { number: "02", title: "Hardware–Algorithm Co-Design for Neuromorphic Computing", image: "assets/images/research/Hardware%E2%80%93Algorithm%20Co-Design%20for%20Neuromorphic%20Computing_photo.jpg", description: "Algorithms, circuits, and architectures are developed together so that each makes effective use of the others. Applications include spike sorting, temporal prediction, and sensory processing under practical hardware constraints." },
-    { number: "03", title: "Neuromorphic Chips Based on Emerging Memory", image: "assets/images/research/Emerging-Memory%20Neuromorphic%20Devices_photo.jpg", description: "RRAM, NbO₂ memristors, and ferroelectric devices provide building blocks for artificial neurons and synapses. Research examines their switching dynamics, synaptic plasticity, and integration into sensing–computing circuits." },
+    { number: "03", title: "Neuromorphic Chips Based on Emerging Memory", image: "assets/images/research/Emerging-Memory%20Neuromorphic%20Devices_photo.jpg", description: "Digital, analog, and mixed-signal chip designs bring brain-inspired computing into efficient hardware. Research spans spiking neural network processors, on-chip communication, and memory-based architectures for low-power, low-latency operation." },
   ],
   leadershipGroups: [
     { title: "Principal Investigators", members: [
