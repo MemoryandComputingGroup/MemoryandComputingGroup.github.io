@@ -1,5 +1,5 @@
 import { siteContent as englishContent } from "./content.js?v=20261030-publication-areas";
-import { languageStorageKey, localizeContent, translate } from "./i18n.js?v=20261027-cn-headings";
+import { languageStorageKey, localizeContent, translate } from "./i18n.js?v=20261030-research-areas";
 
 let currentLanguage = "en";
 let siteContent = englishContent;
@@ -32,6 +32,36 @@ const leaderCardMarkup = (person) => `
       <a class="leader-profile-link" href="${escapeHtml(person.profile)}">View profile <span aria-hidden="true">→</span></a>
     </div>
   </article>`;
+const publicationMarkup = (publication, index, { showArea = true } = {}) => {
+  const detail = [
+    publication.authors,
+    publication.journal,
+    publication.year,
+    publication.doi ? `DOI: ${publication.doi}` : "",
+  ].filter(Boolean).join(" · ");
+  const areaTheme = siteContent.researchThemes[Number(publication.area) - 1];
+  const areaLabel = areaTheme ? areaTheme.title : "";
+  const areaMarkup = showArea && areaLabel
+    ? areaTheme.url
+      ? `<a class="publication-area" data-area="${escapeHtml(publication.area)}" href="${escapeHtml(areaTheme.url)}">${escapeHtml(areaLabel)}</a>`
+      : `<span class="publication-area" data-area="${escapeHtml(publication.area)}">${escapeHtml(areaLabel)}</span>`
+    : "";
+
+  return `
+    <article class="publication" data-year-item="publications" data-item-year="${escapeHtml(publication.year || "")}">
+      <div class="publication-entry">
+        <span class="publication-number">${String(index + 1).padStart(2, "0")}</span>
+        <div>
+          <div class="publication-meta">
+            <p class="publication-type">${escapeHtml(publication.type)}</p>
+            ${areaMarkup}
+          </div>
+          <h3><a class="publication-title-link" href="${escapeHtml(publisherUrl(publication.url, publication.doi))}" target="_blank" rel="noopener noreferrer" aria-label="${currentLanguage === "zh-CN" ? "查看论文原文：" : "Open publication: "}${escapeHtml(publication.title)}">${escapeHtml(publication.title)}</a></h3>
+          <p>${escapeHtml(detail)}</p>
+        </div>
+      </div>
+    </article>`;
+};
 
 function renderContent() {
   setText("[data-site-name]", siteContent.siteName);
@@ -57,10 +87,10 @@ function renderContent() {
   }
 
   renderInto("[data-research-themes]", siteContent.researchThemes.map((theme) => `
-    <article class="theme-card">
+    <a class="theme-card" href="${escapeHtml(theme.url)}">
       <div class="theme-card-media" aria-hidden="true"><img src="${escapeHtml(theme.image)}" alt="" loading="lazy" decoding="async" /><span class="theme-card-number">${escapeHtml(theme.number)}</span></div>
-      <div class="theme-card-body"><h3>${escapeHtml(theme.title)}</h3><p>${escapeHtml(theme.description)}</p></div>
-    </article>`).join(""));
+      <div class="theme-card-body"><h3>${escapeHtml(theme.title)}</h3><p>${escapeHtml(theme.description)}</p><span class="theme-card-link">Explore area <span aria-hidden="true">→</span></span></div>
+    </a>`).join(""));
   renderInto("[data-leadership-groups]", siteContent.leadershipGroups.map((group, index) => {
     const groupId = `leadership-group-${index + 1}`;
     return `<section class="leadership-section" aria-labelledby="${escapeHtml(groupId)}"><div class="section-heading people-heading"><p class="eyebrow">Leadership</p><h2 id="${escapeHtml(groupId)}">${escapeHtml(group.title)}</h2></div><div class="leadership-grid">${group.members.map(leaderCardMarkup).join("")}</div></section>`;
@@ -87,31 +117,7 @@ function renderContent() {
   const publications = [...siteContent.publications].sort(
   (first, second) => Number(second.year || 0) - Number(first.year || 0)
   );
-  renderInto("[data-publications]", publications.map((publication, index) => {
-  const detail = [
-    publication.authors,
-    publication.journal,
-    publication.year,
-    publication.doi ? `DOI: ${publication.doi}` : "",
-  ].filter(Boolean).join(" · ");
-  const areaTheme = siteContent.researchThemes[Number(publication.area) - 1];
-  const areaLabel = areaTheme ? areaTheme.title : "";
-
-  return `
-    <article class="publication" data-year-item="publications" data-item-year="${escapeHtml(publication.year || "")}">
-      <div class="publication-entry">
-        <span class="publication-number">${String(index + 1).padStart(2, "0")}</span>
-        <div>
-          <div class="publication-meta">
-            <p class="publication-type">${escapeHtml(publication.type)}</p>
-            ${areaLabel ? `<span class="publication-area" data-area="${escapeHtml(publication.area)}">${escapeHtml(areaLabel)}</span>` : ""}
-          </div>
-          <h3><a class="publication-title-link" href="${escapeHtml(publisherUrl(publication.url, publication.doi))}" target="_blank" rel="noopener noreferrer" aria-label="${currentLanguage === "zh-CN" ? "查看论文原文：" : "Open publication: "}${escapeHtml(publication.title)}">${escapeHtml(publication.title)}</a></h3>
-          <p>${escapeHtml(detail)}</p>
-        </div>
-      </div>
-    </article>`;
-}).join(""));
+  renderInto("[data-publications]", publications.map((publication, index) => publicationMarkup(publication, index)).join(""));
   const publishedNews = siteContent.news.filter((item) => item.published !== false);
   renderInto("[data-news]", publishedNews.length ? publishedNews.map((item) => `
     <article class="news-card" data-year-item="news" data-item-year="${escapeHtml(item.year || "")}">
@@ -123,6 +129,65 @@ function renderContent() {
       <a class="news-card-link" href="${escapeHtml(item.url || "news.html")}">Read update <span class="news-card-arrow" aria-hidden="true">→</span></a>
     </article>`).join("")
     : `<p class="empty-state">No news updates have been published yet.</p>`);
+  renderResearchAreaPage();
+}
+
+function renderResearchAreaPage() {
+  const areaNumber = Number(document.body.dataset.researchArea);
+  if (!Number.isInteger(areaNumber) || areaNumber < 1) return;
+  const container = document.querySelector("[data-research-area-content]");
+  const theme = siteContent.researchThemes[areaNumber - 1];
+  if (!container || !theme) return;
+
+  const areaPublications = siteContent.publications
+    .filter((publication) => Number(publication.area) === areaNumber)
+    .sort((first, second) => Number(second.year || 0) - Number(first.year || 0));
+  const otherThemes = siteContent.researchThemes
+    .map((otherTheme, index) => ({ theme: otherTheme, number: index + 1 }))
+    .filter((entry) => entry.number !== areaNumber);
+
+  container.innerHTML = `
+    <nav class="research-breadcrumb section-shell" aria-label="Breadcrumb">
+      <a href="research.html">Research</a><span aria-hidden="true">/</span><span aria-current="page">${escapeHtml(theme.title)}</span>
+    </nav>
+    <section class="page-hero page-hero-with-media section-shell research-area-hero" aria-labelledby="research-area-title">
+      <div>
+        <p class="eyebrow">Research area <span class="research-area-number">${escapeHtml(theme.number)}</span></p>
+        <h1 id="research-area-title">${escapeHtml(theme.title)}</h1>
+        <p>${escapeHtml(theme.intro)}</p>
+      </div>
+      <div class="research-area-media">
+        <img src="${escapeHtml(theme.image)}" alt="${escapeHtml(theme.imageAlt || "")}" decoding="async" />
+        <span class="research-area-badge" aria-hidden="true">${escapeHtml(theme.number)}</span>
+      </div>
+    </section>
+    <section class="section-shell area-focus" aria-labelledby="area-focus-title">
+      <div class="section-heading"><p class="eyebrow">Focus</p><h2 id="area-focus-title">What we work on</h2></div>
+      <div class="area-focus-grid">${(theme.focus || []).map((item, index) => `
+        <article class="area-focus-card" data-area="${areaNumber}">
+          <span class="area-focus-number" aria-hidden="true">${String(index + 1).padStart(2, "0")}</span>
+          <h3>${escapeHtml(item.title)}</h3>
+          <p>${escapeHtml(item.description)}</p>
+        </article>`).join("")}</div>
+    </section>
+    <section class="area-publications" aria-labelledby="area-publications-title">
+      <div class="section-shell">
+        <div class="section-heading split-heading"><div><p class="eyebrow">Selected outputs</p><h2 id="area-publications-title">Publications</h2></div><p>Peer-reviewed work from this research area.</p></div>
+        ${areaPublications.length
+          ? `<div class="publication-list">${areaPublications.map((publication, index) => publicationMarkup(publication, index, { showArea: false })).join("")}</div>`
+          : `<p class="empty-state">No publications have been added for this area yet.</p>`}
+        <p class="area-publications-all"><a class="text-link" href="publications.html">Browse all publications <span aria-hidden="true">→</span></a></p>
+      </div>
+    </section>
+    <section class="section-shell area-other" aria-labelledby="area-other-title">
+      <div class="section-heading"><p class="eyebrow">Continue exploring</p><h2 id="area-other-title">Other research areas</h2></div>
+      <div class="area-other-grid">${otherThemes.map(({ theme: otherTheme, number }) => `
+        <a class="area-other-card" data-area="${number}" href="${escapeHtml(otherTheme.url)}">
+          <span class="area-other-number" aria-hidden="true">${escapeHtml(otherTheme.number)}</span>
+          <span class="area-other-copy"><strong>${escapeHtml(otherTheme.title)}</strong><span>${escapeHtml(otherTheme.description)}</span></span>
+          <span class="area-other-arrow" aria-hidden="true">→</span>
+        </a>`).join("")}</div>
+    </section>`;
 }
 
 function setUpMenu() {

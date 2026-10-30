@@ -6,9 +6,48 @@ export const siteContent = {
   },
   homeStatement: "Compute Differently. Think Beyond.",
   researchThemes: [
-    { number: "01", title: "Emerging Memory and Integration", image: "assets/images/research/Neuromorphic%20Chip%20and%20Architecture%20Design_photo.jpg", description: "RRAM, NbO₂ memristors, and ferroelectric devices provide building blocks for artificial neurons and synapses. Research examines their switching dynamics, synaptic plasticity, and integration into sensing–computing circuits." },
-    { number: "02", title: "Hardware–Algorithm Co-Design for Neuromorphic Computing", image: "assets/images/research/Hardware%E2%80%93Algorithm%20Co-Design%20for%20Neuromorphic%20Computing_photo.jpg", description: "Algorithms, circuits, and architectures are developed together so that each makes effective use of the others. Applications include spike sorting, temporal prediction, and sensory processing under practical hardware constraints." },
-    { number: "03", title: "Neuromorphic Chips Based on Emerging Memory", image: "assets/images/research/Emerging-Memory%20Neuromorphic%20Devices_photo.jpg", description: "Digital, analog, and mixed-signal chip designs bring brain-inspired computing into efficient hardware. Research spans spiking neural network processors, on-chip communication, and memory-based architectures for low-power, low-latency operation." },
+    {
+      number: "01",
+      title: "Emerging Memory and Integration",
+      image: "assets/images/research/Emerging-Memory%20Neuromorphic%20Devices_photo.jpg",
+      imageAlt: "Chip package and interconnect of an emerging-memory neuromorphic device",
+      url: "research-emerging-memory.html",
+      description: "RRAM, NbO₂ memristors, and ferroelectric devices provide building blocks for artificial neurons and synapses. Research examines their switching dynamics, synaptic plasticity, and integration into sensing–computing circuits.",
+      intro: "RRAM, NbO₂ memristors, and ferroelectric devices give neuromorphic hardware its neuronal and synaptic behaviour. We study their switching dynamics, plasticity, and reliability, then integrate them into artificial neurons, arrays, and sensing–computing circuits.",
+      focus: [
+        { title: "Memristive and ferroelectric devices", description: "RRAM, NbO₂, and charge-trapping FeFET devices are engineered for analogue switching, long- and short-term plasticity, and reliable multi-state operation." },
+        { title: "Artificial neurons and synapses", description: "Compact Hodgkin–Huxley neurons, homeostatic plasticity, and firing-pattern diversity are realised in device–circuit primitives for brain-inspired computation." },
+        { title: "Sensing and system integration", description: "Devices are co-integrated with sensors and CMOS to build tactile, olfactory, and array-level demonstrations, including trajectory prediction and wireless modulation." },
+      ],
+    },
+    {
+      number: "02",
+      title: "Hardware–Algorithm Co-Design for Neuromorphic Computing",
+      image: "assets/images/research/Hardware%E2%80%93Algorithm%20Co-Design%20for%20Neuromorphic%20Computing_photo.jpg",
+      imageAlt: "Abstract network of connected nodes representing hardware–algorithm co-design",
+      url: "research-hardware-algorithm-codesign.html",
+      description: "Algorithms, circuits, and architectures are developed together so that each makes effective use of the others. Applications include spike sorting, temporal prediction, and sensory processing under practical hardware constraints.",
+      intro: "We develop algorithms, circuits, and architectures together so that each makes effective use of the others. Work spans spike sorting, sensory processing, robotic control, and human–machine interfaces, with mapping and training strategies designed around real device constraints.",
+      focus: [
+        { title: "Spike sorting and neural interfaces", description: "Sparse and residual spiking networks, threshold-based temporal encoding, and hardware-aware training bring high-accuracy spike sorting to low-latency, low-energy platforms." },
+        { title: "Sensory processing and bio-inspired control", description: "Olfactory localization, spike-driven human–machine interaction, and firing-feature-driven neural circuits connect event-based sensing to real-time robotic behaviour." },
+        { title: "Algorithm–hardware co-optimization", description: "Quantization-free mapping, noise-adaptation training, and in-situ computing align network accuracy with the non-idealities of memristive and RRAM hardware." },
+      ],
+    },
+    {
+      number: "03",
+      title: "Neuromorphic Chips Based on Emerging Memory",
+      image: "assets/images/research/Neuromorphic%20Chip%20and%20Architecture%20Design_photo.jpg",
+      imageAlt: "Close-up of a neuromorphic chip die with dense interconnect",
+      url: "research-neuromorphic-chips.html",
+      description: "Digital, analog, and mixed-signal chip designs bring brain-inspired computing into efficient hardware. Research spans spiking neural network processors, on-chip communication, and memory-based architectures for low-power, low-latency operation.",
+      intro: "We design digital, analog, and mixed-signal chips that turn emerging-memory devices into efficient neuromorphic systems. The work covers spiking processors, on-chip communication, in-memory computing for edge applications, and low-leakage circuit building blocks.",
+      focus: [
+        { title: "Spiking processors and architectures", description: "Reconfigurable multi-timescale spiking processors and network-on-chip architectures target low-latency inference for temporal and neural-signal workloads." },
+        { title: "In-memory computing systems", description: "RRAM-based compute-in-memory pipelines integrate signal preprocessing and SNN inference for energy-efficient edge healthcare and sensing applications." },
+        { title: "Energy-efficient circuit building blocks", description: "Near-threshold, low-leakage digital circuits and on-chip communication primitives support dense, power-constrained neuromorphic integration." },
+      ],
+    },
   ],
   leadershipGroups: [
     { title: "Principal Investigators", members: [

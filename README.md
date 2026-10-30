@@ -36,7 +36,7 @@ build.ps1        Produces the deployable dist/ directory
 
 Edit `src/content.js` for routine content changes:
 
-- `researchThemes` — the three research-area card titles and descriptions
+- `researchThemes` — the three research-area card titles, descriptions, images, and detail-page content (`url`, `intro`, `focus`)
 - `leadershipGroups` — principal investigators and faculty
 - `peopleGroups` — postdoctoral researchers, students, and alumni
 - `profiles` — leader and student profile-page content
@@ -48,6 +48,8 @@ Edit `src/content.js` for routine content changes:
 Add approved images to the folder for their page under `assets/images/`. Put member portraits in `assets/images/people/` and images used across pages in `assets/images/shared/`. Update the image path in the relevant HTML page or `src/content.js` when adding or replacing a file. Use descriptive filenames and publish photographs only with permission.
 
 Each publication’s `area` is `1`, `2`, or `3` and maps to the research themes in order: Emerging Memory and Integration, Hardware–Algorithm Co-Design for Neuromorphic Computing, and Neuromorphic Chips Based on Emerging Memory. The publications page renders the matching theme title as a colored label.
+
+Each theme’s `url` points to its research-area page (`research-emerging-memory.html`, `research-hardware-algorithm-codesign.html`, or `research-neuromorphic-chips.html`). Those pages render the theme’s `intro` and `focus` items together with every publication whose `area` matches, so edit the theme entry rather than the page shell.
 
 Each research card reserves a 16:10 visual area. A 1600×1000 image is a suitable replacement size; keep the placeholder until an approved image and descriptive alt text are available.
 
