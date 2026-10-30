@@ -186,8 +186,7 @@ function renderResearchAreaPage() {
             <img src="${escapeHtml(otherTheme.image)}" alt="" loading="lazy" decoding="async" />
             <span class="area-other-number">${escapeHtml(otherTheme.number)}</span>
           </span>
-          <span class="area-other-copy"><strong>${escapeHtml(otherTheme.title)}</strong><span>${escapeHtml(otherTheme.description)}</span></span>
-          <span class="area-other-arrow" aria-hidden="true">→</span>
+          <span class="area-other-copy"><strong>${escapeHtml(otherTheme.title)}</strong><span class="area-other-description">${escapeHtml(otherTheme.description)}</span><span class="area-other-link">Explore area <span aria-hidden="true">→</span></span></span>
         </a>`).join("")}</div>
     </section>`;
 }

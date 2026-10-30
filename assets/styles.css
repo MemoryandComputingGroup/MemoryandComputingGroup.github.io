@@ -421,27 +421,29 @@ body[data-research-area="3"], [data-area="3"] { --area-accent: #34479c; --area-s
 .area-other { padding-block: var(--space-5) var(--space-6); }
 .area-other .section-heading { margin-bottom: 1.75rem; }
 .area-other-grid { display: grid; gap: 1rem; }
-.area-other-card { display: grid; grid-template-columns: minmax(7rem, 0.36fr) minmax(0, 1fr) auto; align-items: center; gap: 1rem; padding: 0.9rem; color: var(--ink); background: linear-gradient(150deg, var(--white), #f6faff); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 9px 24px rgba(17, 71, 145, 0.055); text-decoration: none; transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease; }
+.area-other-card { display: grid; grid-template-columns: minmax(10rem, 0.5fr) minmax(0, 1fr); align-items: center; gap: 1.15rem; padding: 0.9rem; color: var(--ink); background: linear-gradient(150deg, var(--white), #f6faff); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 9px 24px rgba(17, 71, 145, 0.055); text-decoration: none; transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease; }
 .area-other-card:hover { color: var(--ink); border-color: #8dbceb; box-shadow: var(--shadow); transform: translateY(-0.2rem); }
 .area-other-media { position: relative; display: block; aspect-ratio: 16 / 10; overflow: hidden; background: #dceafa; border-radius: calc(var(--radius) - 0.3rem); }
-.area-other-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.area-other-media img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 220ms ease; }
+.area-other-card:hover .area-other-media img { transform: scale(1.035); }
 .area-other-number { position: absolute; top: 0.55rem; left: 0.55rem; display: grid; place-items: center; min-width: 2.2rem; height: 2.2rem; padding: 0 0.45rem; color: var(--white); background: color-mix(in srgb, var(--area-ink) 86%, transparent); border: 1px solid #ffffff70; border-radius: 0.45rem; font-size: 0.78rem; font-weight: 800; line-height: 1; backdrop-filter: blur(6px); }
-.area-other-copy { display: grid; gap: 0.25rem; min-width: 0; }
-.area-other-copy strong { font-size: 1.15rem; line-height: 1.25; letter-spacing: -0.03em; }
-.area-other-copy span { color: var(--muted); font-size: 0.9rem; line-height: 1.55; }
-.area-other-arrow { display: grid; width: 2.15rem; height: 2.15rem; place-items: center; color: var(--area-ink); background: var(--area-soft); border: 1px solid var(--area-line); border-radius: 50%; font-size: 1rem; line-height: 1; transition: transform 180ms ease; }
-.area-other-card:hover .area-other-arrow { transform: translateX(0.2rem); }
+.area-other-copy { display: flex; flex-direction: column; gap: 0.3rem; min-width: 0; padding: 0.15rem 0.35rem 0.2rem 0; }
+.area-other-copy strong { font-size: 1.2rem; line-height: 1.24; letter-spacing: -0.03em; }
+.area-other-description { color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
+.area-other-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: auto; padding-top: 0.8rem; color: var(--teal); font-size: 0.88rem; font-weight: 800; letter-spacing: -0.01em; }
+.area-other-link span { font-size: 1.05rem; line-height: 1; transition: transform 180ms ease; }
+.area-other-card:hover .area-other-link span { transform: translateX(0.2rem); }
 
 @media (max-width: 43.98rem) {
-  .area-other-card { grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 0.85rem; }
-  .area-other-media { grid-column: 1 / -1; aspect-ratio: 16 / 7; }
-  .area-other-copy { grid-column: 1; }
-  .area-other-arrow { grid-column: 2; }
+  .area-other-card { grid-template-columns: minmax(0, 1fr); gap: 0.9rem; }
+  .area-other-media { aspect-ratio: 16 / 8; }
+  .area-other-copy { padding: 0 0.25rem 0.45rem; }
 }
 @media (min-width: 44rem) {
   .research-area-media img { height: clamp(18rem, 30vw, 23rem); }
-  .area-focus-grid, .area-other-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .area-focus-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (min-width: 64rem) {
   .area-focus-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .area-other-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
