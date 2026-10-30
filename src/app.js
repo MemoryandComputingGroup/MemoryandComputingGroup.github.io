@@ -1,4 +1,4 @@
-import { siteContent as englishContent } from "./content.js";
+import { siteContent as englishContent } from "./content.js?v=20261030-publication-areas";
 import { languageStorageKey, localizeContent, translate } from "./i18n.js?v=20261027-cn-headings";
 
 let currentLanguage = "en";
@@ -94,13 +94,18 @@ function renderContent() {
     publication.year,
     publication.doi ? `DOI: ${publication.doi}` : "",
   ].filter(Boolean).join(" · ");
+  const areaTheme = siteContent.researchThemes[Number(publication.area) - 1];
+  const areaLabel = areaTheme ? areaTheme.title : "";
 
   return `
     <article class="publication" data-year-item="publications" data-item-year="${escapeHtml(publication.year || "")}">
       <div class="publication-entry">
         <span class="publication-number">${String(index + 1).padStart(2, "0")}</span>
         <div>
-          <p class="publication-type">${escapeHtml(publication.type)}</p>
+          <div class="publication-meta">
+            <p class="publication-type">${escapeHtml(publication.type)}</p>
+            ${areaLabel ? `<span class="publication-area" data-area="${escapeHtml(publication.area)}">${escapeHtml(areaLabel)}</span>` : ""}
+          </div>
           <h3><a class="publication-title-link" href="${escapeHtml(publisherUrl(publication.url, publication.doi))}" target="_blank" rel="noopener noreferrer" aria-label="${currentLanguage === "zh-CN" ? "查看论文原文：" : "Open publication: "}${escapeHtml(publication.title)}">${escapeHtml(publication.title)}</a></h3>
           <p>${escapeHtml(detail)}</p>
         </div>

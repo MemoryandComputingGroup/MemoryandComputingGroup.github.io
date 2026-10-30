@@ -40,12 +40,14 @@ Edit `src/content.js` for routine content changes:
 - `leadershipGroups` — principal investigators and faculty
 - `peopleGroups` — postdoctoral researchers, students, and alumni
 - `profiles` — leader and student profile-page content
-- `publications` — scholarly outputs; include an official DOI or publisher URL in `url`
+- `publications` — scholarly outputs; include an official DOI or publisher URL in `url` and an `area` number matching `researchThemes`
 - `news` — dated news cards and their destination pages
 - `joinCopy` and `jobOpenings` — Join Us introduction and opportunity cards
 - `contact` — public contact details and the campus-map marker
 
 Add approved images to the folder for their page under `assets/images/`. Put member portraits in `assets/images/people/` and images used across pages in `assets/images/shared/`. Update the image path in the relevant HTML page or `src/content.js` when adding or replacing a file. Use descriptive filenames and publish photographs only with permission.
+
+Each publication’s `area` is `1`, `2`, or `3` and maps to the research themes in order: Emerging Memory and Integration, Hardware–Algorithm Co-Design for Neuromorphic Computing, and Neuromorphic Chips Based on Emerging Memory. The publications page renders the matching theme title as a colored label.
 
 Each research card reserves a 16:10 visual area. A 1600×1000 image is a suitable replacement size; keep the placeholder until an approved image and descriptive alt text are available.
 
