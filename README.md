@@ -79,7 +79,7 @@ GitHub Actions builds and publishes `dist/` after a push to `main`. After deploy
 
 ## Private website analytics
 
-Create a Google Analytics 4 web data stream for `memoryandcomputinggroup.github.io`. Add its `G-...` measurement ID as the repository Actions variable `GA4_MEASUREMENT_ID`, then redeploy the site. The build inserts the Google tag into every published HTML page; draft news templates are excluded. Keep report access in Google Analytics limited to the site manager and approved authors through property access management. No visitor count is displayed on the public website. For local verification, set `GA4_MEASUREMENT_ID` in the shell before running `build.ps1`.
+The deployment workflow supplies the site's GA4 measurement ID to `build.ps1`, which inserts the Google tag into every published HTML page; draft news templates are excluded. Update the workflow's `GA4_MEASUREMENT_ID` value if the data stream changes. Keep report access in Google Analytics limited to the site manager and approved authors through property access management. No visitor count is displayed on the public website. For local verification, set `GA4_MEASUREMENT_ID` in the shell before running `build.ps1`.
 
 ## Content and privacy checklist
 

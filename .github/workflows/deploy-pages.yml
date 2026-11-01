@@ -30,7 +30,7 @@ jobs:
       - name: Build static site
         shell: pwsh
         env:
-          GA4_MEASUREMENT_ID: ${{ vars.GA4_MEASUREMENT_ID }}
+          GA4_MEASUREMENT_ID: G-265XWDNVZ6
         run: ./build.ps1
       - name: Upload static site
         uses: actions/upload-pages-artifact@v4
