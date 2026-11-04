@@ -43,7 +43,7 @@ const zhText = {
   "No publications have been added for this area yet.": "该研究方向暂未添加论文。",
   "Explore area": "了解该方向",
   "“From devices to algorithms to architectures, we design efficient brain-inspired hardware.”": "“从器件、算法到架构，探索高效的类脑计算硬件。”",
-  "Together, Engineering What’s Next.": "携手前行，共塑未来。",
+  "Together, Engineering What’s Next.": "携手前行，\n共塑未来。",
   "Meet the research leaders and current group members.": "了解团队的学术带头人和现有成员。",
   "Opportunities": "加入机会",
   "Interested in joining?": "有意加入我们？",

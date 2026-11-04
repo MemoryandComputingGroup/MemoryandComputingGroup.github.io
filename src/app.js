@@ -1,5 +1,5 @@
 import { siteContent as englishContent } from "./content.js?v=20261104-brand";
-import { languageStorageKey, localizeContent, translate } from "./i18n.js?v=20261104-brand";
+import { languageStorageKey, localizeContent, translate } from "./i18n.js?v=20261104-people-linebreak";
 
 let currentLanguage = "en";
 let siteContent = englishContent;

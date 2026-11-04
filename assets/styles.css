@@ -82,6 +82,7 @@ h3 { font-size: 1.6rem; }
 .section-heading > p { color: var(--muted); }
 .page-hero { max-width: 76rem; padding-block: var(--space-6) var(--space-5); border-bottom: 1px solid var(--line); background: linear-gradient(90deg, transparent, #dceeff52); }
 .page-hero h1 { max-width: 13ch; margin-bottom: 1rem; }
+html[lang="zh-CN"] .people-hero h1 { white-space: pre-line; }
 .page-hero > p:last-child, .page-hero-with-media > div > p:last-child { max-width: 43rem; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.3rem); }
 .page-hero-with-media { display: grid; gap: 2rem; align-items: center; }
 .page-hero-with-media > img { width: 100%; height: clamp(10rem, 48vw, 13rem); min-height: 0; object-fit: cover; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
