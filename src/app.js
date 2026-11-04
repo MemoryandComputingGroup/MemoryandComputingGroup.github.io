@@ -1,5 +1,5 @@
-import { siteContent as englishContent } from "./content.js?v=20261104-brand";
-import { languageStorageKey, localizeContent, translate } from "./i18n.js?v=20261104-people-linebreak";
+import { siteContent as englishContent } from "./content.js?v=20261104-manual-breaks";
+import { languageStorageKey, localizeContent, translate } from "./i18n.js?v=20261104-manual-breaks";
 
 let currentLanguage = "en";
 let siteContent = englishContent;
@@ -306,6 +306,17 @@ function translateDocument(language) {
   document.title = translate(originalTitle, language);
 }
 
+function showExplicitLineBreaks() {
+  document.querySelectorAll(".explicit-line-breaks").forEach((element) => element.classList.remove("explicit-line-breaks"));
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  let node;
+  while ((node = walker.nextNode())) {
+    if (!node.nodeValue.includes("\n") || !node.nodeValue.trim()) continue;
+    const parent = node.parentElement;
+    if (parent && !parent.closest("script, style, [data-no-translate]")) parent.classList.add("explicit-line-breaks");
+  }
+}
+
 function updateLanguageControl() {
   const toggle = document.querySelector("[data-language-toggle]");
   if (!toggle) return;
@@ -325,6 +336,7 @@ function applyLanguage(language) {
   addHomeNavigation();
   setUpYearIndexes();
   translateDocument(language);
+  showExplicitLineBreaks();
   updateLabMapPopup();
   updateLanguageControl();
 }

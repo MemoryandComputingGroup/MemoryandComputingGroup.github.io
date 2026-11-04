@@ -45,6 +45,8 @@ Edit `src/content.js` for routine content changes:
 - `joinCopy` and `jobOpenings` — Join Us introduction and opportunity cards
 - `contact` — public contact details and the campus-map marker
 
+Use `\n` inside a content string to force a visible line break. For Chinese text, edit the corresponding translation in `src/i18n.js` as well; each language controls its own breaks. The shared page script applies `white-space: pre-line` only to text elements containing an explicit newline.
+
 Add approved images to the folder for their page under `assets/images/`. Put member portraits in `assets/images/people/` and images used across pages in `assets/images/shared/`. Update the image path in the relevant HTML page or `src/content.js` when adding or replacing a file. Use descriptive filenames and publish photographs only with permission.
 
 Each publication’s `area` is `1`, `2`, or `3` and maps to the research themes in order: Emerging Memory and Integration, Hardware–Algorithm Co-Design for Neuromorphic Computing, and Neuromorphic Chips Based on Emerging Memory. The publications page renders the matching theme title as a colored label.
