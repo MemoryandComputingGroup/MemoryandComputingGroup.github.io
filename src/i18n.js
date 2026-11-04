@@ -18,7 +18,8 @@ const zhText = {
   "Fudan Memory and Computing Group — Enabling the Future of Memory and Intelligence": "复旦大学存储与计算课题组 —— 以存算之力，启智能未来。",
   "Explore our research": "探索研究方向",
   "Work with us": "加入我们",
-  "Devices · Algorithms · Architectures": "器件 · 算法 · 架构",
+  "RESEARCH": "RESEARCH",
+  "IN PROGRESS": "IN PROGRESS",
   "Find what you need": "走进课题组",
   "Explore our work, community, and opportunities.": "了解研究方向、团队成员和加入机会。",
   "Our research themes and areas of inquiry.": "了解课题组的主要研究方向。",
@@ -192,7 +193,6 @@ const zhContent = {
     summary: "我们贯通类脑芯片与架构设计、硬件—算法协同设计以及新型存储器件研究，致力于构建高效的类脑计算硬件。",
   },
   homeStatement: "另辟计算之道，\n超越既有思维。",
-  researchStatement: "“从器件、算法到架构，探索高效的类脑计算硬件。”",
   researchThemes: [
     {
       title: "新型存储器及集成",

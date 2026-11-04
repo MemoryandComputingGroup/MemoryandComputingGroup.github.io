@@ -1,5 +1,5 @@
-import { siteContent as englishContent } from "./content.js?v=20261104-design";
-import { languageStorageKey, localizeContent, translate } from "./i18n.js?v=20261104-design";
+import { siteContent as englishContent } from "./content.js?v=20261104-manual-breaks";
+import { languageStorageKey, localizeContent, translate } from "./i18n.js?v=20261104-manual-breaks";
 
 let currentLanguage = "en";
 let siteContent = englishContent;
@@ -65,17 +65,9 @@ const publicationMarkup = (publication, index, { showArea = true } = {}) => {
 
 function renderContent() {
   setText("[data-site-name]", siteContent.siteName);
-  const brandName = document.querySelector(".brand [data-site-name]");
-  if (brandName) {
-    const parts = currentLanguage === "zh-CN"
-      ? ["复旦大学", "存储与计算课题组"]
-      : ["Fudan", "Memory and Computing Group"];
-    brandName.innerHTML = `<span class="brand-kicker">${escapeHtml(parts[0])}</span><span class="brand-title">${escapeHtml(parts[1])}</span>`;
-  }
   setText("[data-hero-title]", siteContent.hero.title);
   setText("[data-hero-summary]", siteContent.hero.summary);
   setText("[data-home-statement]", siteContent.homeStatement);
-  setText("[data-statement]", siteContent.researchStatement);
   setText("[data-join-copy]", siteContent.joinCopy);
   renderInto("[data-job-openings]", siteContent.jobOpenings.map((opening, index) => `
     <article class="opening-card">

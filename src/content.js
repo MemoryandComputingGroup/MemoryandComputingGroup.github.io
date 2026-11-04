@@ -5,7 +5,6 @@ export const siteContent = {
     summary: "We connect neuromorphic chip and architecture design, hardware–algorithm co-design, and emerging-memory devices to develop efficient brain-inspired computing hardware.",
   },
   homeStatement: "Compute Differently.\nThink Beyond.",
-  researchStatement: "“From devices to algorithms to architectures,\nwe design efficient brain-inspired hardware.”",
   researchThemes: [
     {
       number: "01",
