@@ -1,5 +1,5 @@
 export const siteContent = {
-  siteName: "Memory and Computing Group",
+  siteName: "Fudan Memory and Computing Group",
   hero: {
     title: "Neuromorphic hardware for efficient AI.",
     summary: "We connect neuromorphic chip and architecture design, hardware–algorithm co-design, and emerging-memory devices to develop efficient brain-inspired computing hardware.",

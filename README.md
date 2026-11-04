@@ -1,6 +1,6 @@
-# Memory and Computing Group Website
+# Fudan Memory and Computing Group Website
 
-Source repository for the public website of the Memory and Computing Group at Fudan University.
+Source repository for the public website of the Fudan Memory and Computing Group.
 
 **Live site:** <https://memoryandcomputinggroup.github.io/>
 
