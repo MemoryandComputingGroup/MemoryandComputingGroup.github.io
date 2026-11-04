@@ -7,7 +7,6 @@
   --teal-dark: #123b65;
   --lime: #a2e4ee;
   --line: #d6e1eb;
-  --heading-gradient: linear-gradient(100deg, #0b2039 5%, #0e5aa8 58%, #1b83cb 100%);
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
@@ -27,11 +26,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid #027cff; outline-offs
 h1, h2, h3, p { margin-top: 0; }
 h1, h2, h3 { font-family: Inter, ui-sans-serif, system-ui, sans-serif; line-height: 1.14; letter-spacing: -0.04em; }
 h1 { max-width: 11ch; margin-bottom: 1.5rem; font-size: clamp(3rem, 6.4vw, 6rem); }
-@supports (-webkit-background-clip: text) {
-  h1 { background: var(--heading-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-  .profile-hero h1 { background: linear-gradient(100deg, #ffffff 8%, #8fd7ff 100%); -webkit-background-clip: text; background-clip: text; }
-  .student-profile-page .profile-hero h1 { background: var(--heading-gradient); -webkit-background-clip: text; background-clip: text; }
-}
 h2 { margin-bottom: 1rem; font-size: clamp(2.3rem, 4vw, 4.1rem); }
 h3 { font-size: 1.6rem; }
 
@@ -72,6 +66,7 @@ h3 { font-size: 1.6rem; }
 .hero-copy { min-width: 0; }
 .hero .eyebrow { max-width: 45rem; font-size: 0.76rem; line-height: 1.55; letter-spacing: 0.12em; }
 .hero h1 { max-width: 13ch; font-size: clamp(3.25rem, 6vw, 5.4rem); line-height: 1.16; letter-spacing: -0.035em; text-wrap: balance; }
+@supports (-webkit-background-clip: text) { .hero h1 { background: linear-gradient(100deg, #0b2039 5%, #0e5aa8 58%, #1b83cb 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; } }
 .hero-summary { max-width: 36rem; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.3rem); line-height: 1.68; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; margin-top: 2rem; }
 .button { display: inline-block; padding: 0.8rem 1.1rem; border: 1px solid transparent; border-radius: 0.35rem; font-weight: 800; text-decoration: none; transition: transform 160ms ease, box-shadow 160ms ease; }
@@ -127,8 +122,8 @@ h3 { font-size: 1.6rem; }
 .theme-card-link span { font-size: 1.1rem; line-height: 1; transition: transform 180ms ease; }
 .theme-card:hover .theme-card-link span { transform: translateX(0.2rem); }
 .person-card p { color: var(--muted); }
-.statement-band { position: relative; overflow: hidden; padding-block: var(--space-5); color: var(--white); background: linear-gradient(115deg, #071d46 0%, #0a3977 62%, #10529e 100%); }
-.statement-band::after { position: absolute; inset: 0 0 0 auto; width: min(64%, 62rem); background: url("images/shared/neural-circuit-pattern.svg") right center / contain no-repeat; opacity: 0.58; content: ""; pointer-events: none; }
+.statement-band { position: relative; overflow: hidden; padding-block: var(--space-5); color: var(--white); background: linear-gradient(120deg, #061d49, #0b4a9c); }
+.statement-band::after { position: absolute; top: -15rem; right: -10rem; width: 32rem; aspect-ratio: 1; border: 1px solid #80ceff59; border-radius: 50%; box-shadow: 0 0 0 3rem #80ceff14, 0 0 0 6rem #80ceff0d; content: ""; }
 .statement-band .section-shell { position: relative; z-index: 1; }
 .statement-band p { max-width: none; margin: 0; font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: clamp(1.65rem, 3vw, 3.2rem); font-weight: 680; line-height: 1.22; letter-spacing: -0.028em; }
 .statement-band [data-home-statement] { font-size: clamp(2.25rem, 4.2vw, 4.1rem); }
@@ -347,7 +342,7 @@ html[lang="zh-CN"] .news-detail [data-news-language="zh-CN"] { display: block; }
 .opening-link { display: inline-flex; align-items: center; gap: 0.6rem; width: fit-content; margin-top: auto; color: var(--teal); font-size: 0.95rem; font-weight: 800; text-decoration: none; }
 .opening-link:hover { text-decoration: underline; }
 .opening-link span { font-size: 1.2rem; line-height: 1; }
-.join-section { position: relative; overflow: hidden; padding-block: var(--space-5); color: var(--white); background: linear-gradient(115deg, #0a3977, #1469b0); }.join-section::before { position: absolute; inset: 0 0 0 auto; width: min(64%, 62rem); background: url("images/shared/neural-circuit-pattern.svg") right center / contain no-repeat; opacity: 0.38; content: ""; pointer-events: none; }.join-layout { position: relative; z-index: 1; display: grid; gap: 2rem; }.join-layout h2 { max-width: 8ch; margin-bottom: 0; }.join-layout p { max-width: 33rem; font-size: 1.15rem; }.join-layout .button { margin-top: 0.75rem; }
+.join-section { position: relative; overflow: hidden; padding-block: var(--space-5); color: var(--white); background: linear-gradient(120deg, #0b4ba0, #1469d8); }.join-section::before { position: absolute; right: 4%; bottom: -9rem; width: 24rem; aspect-ratio: 1; border: 1px solid #80d9ff66; border-radius: 50%; content: ""; }.join-layout { position: relative; z-index: 1; display: grid; gap: 2rem; }.join-layout h2 { max-width: 8ch; margin-bottom: 0; }.join-layout p { max-width: 33rem; font-size: 1.15rem; }.join-layout .button { margin-top: 0.75rem; }
 .join-section .eyebrow { color: var(--lime); }
 .recruitment-page { max-width: 60rem; padding-block: var(--space-6); }.recruitment-header { max-width: 48rem; }.recruitment-header h1 { max-width: 14ch; }.recruitment-intro { max-width: 45rem; color: var(--muted); font-size: 1.08rem; }.recruitment-section { padding: 1.75rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); box-shadow: 0 7px 20px rgba(24, 88, 162, 0.045); }.recruitment-section + .recruitment-section { margin-top: 1.25rem; }.recruitment-section h2 { margin-bottom: 1rem; font-size: clamp(1.55rem, 3vw, 2.25rem); }.recruitment-section h3 { margin: 1.5rem 0 0.6rem; font-size: 1.1rem; }.recruitment-section h3:first-of-type { margin-top: 0; }.recruitment-section p, .recruitment-section li { color: var(--muted); line-height: 1.75; }.recruitment-section ul, .recruitment-section ol { padding-left: 1.35rem; }.recruitment-section li + li { margin-top: 0.6rem; }.recruitment-highlight { color: var(--teal-dark) !important; font-weight: 800; }.application-card { color: var(--white); background: linear-gradient(135deg, #06265c, #0b5ab8); border-color: transparent; }.application-card p, .application-card li { color: #e5f1ff; }.application-card a { color: var(--lime); font-weight: 800; }.application-subject { color: inherit !important; font-weight: 800; }.recruitment-back-link { margin: 2rem 0 0; }
 .contact-grid { display: grid; gap: 1rem; }
@@ -394,7 +389,6 @@ html[lang="zh-CN"] .hero-visual p span { font-size: 0.42em; letter-spacing: 0.08
 html[lang="zh-CN"] .brand-kicker { letter-spacing: 0.1em; }
 html[lang="zh-CN"] .brand-title { letter-spacing: 0.025em; }
 @media (max-width: 30rem) { .brand [data-site-name] { display: none; }.hero h1 { font-size: clamp(2.45rem, 11vw, 3.15rem); } }
-@media (max-width: 44rem) { .statement-band::after, .join-section::before { width: 100%; opacity: 0.2; } }
 @media (max-width: 23rem) { .language-toggle [data-language-code] { display: none; }.language-toggle { min-width: 2.7rem; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
 
