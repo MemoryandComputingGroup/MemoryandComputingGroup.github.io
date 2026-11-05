@@ -29,7 +29,7 @@ const zhText = {
   "Recruitment interests and contact information.": "了解招生招聘方向及联系方式。",
   "Institutional contact information and directions.": "查看课题组地址、联系方式和到访路线。",
   "Redefining the Architecture of Intelligence.": "重塑智能的计算架构。",
-  "Our work connects neuromorphic chips and architectures, hardware–algorithm co-design, and emerging-memory devices.": "我们的研究主要覆盖类脑芯片与架构、硬件—算法协同设计和新型存储器件。",
+  "Our work connects neuromorphic chips and architectures, hardware–algorithm co-design, and emerging-memory devices.": "我们的研究主要覆盖类脑芯片与架构、\n硬件—算法协同设计和新型存储器件。",
   "Themes": "研究主题",
   "Areas of inquiry": "研究领域",
   "The research themes below describe the group’s core areas of inquiry.": "以下为课题组团队的主要研究方向。",
@@ -42,7 +42,6 @@ const zhText = {
   "Browse all publications": "浏览全部研究成果",
   "No publications have been added for this area yet.": "该研究方向暂未添加论文。",
   "Explore area": "了解该方向",
-  "“From devices to algorithms to architectures, we design efficient brain-inspired hardware.”": "“从器件、算法到架构，探索高效的类脑计算硬件。”",
   "Together, Engineering What’s Next.": "携手前行，\n共塑未来。",
   "Meet the research leaders and current group members.": "了解团队的学术带头人和现有成员。",
   "Opportunities": "加入机会",
@@ -193,6 +192,7 @@ const zhContent = {
     summary: "我们贯通类脑芯片与架构设计、硬件—算法协同设计以及新型存储器件研究，致力于构建高效的类脑计算硬件。",
   },
   homeStatement: "另辟计算之道，\n超越既有思维。",
+  researchStatement: "“从器件、算法到架构，\n探索高效的类脑计算硬件。”",
   researchThemes: [
     {
       title: "新型存储器及集成",

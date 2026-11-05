@@ -1,5 +1,5 @@
-import { siteContent as englishContent } from "./content.js?v=20261104-manual-breaks";
-import { languageStorageKey, localizeContent, translate } from "./i18n.js?v=20261105-multiline-copy";
+import { siteContent as englishContent } from "./content.js?v=20261105-heading-polish";
+import { languageStorageKey, localizeContent, translate } from "./i18n.js?v=20261105-heading-polish";
 
 let currentLanguage = "en";
 let siteContent = englishContent;
@@ -68,6 +68,7 @@ function renderContent() {
   setText("[data-hero-title]", siteContent.hero.title);
   setText("[data-hero-summary]", siteContent.hero.summary);
   setText("[data-home-statement]", siteContent.homeStatement);
+  setText("[data-statement]", siteContent.researchStatement);
   setText("[data-join-copy]", siteContent.joinCopy);
   renderInto("[data-job-openings]", siteContent.jobOpenings.map((opening, index) => `
     <article class="opening-card">
