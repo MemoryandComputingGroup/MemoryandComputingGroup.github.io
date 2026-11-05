@@ -1,92 +1,23 @@
-# Fudan Memory and Computing Group Website
+# Fudan Memory and Computing Group
 
-Source repository for the public website of the Fudan Memory and Computing Group.
+**复旦大学存储与计算课题组**
 
-**Live site:** <https://memoryandcomputinggroup.github.io/>
+*Enabling the Future of Memory and Intelligence · 以存算之力，启智能未来*
 
-## Technology
+## Our group
 
-- Static HTML, CSS, and browser-native JavaScript
-- No package installation or framework build is required
-- Leaflet and OpenStreetMap tiles are loaded only on the Contact page to provide the interactive campus map
-- GitHub Pages publishes the site from the `main` branch through the repository workflow
+The Fudan Memory and Computing Group explores how emerging memory technologies can support efficient, brain-inspired computing. Our research connects the behaviour of devices with algorithms, circuits, and chip architectures to advance intelligent hardware.
 
-## Repository structure
+## Our research
 
-```text
-assets/
-  images/
-    home/        Home-page imagery
-    research/    Research-page imagery and icon
-    people/      People-page imagery, portraits, and icon
-    publications/ Publications-page imagery and icon
-    news/        News-page imagery and icon
-    join/        Join-page imagery and icon
-    contact/     Contact-page imagery and icon
-    shared/      Logo and other images used across pages
-  styles.css     Shared responsive styles
-src/
-  content.js     Central editable content: people, profiles, publications, news, contact
-  app.js         Page rendering, navigation, filters, and map setup
-*.html           Public pages and member-profile pages
-build.ps1        Produces the deployable dist/ directory
-```
+- **Emerging memory and integration:** We investigate resistive and ferroelectric memory devices, artificial neurons and synapses, and their integration into computing circuits.
+- **Hardware–algorithm co-design:** We develop algorithms and hardware together for neural-signal and sensory processing under practical device constraints.
+- **Neuromorphic chips:** We study digital, analog, and mixed-signal architectures for efficient spiking and memory-based computation.
 
-## Update content
+## Explore the group
 
-Edit `src/content.js` for routine content changes:
+Visit the [group website](https://memoryandcomputinggroup.github.io/) to learn about our [research](https://memoryandcomputinggroup.github.io/research.html), [people](https://memoryandcomputinggroup.github.io/people.html), [publications](https://memoryandcomputinggroup.github.io/publications.html), and [news](https://memoryandcomputinggroup.github.io/news.html). Information about [joining the group](https://memoryandcomputinggroup.github.io/join.html) and [contacting us](https://memoryandcomputinggroup.github.io/contact.html) is also available there.
 
-- `researchThemes` — the three research-area card titles, descriptions, images, and detail-page content (`url`, `intro`, `focus`)
-- `leadershipGroups` — principal investigators and faculty
-- `peopleGroups` — postdoctoral researchers, students, and alumni
-- `profiles` — leader and student profile-page content
-- `publications` — scholarly outputs; include an official DOI or publisher URL in `url` and an `area` number matching `researchThemes`
-- `news` — dated news cards and their destination pages
-- `joinCopy` and `jobOpenings` — Join Us introduction and opportunity cards
-- `contact` — public contact details and the campus-map marker
+## Website use
 
-Use `\n` inside a content string to force a visible line break. For Chinese text, edit the corresponding translation in `src/i18n.js` as well; each language controls its own breaks. The shared page script applies `white-space: pre-line` only to text elements containing an explicit newline.
-
-Add approved images to the folder for their page under `assets/images/`. Put member portraits in `assets/images/people/` and images used across pages in `assets/images/shared/`. Update the image path in the relevant HTML page or `src/content.js` when adding or replacing a file. Use descriptive filenames and publish photographs only with permission.
-
-Each publication’s `area` is `1`, `2`, or `3` and maps to the research themes in order: Emerging Memory and Integration, Hardware–Algorithm Co-Design for Neuromorphic Computing, and Neuromorphic Chips Based on Emerging Memory. The publications page renders the matching theme title as a colored label.
-
-Each theme’s `url` points to its research-area page (`research-emerging-memory.html`, `research-hardware-algorithm-codesign.html`, or `research-neuromorphic-chips.html`). Those pages render the theme’s `intro` and `focus` items together with every publication whose `area` matches, so edit the theme entry rather than the page shell.
-
-Each research card reserves a 16:10 visual area. A 1600×1000 image is a suitable replacement size; keep the placeholder until an approved image and descriptive alt text are available.
-
-The three `news-*-update.html` files are draft templates. The build excludes them from the public site. To publish a news item, create an approved detail page with a distinct filename and add its dated record to `src/content.js` without `published: false`.
-
-## Build and preview locally
-
-From the repository root in PowerShell:
-
-```powershell
-.\build.ps1
-python -m http.server 8080 --directory dist
-```
-
-Open <http://localhost:8080>. The Contact-page map requires an internet connection because its Leaflet library and OpenStreetMap tiles are delivered from public services.
-
-## Publish changes
-
-```powershell
-git status
-git add <changed-files>
-git commit -m "Describe the change"
-git push origin main
-```
-
-GitHub Actions builds and publishes `dist/` after a push to `main`. After deployment succeeds, review <https://memoryandcomputinggroup.github.io/> in a browser. Do not commit `dist/` unless the repository policy changes.
-
-## Private website analytics
-
-The deployment workflow supplies the site's GA4 measurement ID to `build.ps1`, which inserts the Google tag into every published HTML page; draft news templates are excluded. Update the workflow's `GA4_MEASUREMENT_ID` value if the data stream changes. Keep report access in Google Analytics limited to the site manager and approved authors through property access management. No visitor count is displayed on the public website. For local verification, set `GA4_MEASUREMENT_ID` in the shell before running `build.ps1`.
-
-## Content and privacy checklist
-
-Before publishing, confirm that names, biographies, affiliations, news, publication metadata, photographs, and contact details are approved for public release. Prefer official publisher pages and DOI links for publications. Keep credentials, tokens, private contact details, and unapproved images out of the repository.
-
-## Map attribution
-
-The Contact page uses [Leaflet](https://leafletjs.com/) with map tiles from [OpenStreetMap](https://www.openstreetmap.org/copyright). The marker identifies the Jiangwan Campus location; it is not represented as a room-level geolocation.
+This website is published for visitors seeking information about the group. Its public availability does not make it an open-source project or grant permission to reproduce or adapt the group's original text, images, visual design, or website implementation. Please [contact the group](https://memoryandcomputinggroup.github.io/contact.html) about any proposed reuse.
