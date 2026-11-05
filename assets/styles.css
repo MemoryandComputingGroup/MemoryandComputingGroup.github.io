@@ -379,6 +379,7 @@ html[lang="zh-CN"] .news-detail [data-news-language="zh-CN"] { display: block; }
 html[lang="zh-CN"] body { font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Inter, sans-serif; }
 html[lang="zh-CN"] h1, html[lang="zh-CN"] h2, html[lang="zh-CN"] h3 { line-height: 1.25; letter-spacing: 0; }
 html[lang="zh-CN"] h1, html[lang="zh-CN"] .page-hero h1 { max-width: 15em; }
+html[lang="zh-CN"] .publications-title { font-size: clamp(2.5rem, 4.8vw, 4.2rem); }
 html[lang="zh-CN"] .statement-band p, html[lang="zh-CN"] .join-layout h2 { max-width: none; }
 html[lang="zh-CN"] .eyebrow, html[lang="zh-CN"] .publication-type, html[lang="zh-CN"] .contact-label { letter-spacing: 0.06em; }
 html[lang="zh-CN"] .hero-visual p span { font-size: 0.42em; letter-spacing: 0.08em; }

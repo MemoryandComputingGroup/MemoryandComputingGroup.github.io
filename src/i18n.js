@@ -102,7 +102,7 @@ const zhText = {
   "Selected publications": "代表性论文",
   "Group contact email": "课题组联系邮箱",
   "Email": "电子邮箱",
-  "Ideas That Advance Intelligent Computing.": "思想驱动创新，<br />创新赋能智能计算。",
+  "Ideas That Advance Intelligent Computing.": "思想驱动创新，\n创新赋能智能计算。",
   "Explore our latest research contributions in neuromorphic computing, RRAM, and intelligent chip design.": "探索我们在类脑计算、RRAM 及智能芯片设计领域的最新研究成果。",
   "Selected outputs": "代表性成果",
   "A selection of our recent contributions to neuromorphic computing and intelligent chip technologies.": "这里收录了课题组近期在神经形态计算和智能芯片技术领域的部分成果。",
