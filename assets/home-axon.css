@@ -1,0 +1,112 @@
+.axon-home { background:#020e1a; color:#e9f3ff; font-family:"SF Mono",Menlo,Consolas,"Liberation Mono",monospace; }
+.axon-home .site-header { position:relative; z-index:5; width:calc(100% - 6rem); max-width:none; min-height:5.5rem; border:0; }
+.axon-home .brand { max-width:19rem; font-size:.9rem; line-height:1.3; font-weight:600; }
+.axon-home .brand-mark { flex-basis:3rem; width:3rem; height:3rem; }
+.axon-home .site-nav { gap:clamp(.2rem,1vw,1.1rem); }
+.axon-home .site-nav a { font-size:.88rem; font-weight:400; }
+.axon-home .site-nav a[aria-current="page"] { color:#19a2ff; }
+.axon-home .site-nav .nav-contact { background:#0871e7; box-shadow:none; }
+.axon-home .language-toggle { color:#e9f3ff; background:transparent; border-color:#243d57; font-weight:400; }
+.axon-home .language-toggle:hover,.axon-home .language-toggle[aria-expanded="true"] { background:#10283c; }
+.axon-home .menu-button span:not(.visually-hidden) { background:#e9f3ff; }
+.synaptic-hero { position:relative; min-height:calc(100svh - 5.5rem); isolation:isolate; overflow:hidden; }
+.synaptic-art { position:absolute; z-index:-1; inset:-5.5rem 0 0; background:#020e1a url('images/home/synaptic-field-v2.png') center center / cover no-repeat; }
+.synaptic-art canvas { display:block; width:100%; height:100%; }
+.research-index { position:absolute; top:4rem; left:5.2%; width:17rem; padding-left:1.7rem; border-left:1px solid #1a354b; }
+.research-index-label,.synaptic-kicker { color:#42afff; font-size:.83rem; letter-spacing:.02em; text-transform:uppercase; }
+.research-index-label { margin-bottom:1.5rem; }
+.research-index nav { display:grid; gap:1.3rem; }
+.research-index nav a { display:flex; justify-content:space-between; gap:1rem; color:#eff6ff; font-size:.84rem; line-height:1.45; text-decoration:none; }
+.research-index nav a span { color:#9cccf5; }
+.research-index nav a:hover { color:#55b9ff; }
+.synaptic-copy { position:absolute; right:5.5%; bottom:12%; width:min(39%,36rem); }
+.synaptic-kicker { margin:0 0 1.3rem; }
+.synaptic-kicker::before { content:""; display:inline-block; width:2rem; height:1px; margin:0 .8rem .3rem 0; background:#42afff; }
+.axon-home .synaptic-copy h1 { max-width:18ch; margin:0 0 1.4rem; color:#f0f6ff; background:none; -webkit-text-fill-color:currentColor; font:400 clamp(2rem,3.15vw,3.15rem)/1.23 "SF Mono",Menlo,Consolas,monospace; letter-spacing:-.035em; }
+.synaptic-summary { max-width:37rem; margin:0; color:#d1dfed; font-size:clamp(.92rem,1.15vw,1.1rem); line-height:1.6; }
+.synaptic-actions { display:flex; align-items:center; flex-wrap:wrap; gap:1.5rem 2.5rem; margin-top:2rem; font-size:.88rem; }
+.synaptic-primary { padding:.85rem 1.1rem; color:#fff; background:#0871e7; border-radius:.3rem; text-decoration:none; }
+.synaptic-primary:hover { background:#1686fa; color:#fff; }
+.synaptic-secondary { color:#fff; text-underline-offset:.4rem; }
+.axon-home .site-footer { background:#020e1a; border-top:1px solid #18324a; color:#9bb2c8; }
+@media (max-width: 63.99rem) {
+ .axon-home .site-header { width:calc(100% - 2.5rem); }
+ .axon-home .site-nav { background:#071a2c; border-color:#28455f; }
+ .axon-home .site-nav a { color:#e9f3ff; }
+ .research-index { left:3%; width:14rem; padding-left:1rem; }
+ .synaptic-copy { right:4%; width:45%; }
+}
+@media (max-width: 46rem) {
+ .axon-home .site-header { min-height:4.5rem; }
+ .axon-home .brand [data-site-name] { display:inline; font-size:.7rem; }
+ .axon-home .brand-mark { flex-basis:2.5rem; width:2.5rem; height:2.5rem; }
+ .synaptic-hero { display:flex; flex-direction:column; justify-content:flex-end; min-height:calc(100svh - 4.5rem); padding:21rem 1.5rem 3rem; }
+ .synaptic-art { inset:-4.5rem 0 0; background-size:auto 70%; background-position:37% top; }
+ .research-index { position:relative; top:auto; left:auto; width:auto; max-width:30rem; order:2; margin-top:2.75rem; }
+ .research-index nav { gap:.8rem; }
+ .synaptic-copy { position:relative; right:auto; bottom:auto; width:100%; max-width:36rem; }
+ .axon-home .synaptic-copy h1 { font-size:clamp(1.85rem,8vw,2.7rem); }
+ .synaptic-summary { font-size:.9rem; }
+ .synaptic-actions { margin-top:1.5rem; }
+}
+/* Match the original site's typography. */
+.axon-home, .axon-home .synaptic-copy h1 { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.axon-home .synaptic-copy h1 { font-weight:700; letter-spacing:-.035em; }
+.synaptic-art { background-image:none; }
+.synaptic-art::before { content:""; position:absolute; inset:0; background:url('images/home/synaptic-field-v2.png') center / cover no-repeat; opacity:.23; }
+.synaptic-art canvas { position:relative; }
+@media (max-width:46rem) { .synaptic-art::before { background-size:auto 70%; background-position:37% top; } }
+.synaptic-art.image-fallback::before { opacity: 1; }
+/* Navigation follows the original light homepage controls. */
+.axon-home .language-toggle { color:#082d68; background:#fff; border-color:#cbdbf0; font-weight:800; }
+.axon-home .language-toggle:hover, .axon-home .language-toggle[aria-expanded="true"] { background:#eaf4ff; border-color:#80b9ee; }
+@media (min-width:64rem) {
+ .axon-home .site-nav { gap:.2rem; padding:.15rem; border:1px solid #c9e0fa; border-radius:.85rem; background:#f3f8ff; box-shadow:none; }
+ .axon-home .site-nav a { padding:.5rem .7rem; color:#071b36; font-size:.95rem; font-weight:700; }
+ .axon-home .site-nav a:hover, .axon-home .site-nav a[aria-current="page"] { color:#1469d8; }
+ .axon-home .site-nav .nav-contact { margin-left:.4rem; color:#fff; background:linear-gradient(135deg,#187df2,#082d68); box-shadow:0 8px 18px rgba(20,105,216,.24); }
+ .axon-home .site-nav .nav-contact:hover { color:#fff; }
+}
+/* Homepage typography and actions. */
+.research-index { width: min(22rem, 27vw); }
+.research-index-label { font-size: 1.22rem; font-weight: 800; letter-spacing: .06em; }
+.research-index nav { gap: 1.45rem; }
+.research-index nav a { font-size: clamp(.96rem, 1.05vw, 1.08rem); line-height: 1.45; font-weight: 600; }
+.synaptic-copy { width: min(41%, 42rem); }
+.synaptic-kicker { margin-bottom: 1.2rem; font-size: clamp(.95rem, 1.05vw, 1.12rem); font-weight: 700; letter-spacing: .045em; line-height: 1.4; }
+.axon-home .synaptic-copy h1 { max-width: 16ch; margin-bottom: 1.35rem; font-size: clamp(2.35rem, 3.7vw, 4.15rem); line-height: 1.1; }
+.synaptic-summary { max-width: 38rem; font-size: clamp(1.04rem, 1.25vw, 1.22rem); line-height: 1.65; }
+.synaptic-actions { font-size: 1rem; }
+.synaptic-primary { display: inline-flex; align-items: center; justify-content: center; gap: 1.15rem; min-height: 3.4rem; padding: .85rem 1.2rem; color: #fff; background: linear-gradient(125deg, #187df2, #0956b7); border: 1px solid #67b3ff; border-radius: .45rem; box-shadow: 0 6px 18px rgba(0, 80, 180, .24), inset 0 1px rgba(255, 255, 255, .15); font-weight: 700; transition: background 160ms ease, box-shadow 160ms ease, transform 160ms ease; }
+.synaptic-primary:hover { color: #fff; background: linear-gradient(125deg, #3294ff, #0962d0); box-shadow: 0 8px 22px rgba(0, 105, 220, .35); transform: translateY(-2px); }
+.synaptic-primary-arrow { font-size: 1.2rem; line-height: 1; transition: transform 160ms ease; }
+.synaptic-primary:hover .synaptic-primary-arrow { transform: translateX(.2rem); }
+.synaptic-secondary { font-weight: 700; }
+@media (max-width: 63.99rem) and (min-width: 46.01rem) {
+ .research-index { width: 16rem; }
+ .synaptic-copy { width: 46%; }
+}
+@media (max-width: 46rem) {
+ .research-index { width: auto; }
+ .research-index-label { font-size: 1.15rem; }
+ .research-index nav { gap: 1rem; }
+ .research-index nav a { font-size: 1rem; }
+ .synaptic-copy { width: 100%; }
+ .synaptic-kicker { font-size: .95rem; }
+ .axon-home .synaptic-copy h1 { max-width: 18ch; font-size: clamp(2rem, 8vw, 2.8rem); }
+ .synaptic-summary { font-size: 1rem; }
+ .synaptic-actions { font-size: .95rem; }
+}
+/* Give the Chinese introduction balanced, meaningful line breaks. */
+html[lang="zh-CN"] .axon-home .synaptic-copy { bottom: 10%; }
+html[lang="zh-CN"] .axon-home .synaptic-kicker { margin-bottom: 1.5rem; }
+html[lang="zh-CN"] .axon-home .synaptic-copy h1 { max-width: none; margin-bottom: 1.55rem; font-size: clamp(2.1rem, 3.55vw, 4rem); line-height: 1.22; letter-spacing: 0; }
+html[lang="zh-CN"] .axon-home .synaptic-copy h1 span { display: block; white-space: nowrap; }
+html[lang="zh-CN"] .axon-home .synaptic-summary { max-width: 23em; font-size: clamp(1.08rem, 1.3vw, 1.25rem); line-height: 1.9; }
+html[lang="zh-CN"] .axon-home .synaptic-actions { margin-top: 2.2rem; }
+@media (max-width: 46rem) {
+ html[lang="zh-CN"] .axon-home .synaptic-copy { bottom: auto; }
+ html[lang="zh-CN"] .axon-home .synaptic-copy h1 { font-size: clamp(1.65rem, 7vw, 2.6rem); }
+ html[lang="zh-CN"] .axon-home .synaptic-summary { font-size: 1rem; line-height: 1.8; }
+ html[lang="zh-CN"] .axon-home .synaptic-actions { margin-top: 1.5rem; }
+}
