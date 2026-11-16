@@ -11,6 +11,7 @@
 .axon-home .menu-button span:not(.visually-hidden) { background:#e9f3ff; }
 .synaptic-hero { position:relative; min-height:calc(100svh - 5.5rem); isolation:isolate; overflow:hidden; }
 .synaptic-art { position:absolute; z-index:-1; inset:-5.5rem 0 0; background:#020e1a url('images/home/synaptic-field-v3.png') center center / cover no-repeat; }
+html.synaptic-loading .synaptic-art { visibility:hidden; }
 .synaptic-art canvas { display:block; width:100%; height:100%; }
 .research-index { position:absolute; top:4rem; left:5.2%; width:17rem; padding-left:1.7rem; border-left:1px solid #1a354b; }
 .research-index-label,.synaptic-kicker { color:#42afff; font-size:.83rem; letter-spacing:.02em; text-transform:uppercase; }

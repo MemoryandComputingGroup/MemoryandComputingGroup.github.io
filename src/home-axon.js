@@ -1,7 +1,11 @@
 (() => {
   const canvas = document.querySelector('#synaptic-particles');
   const ctx = canvas && canvas.getContext('2d');
-  if (!ctx) return;
+  if (!ctx) {
+    canvas?.parentElement.classList.add('image-fallback');
+    document.documentElement.classList.remove('synaptic-loading');
+    return;
+  }
   const art = canvas.parentElement;
   const image = new Image();
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -15,8 +19,9 @@
     const brush = buffer.getContext('2d', { willReadFrequently: true });
     brush.drawImage(image, 0, 0, buffer.width, buffer.height);
     try { source = { pixels: brush.getImageData(0, 0, buffer.width, buffer.height).data, width: buffer.width, height: buffer.height }; }
-    catch { art.classList.add('image-fallback'); return; }
+    catch { art.classList.add('image-fallback'); return false; }
     resize();
+    return true;
   }
   function resize() {
     if (frame) { cancelAnimationFrame(frame); frame = 0; }
@@ -106,7 +111,22 @@
   window.addEventListener('resize', resize, { passive:true });
   document.addEventListener('visibilitychange', start);
   motion.addEventListener('change', () => { if (frame) cancelAnimationFrame(frame); frame = 0; previous = 0; draw(0); });
-  image.addEventListener('load', () => { sample(); if (!motion.matches && !frame) start(); });
+  image.addEventListener('load', async () => {
+    try {
+      if (image.decode) await image.decode();
+      if (sample()) {
+        art.classList.remove('image-fallback');
+        if (!motion.matches && !frame) start();
+      }
+    } catch {
+      art.classList.add('image-fallback');
+    }
+    document.documentElement.classList.remove('synaptic-loading');
+  });
+  image.addEventListener('error', () => {
+    art.classList.add('image-fallback');
+    document.documentElement.classList.remove('synaptic-loading');
+  });
   image.src = 'assets/images/home/synaptic-field-v3.png';
   const labels = document.querySelectorAll('[data-home-research] a');
   const titles = {

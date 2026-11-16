@@ -3,6 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      document.documentElement.classList.add('synaptic-loading');
+      setTimeout(() => {
+        if (document.documentElement.classList.contains('synaptic-loading')) {
+          document.querySelector('.synaptic-art')?.classList.add('image-fallback');
+          document.documentElement.classList.remove('synaptic-loading');
+        }
+      }, 8000);
+    </script>
+    <link rel="preload" as="image" href="assets/images/home/synaptic-field-v3.png" />
     <link rel="icon" href="assets/images/shared/lab-logo.png" type="image/png" />
     <meta name="description" content="Memory and Computing Group researches neuromorphic hardware for efficient artificial intelligence at Fudan University." />
     <meta property="og:title" content="Fudan Memory and Computing Group — Enabling the Future of Memory and Intelligence" />
@@ -10,9 +20,9 @@
     <meta property="og:type" content="website" />
     <title>Fudan Memory and Computing Group — Enabling the Future of Memory and Intelligence</title>
     <link rel="stylesheet" href="assets/styles.css?v=20261105-heading-polish" />
-    <link rel="stylesheet" href="assets/home-axon.css?v=6" />
+    <link rel="stylesheet" href="assets/home-axon.css?v=7" />
     <script type="module" src="src/app.js?v=20261105-heading-polish"></script>
-    <script defer src="src/home-axon.js?v=8"></script>
+    <script defer src="src/home-axon.js?v=9"></script>
   </head>
   <body class="axon-home">
     <a class="skip-link" href="#main-content">Skip to content</a>
