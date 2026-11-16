@@ -107,7 +107,7 @@
   document.addEventListener('visibilitychange', start);
   motion.addEventListener('change', () => { if (frame) cancelAnimationFrame(frame); frame = 0; previous = 0; draw(0); });
   image.addEventListener('load', () => { sample(); if (!motion.matches && !frame) start(); });
-  image.src = 'assets/images/home/synaptic-field-v2.png';
+  image.src = 'assets/images/home/synaptic-field-v3.png';
   const labels = document.querySelectorAll('[data-home-research] a');
   const titles = {
     en:['Emerging Memory and Integration','Hardware–Algorithm Co-Design for Neuromorphic Computing','Neuromorphic Chips Based on Emerging Memory'],
