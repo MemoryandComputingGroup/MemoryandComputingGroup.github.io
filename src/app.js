@@ -1,4 +1,4 @@
-import { siteContent as englishContent } from "./content.js?v=20261117-home-title";
+import { siteContent as englishContent } from "./content.js?v=20261117-sleep-area";
 import { languageStorageKey, localizeContent, translate } from "./i18n.js?v=20261117-home-title";
 
 let currentLanguage = "en";

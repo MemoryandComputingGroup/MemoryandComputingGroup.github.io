@@ -218,7 +218,7 @@ export const siteContent = {
       type: "Conference Paper",
       authors: "Jingyi Chen, Fangduo Zhu, Zhicheng Li, Zihan Xu, Yiwen Zhu, Jingsong Zhang, Jinhao Liang, Xumeng Zhang, and Qi Liu",
       journal: "2026 IEEE International Symposium on Circuits and Systems (ISCAS)",
-      area: 3,
+      area: 2,
       title: "An RRAM-based Neuromorphic Sleep Monitoring System for Energy-efficient Edge Healthcare Applications",
       year: "2026",
       doi: "10.1109/ISCAS66217.2026.11562757",
