@@ -117,11 +117,11 @@
     const chinese = document.documentElement.lang === 'zh-CN';
     labels.forEach((link, i) => { link.firstChild.textContent = titles[chinese ? 'zh-CN' : 'en'][i] + ' '; });
     const heading = document.querySelector('[data-hero-title]');
-    if (chinese && heading?.textContent === '面向高效人工智能的类脑硬件。') {
+    if (chinese && heading?.textContent === '面向高效人工智能的新型硬件。') {
       const first = document.createElement('span');
       const second = document.createElement('span');
       first.textContent = '面向高效人工智能的';
-      second.textContent = '类脑硬件。';
+      second.textContent = '新型硬件。';
       heading.replaceChildren(first, second);
     }
   };

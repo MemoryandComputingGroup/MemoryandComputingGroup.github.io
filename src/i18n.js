@@ -188,7 +188,7 @@ const zhText = {
 
 const zhContent = {
   hero: {
-    title: "面向高效人工智能的类脑硬件。",
+    title: "面向高效人工智能的新型硬件。",
     summary: "我们贯通类脑芯片与架构设计、硬件—算法协同设计以及新型存储器件研究，致力于构建高效的类脑计算硬件。",
   },
   homeStatement: "另辟计算之道，\n超越既有思维。",
