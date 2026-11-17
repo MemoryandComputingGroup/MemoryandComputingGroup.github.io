@@ -110,7 +110,7 @@ export const siteContent = {
       sections: [
         { heading: "Introduction", type: "biography", entries: [
           "Xianghui Li is currently a Ph.D. student in the Memory and Computing Group at Fudan University. He received his Bachelor of Engineering degree in Integrated Circuit Design and Integrated Systems from Anhui University in 2026. He began his doctoral studies at Fudan University in 2026.",
-          "Honors and Awards: He has received 5 honors and awards, including the National Scholarship.",
+          "Honors and Awards: He has received 5 honors and awards.",
           "Interests: In his daily life, he enjoys traveling, photography, and fitness.",
           "Personal Slogan: Stay hungry, stay foolish."
         ] },
