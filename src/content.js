@@ -62,6 +62,7 @@ export const siteContent = {
   peopleGroups: [
     { title: "Postdoctoral Researchers", members: [{ name: "Postdoctoral researcher", role: "Profile to be confirmed", placeholder: true }] },
     { title: "Doctoral Students", members: [
+      {"name": "Yiheng Fang", "role": "Doctoral student", "image": "assets/images/people/yiheng-fang.png", "alt": "Portrait of Yiheng Fang", "profile": "yiheng-fang.html"},
       { name: "Chenyang Li", role: "Doctoral student", image: "assets/images/people/chenyang-li.jpg", alt: "Portrait of Chenyang Li", profile: "chenyang-li.html" },
       { name: "Yiwen Zhu", role: "Doctoral student", image: "assets/images/people/Yiwen%20Zhu.jpg", alt: "Portrait of Yiwen Zhu", profile: "yiwen-zhu.html" },
       { name: "Xianghui Li", role: "Doctoral student", image: "assets/images/people/xianghui-li.jpg", alt: "Portrait of Xianghui Li", profile: "xianghui-li.html" },
@@ -79,6 +80,7 @@ export const siteContent = {
     ] },
   ],
   profiles: {
+    person_yiheng_fang: {"kind": "student", "name": "Yiheng Fang", "role": "Doctoral student", "affiliation": "Memory and Computing Group · Fudan University", "image": "assets/images/people/yiheng-fang.png", "alt": "Portrait of Yiheng Fang", "email": "25113040131@m.fudan.edu.cn", "sections": [{"heading": "Introduction", "type": "biography", "entries": ["Yiheng Fang is currently a doctoral student in the Memory and Computing Group at Fudan University.\nHe received his Bachelor of Engineering degree in Electronic Science and Technology from the University of Electronic Science and Technology of China (UESTC) in 2025.\nHe began his doctoral studies at Fudan University in 2025."]}, {"heading": "Research interests", "type": "list", "entries": ["Neuromorphic chip architecture design"]}]},
     chenyangLi: {
       kind: "student", name: "Chenyang Li", role: "Doctoral student", affiliation: "Memory and Computing Group · Fudan University", image: "assets/images/people/chenyang-li.jpg", alt: "Portrait of Chenyang Li", email: "xumengzhang@fudan.edu.cn", emailLabel: "Group contact email",
       sections: [

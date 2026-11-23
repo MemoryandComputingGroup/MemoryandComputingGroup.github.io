@@ -229,6 +229,7 @@ const zhContent = {
     },
   ],
   profiles: {
+    person_yiheng_fang: {"name": "方懿恒", "role": "博士研究生", "alt": "方懿恒肖像", "sections": [{"entries": ["方懿恒现为复旦大学存储与计算课题组（Memory and Computing Group）博士研究生。\n他于2025年在电子科技大学获得电子科学与技术的工学学士学位。\n他于2025年开始在复旦大学攻读博士学位。"]}, {"entries": ["类脑芯片架构设计"]}]},
     chenyangLi: { sections: [
       { entries: ["Chenyang Li 是复旦大学存储与计算课题组的博士研究生。其参与发表的论文涉及面向神经脉冲分选的片上网络脉冲架构、基于 RRAM 的脉冲处理器，以及低漏电数字电路。以下方向根据已发表论文归纳，仅供参考。"] },
       { entries: ["脉冲神经网络处理器与片上通信", "基于 RRAM 的神经形态计算架构", "低功耗数字与混合信号电路"] },
@@ -283,6 +284,10 @@ const zhContent = {
   },
 };
 
+// Automatically added profile card translations.
+const addedProfileCards = {
+  "yiheng-fang.html": {"name": "方懿恒", "role": "博士研究生", "alt": "方懿恒肖像"},};
+
 const localizeValue = (value, override) => {
   if (typeof value === "string") return override ?? zhText[value] ?? value;
   if (Array.isArray(value)) return value.map((entry, index) => localizeValue(entry, override?.[index]));
@@ -291,4 +296,12 @@ const localizeValue = (value, override) => {
 };
 
 export const translate = (value, language) => language === "zh-CN" ? (zhText[value] ?? value) : value;
-export const localizeContent = (content, language) => language === "zh-CN" ? localizeValue(content, zhContent) : content;
+export const localizeContent = (content, language) => {
+  if (language !== "zh-CN") return content;
+  const localized = localizeValue(content, zhContent);
+  localized.peopleGroups.forEach((group) => group.members.forEach((member) => {
+    const translation = addedProfileCards[member.profile];
+    if (translation) Object.assign(member, translation);
+  }));
+  return localized;
+};
