@@ -27,7 +27,7 @@ export const siteContent = {
       image: "assets/images/research/Hardware%E2%80%93Algorithm%20Co-Design%20for%20Neuromorphic%20Computing_photo.jpg",
       imageAlt: "Abstract network of connected nodes representing hardware–algorithm co-design",
       url: "research-hardware-algorithm-codesign.html",
-      description: "Algorithms, circuits, and architectures are developed together so that each makes effective use of the others. Applications include spike sorting, temporal prediction, and sensory processing under practical hardware constraints.",
+      description: "Algorithms, circuits, and architectures are developed together so that each makes effective use of the others. Applications include spike sorting, temporal prediction, and sensory processings under practical hardware constraints.",
       intro: "We develop algorithms, circuits, and architectures together so that each makes effective use of the others. Work spans spike sorting, sensory processing, robotic control, and human–machine interfaces, with mapping and training strategies designed around real device constraints.",
       focus: [
         { title: "Spike sorting and neural interfaces", description: "Sparse and residual spiking networks, threshold-based temporal encoding, and hardware-aware training bring high-accuracy spike sorting to low-latency, low-energy platforms." },
