@@ -97,10 +97,10 @@ function renderContent() {
     return `<section class="leadership-section" aria-labelledby="${escapeHtml(groupId)}"><div class="section-heading people-heading"><p class="eyebrow">Leadership</p><h2 id="${escapeHtml(groupId)}">${escapeHtml(group.title)}</h2></div><div class="leadership-grid">${group.members.map(leaderCardMarkup).join("")}</div></section>`;
   }).join(""));
   const peopleGroups = siteContent.peopleGroups
-    .map((group) => ({ ...group, members: group.members.filter((person) => !person.placeholder) }))
+    .map((group, index) => ({ ...group, compactCards: ["Doctoral Students", "Graduate Students", "Alumni"].includes(englishContent.peopleGroups[index]?.title), members: group.members.filter((person) => !person.placeholder) }))
     .filter((group) => group.members.length > 0);
   renderInto("[data-people-groups]", peopleGroups.map((group, index) => `
-    <section class="people-group" aria-labelledby="people-group-${index + 1}"><div class="group-heading"><h2 id="people-group-${index + 1}">${escapeHtml(group.title)}</h2></div><div class="member-grid">${group.members.map((person) => `
+    <section class="people-group${group.compactCards ? " people-group-compact" : ""}" aria-labelledby="people-group-${index + 1}"><div class="group-heading"><h2 id="people-group-${index + 1}">${escapeHtml(group.title)}</h2></div><div class="member-grid">${group.members.map((person) => `
       <article class="member-card"><img class="member-photo" src="${escapeHtml(person.image)}" alt="${escapeHtml(person.alt)}" width="640" height="800" loading="lazy" /><div class="member-card-copy"><h3>${person.profile ? `<a href="${escapeHtml(person.profile)}">${escapeHtml(person.name)}</a>` : escapeHtml(person.name)}</h3><p>${escapeHtml(person.role)}</p>${person.profile ? `<a class="member-profile-link" href="${escapeHtml(person.profile)}">View profile <span aria-hidden="true">→</span></a>` : ""}</div></article>`).join("")}</div></section>`).join(""));
 
   const profileKey = document.body.dataset.profile;

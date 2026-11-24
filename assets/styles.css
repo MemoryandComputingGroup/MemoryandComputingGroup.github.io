@@ -398,6 +398,16 @@ html[lang="zh-CN"] .hero-visual p span { font-size: 0.42em; letter-spacing: 0.08
 @media (max-width: 23rem) { .language-toggle [data-language-code] { display: none; }.language-toggle { min-width: 2.7rem; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
 
+/* Smaller member portraits for students and alumni. */
+.people-group-compact .member-profile-link { font-size: 1.05rem; }
+.people-group-compact .member-profile-link span { font-size: 1em; }
+@media (min-width: 44rem) {
+  .people-group-compact .member-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 64rem) {
+  .people-group-compact .member-grid { width: 90%; margin-inline: auto; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
 /* Present the postdoctoral listing as a centered, single-column row. */
 #postdoctoral-researchers .member-grid {
   grid-template-columns: minmax(0, 1fr);
