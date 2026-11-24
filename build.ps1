@@ -44,4 +44,11 @@ New-Item -ItemType Directory -Path $assetsOutput, $sourceOutput | Out-Null
 Copy-Item -Recurse -Force (Join-Path (Join-Path $projectRoot "assets") "*") $assetsOutput
 Copy-Item -Recurse -Force (Join-Path (Join-Path $projectRoot "src") "*") $sourceOutput
 
+# Give every local asset URL a content-based version in the deployment copy.
+$python = "python"
+& $python (Join-Path $projectRoot "version_site_assets.py") $outputRoot
+if ($LASTEXITCODE -ne 0) {
+  throw "Asset versioning failed."
+}
+
 Write-Output "Static site prepared in $outputRoot"
