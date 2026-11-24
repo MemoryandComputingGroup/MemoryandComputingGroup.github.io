@@ -62,12 +62,12 @@ export const siteContent = {
   peopleGroups: [
     { title: "Postdoctoral Researchers", members: [{ name: "Postdoctoral researcher", role: "Profile to be confirmed", placeholder: true }] },
     { title: "Doctoral Students", members: [
-      {"name": "Yifan Li", "role": "Doctoral student", "image": "assets/images/people/yifan-li.jpg", "alt": "Portrait of Yifan Li", "profile": "yifan-li.html"},
-      {"name": "Jiajun Ji", "role": "Doctoral student", "image": "assets/images/people/jiajun-ji.jpg", "alt": "Portrait of Jiajun Ji", "profile": "jiajun-ji.html"},
-      {"name": "Siyuan Ouyang", "role": "Doctoral student", "image": "assets/images/people/siyuan-ouyang.jpg", "alt": "Portrait of Siyuan Ouyang", "profile": "siyuan-ouyang.html"},
-      {"name": "Yiheng Fang", "role": "Doctoral student", "image": "assets/images/people/yiheng-fang.png", "alt": "Portrait of Yiheng Fang", "profile": "yiheng-fang.html"},
       { name: "Chenyang Li", role: "Doctoral student", image: "assets/images/people/chenyang-li.jpg", alt: "Portrait of Chenyang Li", profile: "chenyang-li.html" },
       { name: "Yiwen Zhu", role: "Doctoral student", image: "assets/images/people/yiwen-zhu.jpg", alt: "Portrait of Yiwen Zhu", profile: "yiwen-zhu.html" },
+      {"name": "Siyuan Ouyang", "role": "Doctoral student", "image": "assets/images/people/siyuan-ouyang.jpg", "alt": "Portrait of Siyuan Ouyang", "profile": "siyuan-ouyang.html"},
+      {"name": "Yifan Li", "role": "Doctoral student", "image": "assets/images/people/yifan-li.jpg", "alt": "Portrait of Yifan Li", "profile": "yifan-li.html"},
+      {"name": "Jiajun Ji", "role": "Doctoral student", "image": "assets/images/people/jiajun-ji.jpg", "alt": "Portrait of Jiajun Ji", "profile": "jiajun-ji.html"},
+      {"name": "Yiheng Fang", "role": "Doctoral student", "image": "assets/images/people/yiheng-fang.png", "alt": "Portrait of Yiheng Fang", "profile": "yiheng-fang.html"},
       { name: "Xianghui Li", role: "Doctoral student", image: "assets/images/people/xianghui-li.jpg", alt: "Portrait of Xianghui Li", profile: "xianghui-li.html" },
       { name: "Doctoral student", role: "Profile to be confirmed", placeholder: true },
     ] },
