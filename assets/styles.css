@@ -191,7 +191,7 @@ html[lang="zh-CN"] .brand [data-site-name] { font-family: Inter, ui-sans-serif, 
 .profile-hero--student .profile-portrait { width: min(100%, 19rem); }
 .profile-hero-copy { min-width: 0; }
 .profile-hero .eyebrow { color: var(--lime); font-size: 0.83rem; line-height: 1.5; }
-.profile-hero h1 { max-width: none; margin-bottom: 1.35rem; font-size: clamp(3.2rem, 5.7vw, 5.6rem); }
+.profile-hero h1 { max-width: none; margin-bottom: calc(1.35rem - 0.15em); padding-bottom: 0.15em; font-size: clamp(3.2rem, 5.7vw, 5.6rem); }
 .profile-affiliation { max-width: 40rem; margin-bottom: 2rem; color: #d5e8ff; font-size: clamp(1.05rem, 1.7vw, 1.25rem); line-height: 1.65; }
 .profile-email-label { margin-bottom: 0.55rem; color: var(--lime); font-size: 0.8rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
 .profile-email { display: inline-flex; align-items: center; gap: 1rem; max-width: 100%; overflow-wrap: anywhere; padding: 0.85rem 1.1rem; color: var(--white); border: 1px solid #ffffff66; border-radius: 0.45rem; font-weight: 800; text-decoration: none; transition: background 180ms ease, border-color 180ms ease; }
@@ -215,6 +215,7 @@ html[lang="zh-CN"] .brand [data-site-name] { font-family: Inter, ui-sans-serif, 
 .student-profile-page .profile-hero { color: #173654; background: radial-gradient(circle at 94% 8%, #cceaff 0, transparent 31%), radial-gradient(circle at 4% 96%, #d9f1ff 0, transparent 36%), linear-gradient(125deg, #f7fcff, #e9f6ff); border-color: #c7e2f5; border-radius: 1.4rem; box-shadow: 0 20px 44px rgba(43, 105, 153, 0.1); }
 .student-profile-page .profile-hero::after { right: -7rem; bottom: -15rem; border-color: #62b1e82e; box-shadow: 0 0 0 4rem #62b1e80a, 0 0 0 8rem #62b1e807; }
 .student-profile-page .profile-portrait { width: min(100%, 17rem); background: #dceeff; border: 0.45rem solid #fff; border-radius: 1rem; box-shadow: 0 15px 30px rgba(39, 93, 137, 0.16); }
+.student-profile-page:is([data-profile="person_jiajun_ji"], [data-profile="person_yifan_li"]) .profile-portrait img { aspect-ratio: auto; object-fit: contain; }
 .student-profile-page .profile-hero .eyebrow { display: inline-block; padding: 0.45rem 0.8rem; color: #155f9f; background: #dceeff; border-radius: 999px; letter-spacing: 0.09em; }
 .student-profile-page .profile-hero h1 { color: #153b61; text-wrap: balance; }
 .student-profile-page .profile-affiliation { color: #415b70; }
@@ -399,6 +400,8 @@ html[lang="zh-CN"] .hero-visual p span { font-size: 0.42em; letter-spacing: 0.08
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
 
 /* Smaller member portraits for students and alumni. */
+.people-group-compact .member-card { border: 1px solid transparent; border-radius: .8rem; background: #fff; box-shadow: 0 6px 22px rgba(20, 56, 100, .11); }
+.people-group-compact .member-card:hover { border-color: #c4d9ef; box-shadow: 0 10px 25px rgba(20, 56, 100, .15); }
 .people-group-compact .member-profile-link { font-size: 1.05rem; }
 .people-group-compact .member-profile-link span { font-size: 1em; }
 @media (min-width: 44rem) {
