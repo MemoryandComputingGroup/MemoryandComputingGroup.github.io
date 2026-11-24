@@ -28,6 +28,12 @@ Email: [xumengzhang@fudan.edu.cn](mailto:xumengzhang@fudan.edu.cn) · [Contact p
 
 This repository contains the source for the group's website. The website is published through GitHub Pages.
 
+## Website source
+
+The homepage is `index.html`. Other source pages are organized under `pages/site`, `pages/research`, `pages/people`, and `pages/news`. The build places them at their existing public addresses.
+
+To preview the complete site locally, run `./build.ps1`, then `python -m http.server 9036 --directory dist` from the repository root. Open `http://127.0.0.1:9036/` in a browser. New member profiles created with `add_person.py` are stored in `pages/people`.
+
 ## Website use
 
 This website is published for visitors seeking information about the group. Its public availability does not make it an open-source project or grant permission to reproduce or adapt the group's original text, images, visual design, or website implementation. Please [contact the group](https://memoryandcomputinggroup.github.io/contact.html) about any proposed reuse.

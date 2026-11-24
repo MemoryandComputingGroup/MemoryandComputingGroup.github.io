@@ -7,6 +7,7 @@ import json
 import re
 import shutil
 import socketserver
+import subprocess
 import sys
 import threading
 import webbrowser
@@ -58,7 +59,7 @@ def insert_once(text, needle, replacement):
 def main():
     root = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else ROOT
     content_path, i18n_path = root / "src/content.js", root / "src/i18n.js"
-    template_path = root / "xianghui-li.html"
+    template_path = root / "pages/people/xianghui-li.html"
     if not all(p.is_file() for p in (content_path, i18n_path, template_path)):
         raise ValueError("Run this script from the website directory, or pass the website directory as an argument.")
     content = content_path.read_text(encoding="utf-8")
@@ -116,9 +117,9 @@ def main():
             print("Use lowercase letters, numbers, and single hyphens.")
             continue
         key = "person_" + slug.replace("-", "_")
-        page = root / (slug + ".html")
+        page = root / "pages/people" / (slug + ".html")
         image = root / "assets/images/people" / (slug + photo.suffix.lower())
-        if page.exists() or image.exists() or re.search(r"\b" + re.escape(key) + r"\s*:", content):
+        if any(p.name.lower() == page.name.lower() for p in root.rglob("*.html") if "dist" not in p.relative_to(root).parts and ".git" not in p.relative_to(root).parts) or image.exists() or re.search(r"\b" + re.escape(key) + r"\s*:", content):
             print("That identifier is already in use. Choose another.")
             continue
         break
@@ -192,7 +193,16 @@ const addedProfileCards = {};
             item.unlink(missing_ok=True)
         raise
     print("Profile added. Review the profile and People page in English and Chinese.")
-    handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(root))
+    shell = shutil.which("pwsh") or shutil.which("powershell")
+    if not shell:
+        print("Preview unavailable: PowerShell is required to build the website.")
+        return
+    try:
+        subprocess.run([shell, "-NoProfile", "-File", str(root / "build.ps1")], cwd=root, check=True)
+    except subprocess.CalledProcessError:
+        print("Preview build failed; the new profile files remain available for review.")
+        return
+    handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(root / "dist"))
     with socketserver.TCPServer(("127.0.0.1", 0), handler) as server:
         threading.Thread(target=server.serve_forever, daemon=True).start()
         url = f"http://127.0.0.1:{server.server_address[1]}/{page_url}"

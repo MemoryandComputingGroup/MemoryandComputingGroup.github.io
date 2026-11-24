@@ -9,9 +9,15 @@ if (Test-Path -LiteralPath $outputRoot) {
 
 New-Item -ItemType Directory -Path $outputRoot | Out-Null
 $draftPages = @("news-group-update.html", "news-opportunity-update.html", "news-publication-update.html")
-Get-ChildItem -LiteralPath $projectRoot -Filter "*.html" -File |
-  Where-Object { $_.Name -notin $draftPages } |
-  Copy-Item -Destination $outputRoot -Force
+# Flatten categorized source pages into the existing public URLs.
+$pages = @(Get-ChildItem -LiteralPath $projectRoot -Filter "*.html" -File) +
+  @(Get-ChildItem -LiteralPath (Join-Path $projectRoot "pages") -Filter "*.html" -File -Recurse)
+$pages = @($pages | Where-Object { $_.Name -notin $draftPages })
+$duplicate = $pages | Group-Object Name | Where-Object { $_.Count -gt 1 } | Select-Object -First 1
+if ($duplicate) {
+  throw "Duplicate page name: $($duplicate.Name). Public page names must be unique."
+}
+$pages | Copy-Item -Destination $outputRoot
 
 $measurementId = $env:GA4_MEASUREMENT_ID
 if ($measurementId) {

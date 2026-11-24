@@ -5,7 +5,7 @@ description: Add one or more people to the Memory and Computing Group website fr
 
 # Add group members
 
-Use the existing repository's `add_person.py` as the source of truth. Locate the project root from the current workspace; check `add_person.py`, `src/content.js`, `src/i18n.js` and `xianghui-li.html` exist. Read the current script before running it: its prompts and behavior may have changed. Respect existing changes; do not overwrite, commit, push or publish unrelated work.
+Use the existing repository's `add_person.py` as the source of truth. Locate the project root from the current workspace; check `add_person.py`, `src/content.js`, `src/i18n.js` and `pages/people/xianghui-li.html` exist. Read the current script before running it: its prompts and behavior may have changed. Respect existing changes; do not overwrite, commit, push or publish unrelated work.
 
 ## Prepare each person
 
