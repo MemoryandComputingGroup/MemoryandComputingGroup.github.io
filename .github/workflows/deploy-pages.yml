@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 
@@ -15,10 +16,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -36,6 +34,35 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      # The upload can complete before the artifact is visible to the Pages API.
+      - name: Wait for Pages artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          for attempt in {1..12}; do
+            count=$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts?name=github-pages&per_page=100" --jq '[.artifacts[] | select(.name == "github-pages" and .expired == false)] | length') || count=0
+            if [ "$count" = "1" ]; then
+              echo "Pages artifact is available."
+              exit 0
+            fi
+            if [ "$count" -gt 1 ]; then
+              echo "More than one Pages artifact was found; start a new workflow run."
+              exit 1
+            fi
+            echo "Waiting for Pages artifact (attempt $attempt of 12)."
+            sleep 5
+          done
+          echo "Pages artifact did not become available."
+          exit 1
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
