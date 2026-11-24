@@ -1,0 +1,4 @@
+interface:
+  display_name: "Add Group Member"
+  short_description: "Add bilingual group member profiles"
+  default_prompt: "Add the supplied people to the group website using the existing member script."
