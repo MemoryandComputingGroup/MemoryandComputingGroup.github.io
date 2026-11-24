@@ -1,5 +1,5 @@
 import { siteContent as englishContent } from "./content.js?v=20261117-sleep-area";
-import { languageStorageKey, localizeContent, translate } from "./i18n.js?v=20261123-chinese-names";
+import { languageStorageKey, localizeContent, translate } from "./i18n.js?v=20261123-sticky-nav";
 
 let currentLanguage = "en";
 let siteContent = englishContent;
@@ -342,6 +342,29 @@ function applyLanguage(language) {
   updateLanguageControl();
 }
 
+function setUpBackToTop() {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "back-to-top";
+  button.hidden = true;
+  button.setAttribute("aria-label", "Back to top");
+  button.innerHTML = '<svg class="back-to-top-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+  document.body.append(button);
+
+  const updateVisibility = () => { button.hidden = window.scrollY < window.innerHeight * 1.5; };
+  window.addEventListener("scroll", updateVisibility, { passive: true });
+  window.addEventListener("resize", updateVisibility, { passive: true });
+  button.addEventListener("click", () => {
+    const main = document.querySelector("main");
+    if (main) {
+      if (!main.hasAttribute("tabindex")) main.setAttribute("tabindex", "-1");
+      main.focus({ preventScroll: true });
+    }
+    window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  });
+  updateVisibility();
+}
+
 function setUpLanguageControl() {
   const header = document.querySelector("[data-header]");
   if (!header) return;
@@ -378,6 +401,7 @@ function setUpLanguageControl() {
   });
 }
 
+setUpBackToTop();
 setUpLanguageControl();
 let preferredLanguage = "en";
 try { if (localStorage.getItem(languageStorageKey) === "zh-CN") preferredLanguage = "zh-CN"; } catch { /* Use English when storage is unavailable. */ }

@@ -4,6 +4,7 @@ export const languageStorageKey = "qiliu-language";
 // until a matching Chinese translation is reviewed.
 const zhText = {
   "Skip to content": "跳转到正文",
+  "Back to top": "返回顶部",
   "Toggle navigation": "切换导航菜单",
   "Fudan Memory and Computing Group home": "复旦大学存储与计算课题组首页",
   "Main navigation": "主导航",
@@ -244,7 +245,7 @@ const zhContent = {
     xianghuiLi: { sections: [
       { entries: [
         "李相辉现为复旦大学存储与计算课题组（Memory and Computing Group）博士研究生。他于2026年在安徽大学获得集成电路设计与集成系统的工学学士学位。他于2026年开始在复旦大学攻读博士学位。",
-        "荣誉与奖励：他曾获得5项荣誉与奖励，包括国家奖学金等。",
+        "荣誉与奖励：他曾获得5项荣誉与奖励。",
         "兴趣爱好：日常喜爱旅行和摄影，以及健身。",
         "个人 Slogan：求知若饥，虚心若愚。 (Stay Hungry, stay Foolish.)"
       ] },
