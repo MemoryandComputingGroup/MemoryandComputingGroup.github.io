@@ -115,7 +115,7 @@ const zhText = {
   "Journal article": "期刊论文",
   "Conference Paper": "会议论文",
   "Open publication": "查看论文原文",
-  "Discoveries, Milestones, and Momentum.": "新发现、\n新突破、\n新动能。",
+  "Discoveries, Milestones, Momentum.": "新发现、\n新突破、\n新动能。",
   "Stay updated on our latest achievements and activities.": "及时了解团队的最新成果与动态。",
   "Latest": "最新动态",
   "News archive": "动态一览",
