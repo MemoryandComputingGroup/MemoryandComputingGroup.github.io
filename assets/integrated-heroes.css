@@ -6,12 +6,19 @@
 .hero-integrated .hero-integrated-copy .publications-title{max-width:15ch}
 .hero-integrated .hero-integrated-copy p:last-child{max-width:31rem;margin:0;color:#d5e4f5;font-size:clamp(1.02rem,1.3vw,1.22rem);line-height:1.6}
 .hero-integrated .hero-integrated-media{position:absolute;inset:0 -8% 0 42%;z-index:-1;overflow:hidden}
-.hero-integrated .hero-integrated-media>img{display:block;width:100%;height:100%;object-fit:cover;object-position:42% center;opacity:.86}
-.hero-integrated .hero-integrated-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#041120 0%,rgba(4,17,32,.96) 13%,rgba(4,17,32,.53) 48%,rgba(4,17,32,.14) 100%),linear-gradient(0deg,rgba(4,17,32,.34),transparent 45%)}
+.hero-integrated .hero-integrated-media>img{display:block;width:100%;height:100%;object-fit:cover;object-position:42% center;opacity:.96;filter:brightness(1)}
+.hero-integrated .hero-integrated-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#041120 0%,rgba(4,17,32,.96) 13%,rgba(4,17,32,.30) 48%,rgba(4,17,32,.07) 100%),linear-gradient(0deg,rgba(4,17,32,.12),transparent 45%)}
 .page-hero.hero-integrated--light{background:#edf5fd}
 .hero-integrated--light .hero-integrated-copy .eyebrow{color:#1469d8}
 .hero-integrated--light .hero-integrated-copy h1{color:#0b2344;-webkit-text-fill-color:#0b2344}
 .hero-integrated--light .hero-integrated-copy p:last-child{color:#405f83}
-.hero-integrated--light .hero-integrated-media>img{opacity:.85}
-.hero-integrated--light .hero-integrated-media::after{background:linear-gradient(90deg,#edf5fd 0%,rgba(237,245,253,.97) 14%,rgba(237,245,253,.6) 46%,rgba(237,245,253,.08) 100%),linear-gradient(0deg,rgba(237,245,253,.22),transparent 45%)}
+.hero-integrated--light .hero-integrated-media>img{opacity:.95;filter:brightness(1)}
+.hero-integrated--light .hero-integrated-media::after{background:linear-gradient(90deg,#edf5fd 0%,rgba(237,245,253,.97) 14%,rgba(237,245,253,.35) 46%,rgba(237,245,253,.08) 100%),linear-gradient(0deg,rgba(237,245,253,.12),transparent 45%)}
 @media(max-width:43.99rem){.page-hero.hero-integrated{align-items:flex-end;min-height:34rem;padding:5rem 1.5rem 2.5rem}.hero-integrated .hero-integrated-media{inset:0}.hero-integrated .hero-integrated-media::after{background:linear-gradient(0deg,#041120 2%,rgba(4,17,32,.94) 25%,rgba(4,17,32,.28) 100%)}.hero-integrated--light .hero-integrated-media::after{background:linear-gradient(0deg,#edf5fd 2%,rgba(237,245,253,.97) 26%,rgba(237,245,253,.35) 100%)}.hero-integrated .hero-integrated-copy h1{font-size:clamp(2.6rem,10vw,4rem)}.hero-integrated .hero-integrated-copy p:last-child{font-size:1rem}}
+
+/* The Contact image has warmer tones, so it needs a gentler transition. */
+@media (min-width: 44rem) {
+  .hero-integrated--contact .hero-integrated-media::after {
+    background: linear-gradient(90deg, #edf5fd 0%, rgba(237,245,253,.96) 16%, rgba(237,245,253,.75) 34%, rgba(237,245,253,.38) 62%, rgba(237,245,253,.10) 84%, rgba(237,245,253,.04) 100%), linear-gradient(0deg, rgba(237,245,253,.12), transparent 45%);
+  }
+}

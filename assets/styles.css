@@ -482,3 +482,18 @@ body[data-research-area="2"] .research-area-hero h1 { font-size: clamp(2.6rem, 4
 }
 
 .explicit-line-breaks { white-space: pre-line; }
+
+/* Join page: a quieter contact close that carries the site's navy palette. */
+.join-contact-panel { padding-block: clamp(3.5rem, 6vw, 5.5rem); background: #071b36; }
+.join-contact-panel::before { content: none; }
+.join-contact-panel .join-layout { align-items: center; gap: 2rem; }
+.join-contact-panel .eyebrow { margin-bottom: 1.1rem; color: #82c7ff; }
+.join-contact-panel h2 { max-width: 14ch; color: #f6faff; font-size: clamp(2.25rem, 3.6vw, 3.5rem); line-height: 1.1; letter-spacing: -.035em; }
+.join-contact-panel .join-layout > div:last-child { padding-left: clamp(1.5rem, 3vw, 3rem); }
+@media (min-width: 44rem) { .join-contact-panel .join-layout::after { content: ""; position: absolute; left: 40%; top: 50%; width: 2px; height: clamp(6rem, 9vw, 8rem); transform: translate(-50%, -50%); background: rgba(153, 198, 238, .55); border-radius: 2px; } }
+.join-contact-panel .join-layout > div:last-child p { max-width: 28rem; margin: 0 0 1.4rem; color: #d4e3f5; font-size: 1.08rem; line-height: 1.65; }
+.join-contact-panel .join-contact-button { display: inline-flex; align-items: center; justify-content: space-between; gap: 2rem; min-height: 3rem; margin: 0; padding: .8rem 1.1rem; color: #fff; background: linear-gradient(135deg, #2868be, #174481); border: 1px solid #77afe6; border-radius: .5rem; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .16), 0 7px 16px rgba(0, 0, 0, .15); text-decoration: none; transition: background 160ms ease, border-color 160ms ease, transform 160ms ease; }
+.join-contact-panel .join-contact-button:hover { color: #fff; background: linear-gradient(135deg, #347bd3, #1c549c); border-color: #c0e4ff; transform: translateY(-2px); }
+.join-contact-panel .join-contact-button span { font-size: 1.2em; line-height: 1; }
+@media (max-width: 43.99rem) { .join-contact-panel .join-layout > div:last-child { padding-left: 0; border-left: 0; } .join-contact-panel h2 { max-width: none; } }
+@media (prefers-reduced-motion: reduce) { .join-contact-panel .join-contact-button { transition: none; } .join-contact-panel .join-contact-button:hover { transform: none; } }
