@@ -151,13 +151,13 @@ function renderResearchAreaPage() {
     <nav class="research-breadcrumb section-shell" aria-label="Breadcrumb">
       <a href="research.html">Research</a><span aria-hidden="true">/</span><span aria-current="page">${escapeHtml(theme.title)}</span>
     </nav>
-    <section class="page-hero page-hero-with-media section-shell research-area-hero" aria-labelledby="research-area-title">
-      <div>
+    <section class="page-hero page-hero-with-media section-shell research-area-hero hero-integrated hero-integrated--dark" aria-labelledby="research-area-title">
+      <div class="hero-integrated-copy">
         <p class="eyebrow">Research area <span class="research-area-number">${escapeHtml(theme.number)}</span></p>
         <h1 id="research-area-title">${escapeHtml(theme.title)}</h1>
         <p>${escapeHtml(theme.intro)}</p>
       </div>
-      <div class="research-area-media">
+      <div class="hero-integrated-media">
         <img src="${escapeHtml(theme.image)}" alt="${escapeHtml(theme.imageAlt || "")}" decoding="async" />
       </div>
     </section>
